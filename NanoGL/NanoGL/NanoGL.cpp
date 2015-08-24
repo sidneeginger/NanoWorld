@@ -5,6 +5,9 @@
 #include "NanoGL.h"
 #include <stdio.h>
 
+
+
+
 #define MAX_LOADSTRING 100
 
 // 全局变量: 
@@ -12,16 +15,17 @@ HINSTANCE hInst;                                // 当前实例
 WCHAR szTitle[MAX_LOADSTRING];                  // 标题栏文本
 WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
 
+HDC		hDC;		// GDI设备句柄,将窗口连接到 GDI( 图形设备接口)
+HGLRC	hRC = NULL;	// 渲染描述句柄,将OpenGL调用连接到设备描述表 
+HWND	hWnd = NULL;	// 保存 Windows 分配给程序的窗口句柄
+
 // 此代码模块中包含的函数的前向声明: 
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
-void GameRun()
-{
-	int i = 0;
-}
+void GameRun();
+void GLInit(HDC hDc);
 
 void MainLoop()
 {
@@ -63,6 +67,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     {
         return FALSE;
     }	
+
+	glClearDepth(1.0f);
 	
 	MainLoop();
 
@@ -111,7 +117,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 将实例句柄存储在全局变量中
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+	hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
@@ -140,15 +146,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
+	case  WM_CREATE:
+		hDC = GetDC(hWnd);				// 获取当前窗口的设备句柄
+		GLInit(hDC);
+		break;
+	case WM_SIZE:						// 窗口尺寸变化
+		{
+			hDC = GetDC(hWnd);				// 获取当前窗口的设备句柄
+			GLInit(hDC);
+		int Height = HIWORD(lParam);		// 窗口的高
+		int Width = LOWORD(lParam);		// 窗口的宽
+		if (Height == 0)	Height = 1;		// 防止被0 除
+		glViewport(0, 0, Width, Height);
+		}
+		break;
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
             // 分析菜单选择: 
             switch (wmId)
             {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
                 break;
@@ -157,14 +174,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 在此处添加使用 hdc 的任何绘图代码...
-            EndPaint(hWnd, &ps);
-        }
-        break;
+    //case WM_PAINT:
+    //    {
+    //        PAINTSTRUCT ps;
+    //        HDC hdc = BeginPaint(hWnd, &ps);
+    //        // TODO: 在此处添加使用 hdc 的任何绘图代码...
+    //        EndPaint(hWnd, &ps);
+    //    }
+    //    break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
@@ -174,22 +191,87 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-// “关于”框的消息处理程序。
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+BOOL bSetupPixelFormat(HDC hDc)
 {
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
+	static PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),  // size of this pfd
+		1,                              // version number
+		PFD_DRAW_TO_WINDOW |            // support window
+		PFD_SUPPORT_OPENGL |          // support OpenGL
+		PFD_DOUBLEBUFFER,             // float buffered
+		PFD_TYPE_RGBA,                  // RGBA type
+		24,                             // 24-bit color depth
+		0, 0, 0, 0, 0, 0,               // color bits ignored
+		0,                              // no alpha buffer
+		0,                              // shift bit ignored
+		0,                              // no accumulation buffer
+		0, 0, 0, 0,                     // accum bits ignored
+		32,                             // 32-bit z-buffer
+		0,                              // no stencil buffer
+		0,                              // no auxiliary buffer
+		PFD_MAIN_PLANE,                 // main layer
+		0,                              // reserved
+		0, 0, 0                         // layer masks ignored
+	};
+	int pixelformat;
 
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
+	if ((pixelformat = ChoosePixelFormat(hDc, &pfd)) == 0)
+	{
+		return FALSE;
+	}
+
+	if (SetPixelFormat(hDc, pixelformat, &pfd) == FALSE)
+	{
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
+void GLInit(HDC hDc)
+{
+	PIXELFORMATDESCRIPTOR pfd;
+	int         n;
+
+	if (!bSetupPixelFormat(hDc))
+		return;
+
+	n = ::GetPixelFormat(hDC);
+	::DescribePixelFormat(hDC, n, sizeof(pfd), &pfd);
+
+	hRC = wglCreateContext(hDc);
+	wglMakeCurrent(hDc, hRC);
+
+	//glEnable( GL_BLEND );
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+	glClearDepth(1.0f);
+	//glEnable(GL_DEPTH_TEST);
+
+
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	glMatrixMode(GL_MODELVIEW);
+}
+
+void Reander()
+{
+	glClearColor(0.0f, 0.0f, 0.4f, 0.1f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glFinish();
+	SwapBuffers(wglGetCurrentDC());
+}
+
+void Logic()
+{
+
+}
+
+void GameRun()
+{
+	Logic();
+	Reander();
 }
