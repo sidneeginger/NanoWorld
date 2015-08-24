@@ -16,14 +16,16 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <stdio.h>
 
 #include <gl/gl.h>
 #include <gl/glu.h>
 #include <mmsystem.h>
+#include "gl/freeglut.h"
 
 
 // TODO:  在此处引用程序需要的其他头文件
 #pragma comment( lib, "winmm.lib")
 #pragma comment( lib, "opengl32.lib")	// OpenGL32连接库
 #pragma comment( lib, "glu32.lib")		// GLu32连接库
-//#pragma comment( lib, "glut32.lib")		// GLu32连接库
+//#pragma comment( lib, "freeglut.lib")		// GLu32连接库

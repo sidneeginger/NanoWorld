@@ -4,8 +4,7 @@
 #include "stdafx.h"
 #include "NanoGL.h"
 #include <stdio.h>
-
-
+#include "GameApp.h"
 
 
 #define MAX_LOADSTRING 100
@@ -18,13 +17,13 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
 HDC		hDC;		// GDI设备句柄,将窗口连接到 GDI( 图形设备接口)
 HGLRC	hRC = NULL;	// 渲染描述句柄,将OpenGL调用连接到设备描述表 
 HWND	hWnd = NULL;	// 保存 Windows 分配给程序的窗口句柄
+GameApp app;
 
 // 此代码模块中包含的函数的前向声明: 
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 
-void GameRun();
 void GLInit(HDC hDc);
 
 void MainLoop()
@@ -42,7 +41,7 @@ void MainLoop()
 		}
 		else
 		{
-			GameRun();
+			app.Run();
 		}
 	}
 }
@@ -174,6 +173,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             }
         }
         break;
+	case WM_KEYDOWN:					// 
+
+		app.OnKeyDown(wParam, lParam);
+		break;
     //case WM_PAINT:
     //    {
     //        PAINTSTRUCT ps;
@@ -254,24 +257,4 @@ void GLInit(HDC hDc)
 	glLoadIdentity();
 
 	glMatrixMode(GL_MODELVIEW);
-}
-
-void Reander()
-{
-	glClearColor(0.0f, 0.0f, 0.4f, 0.1f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glFinish();
-	SwapBuffers(wglGetCurrentDC());
-}
-
-void Logic()
-{
-
-}
-
-void GameRun()
-{
-	Logic();
-	Reander();
 }
