@@ -151,12 +151,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_SIZE:						// 窗口尺寸变化
 		{
-			hDC = GetDC(hWnd);				// 获取当前窗口的设备句柄
-			GLInit(hDC);
-		int Height = HIWORD(lParam);		// 窗口的高
-		int Width = LOWORD(lParam);		// 窗口的宽
-		if (Height == 0)	Height = 1;		// 防止被0 除
-		glViewport(0, 0, Width, Height);
+			//hDC = GetDC(hWnd);				// 获取当前窗口的设备句柄
+			//GLInit(hDC);
+			int Height = HIWORD(lParam);		// 窗口的高
+			int Width = LOWORD(lParam);		// 窗口的宽
+			if (Height == 0)	Height = 1;		// 防止被0 除
+			glViewport(0, 0, Width, Height);
 		}
 		break;
     case WM_COMMAND:

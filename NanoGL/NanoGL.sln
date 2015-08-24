@@ -5,16 +5,32 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NanoGL", "NanoGL\NanoGL.vcxproj", "{1E76C892-10B5-46D6-8AAE-A4295AD19A74}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NGUClient", "NGUClient\NGUClient.vcxproj", "{F81E31B8-2CEB-4316-A2A0-3411232816F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Debug|x64.ActiveCfg = Debug|x64
 		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Debug|x64.Build.0 = Debug|x64
+		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Debug|x86.ActiveCfg = Debug|Win32
+		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Debug|x86.Build.0 = Debug|Win32
 		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Release|x64.ActiveCfg = Release|x64
 		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Release|x64.Build.0 = Release|x64
+		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Release|x86.ActiveCfg = Release|Win32
+		{1E76C892-10B5-46D6-8AAE-A4295AD19A74}.Release|x86.Build.0 = Release|Win32
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Debug|x64.ActiveCfg = Debug|x64
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Debug|x64.Build.0 = Debug|x64
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Debug|x86.ActiveCfg = Debug|Win32
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Debug|x86.Build.0 = Debug|Win32
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Release|x64.ActiveCfg = Release|x64
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Release|x64.Build.0 = Release|x64
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Release|x86.ActiveCfg = Release|Win32
+		{F81E31B8-2CEB-4316-A2A0-3411232816F0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
