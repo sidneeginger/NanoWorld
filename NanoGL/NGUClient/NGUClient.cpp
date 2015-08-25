@@ -3,12 +3,6 @@
 
 #include "stdafx.h"
 
-
-//int main()
-//{
-//    return 0;
-//}
-
 #include <GL/glut.h>
 
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
