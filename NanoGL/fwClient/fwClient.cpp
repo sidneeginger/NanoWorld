@@ -24,6 +24,7 @@ float fEyeAngleZ = 0.0f;
 int bRClick = 0;
 float fMousePosX = 0.0f;
 float fMousePosY = 0.0f;
+bool bTrack = false;
 
 Player player;
 World world;
@@ -39,6 +40,8 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, GL_TRUE);
+    else if (key == GLFW_KEY_C && action == GLFW_PRESS)
+        bTrack = !bTrack;
 }
 
 void CalcView(GLFWwindow * window)
@@ -218,8 +221,11 @@ void GLRender()
 
 		glTranslatef(0, 0, (-100.0f + fTransZ));
 		glRotatef((GLfloat)fEyeAngleX + 90, 1.0f, 0.0f, 0.0f);
-		glRotatef((GLfloat)fEyeAngleZ + 180, 0.0f, 1.0f, 0.0f);	
-		//glRotatef(player.m_fAngle*57.29577951f - 90, 0.0f, 1.0f, 0.0f);
+		//glRotatef((GLfloat)fEyeAngleZ + 180, 0.0f, 1.0f, 0.0f);
+        if (bTrack)
+        {
+            glRotatef(-player.m_fAngle - 90, 0.0f, 1.0f, 0.0f);
+        }
 		gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
 		//gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
 
