@@ -11,7 +11,7 @@
 #pragma comment( lib, "glfw3dll.lib")
 #pragma comment( lib, "opengl32.lib")
 #pragma comment( lib, "glu32.lib")
-#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
+//#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
 
 #include "Player.h"
 #include "World.h"
@@ -24,6 +24,10 @@ float fEyeAngleZ = 0.0f;
 int bRClick = 0;
 float fMousePosX = 0.0f;
 float fMousePosY = 0.0f;
+
+Player player;
+World world;
+
 
 static void error_callback(int error, const char* description)
 {
@@ -52,6 +56,26 @@ void CalcView(GLFWwindow * window)
 		gluPerspective(45.0f, (GLfloat)width / height, 1.0f, 8000.0f);
 		glMatrixMode(GL_MODELVIEW);
 	}
+}
+
+void CheckInput(GLFWwindow * window)
+{
+	int state = 0;
+	state = glfwGetKey(window, GLFW_KEY_W);
+	if (state == GLFW_PRESS)
+		player.MoveUp();
+
+	state = glfwGetKey(window, GLFW_KEY_S);
+	if (state == GLFW_PRESS)
+		player.MoveDown();
+
+	state = glfwGetKey(window, GLFW_KEY_A);
+	if (state == GLFW_PRESS)
+		player.TurnLeft();
+
+	state = glfwGetKey(window, GLFW_KEY_D);
+	if (state == GLFW_PRESS)
+		player.TrunRight();
 }
 
 
@@ -99,9 +123,6 @@ static void win_size(GLFWwindow * window, int nW, int nH)
 
 void GLRender();
 
-Player player;
-World world;
-
 int main(void)
 {
 	GLFWwindow* window;
@@ -125,17 +146,15 @@ int main(void)
 
 
 	glClearDepth(1.0f);
-	/*glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glMatrixMode(GL_MODELVIEW);*/
 
 	while (!glfwWindowShouldClose(window))
 	{
-	
+		
 		GLRender();
 		
 		glfwSwapBuffers(window);
 		glfwPollEvents();
+		CheckInput(window);
 	}
 	glfwDestroyWindow(window);
 	glfwTerminate();
@@ -200,7 +219,9 @@ void GLRender()
 		glTranslatef(0, 0, (-100.0f + fTransZ));
 		glRotatef((GLfloat)fEyeAngleX + 90, 1.0f, 0.0f, 0.0f);
 		glRotatef((GLfloat)fEyeAngleZ + 180, 0.0f, 1.0f, 0.0f);	
-		gluLookAt(0, 0, 10, 0, -1000, 0, 0, 0, 1);
+		//glRotatef(player.m_fAngle*57.29577951f - 90, 0.0f, 1.0f, 0.0f);
+		gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
+		//gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
 
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_LIGHTING);
