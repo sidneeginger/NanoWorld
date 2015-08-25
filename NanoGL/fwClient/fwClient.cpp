@@ -147,14 +147,25 @@ int main(void)
 
 	glClearDepth(1.0f);
 
+	float fTime = 0.0f;
+	float fDtime = 0.0f;
+	float fNow = 0.0f;
 	while (!glfwWindowShouldClose(window))
 	{
-		
-		GLRender();
-		
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-		CheckInput(window);
+		fNow = glfwGetTime();
+		fDtime = fNow - fTime;
+
+		if (fDtime > (1.0f/60.0f) )
+		{
+			fTime = fNow;
+			printf("time %f dTime %f\n", fNow, fDtime);
+			GLRender();
+			glfwSwapBuffers(window);
+			glfwPollEvents();
+			CheckInput(window);
+		}
+	
+	
 	}
 	glfwDestroyWindow(window);
 	glfwTerminate();

@@ -26,7 +26,7 @@ void Player::Draw()
 	m_dTime = ftime - m_fTime;
 	m_fTime = ftime;
 
-	glColor3f(0.65f, 0.65f, 0.65f);
+	glColor3f(0.65f, 0.65f, 0.85f);
 	
 	glTranslatef(m_fX, m_fY, 3.0f);
 	glRotatef(m_fAngle, 0.f, 0.f, 1.f);
@@ -65,13 +65,13 @@ void Player::MoveDown()
 
 void Player::TurnLeft()
 {
-	m_fAngle += 0.1f;
+	m_fAngle += 90.0f * m_dTime;
 }
 
 
 void Player::TrunRight()
 {
-	m_fAngle -= 0.1f;
+	m_fAngle -= 90.0f * m_dTime;
 }
 
 
