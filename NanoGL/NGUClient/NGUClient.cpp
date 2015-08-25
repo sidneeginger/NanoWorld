@@ -1,11 +1,15 @@
 // NGUClient.cpp : 定义控制台应用程序的入口点。
 //
 
+#ifdef _WIN32
 #include "stdafx.h"
-
 #include <GL/glut.h>
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+#else
+#include <GLUT/glut.h>
+#endif
+#include <stdlib.h>
 
-#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
 
 // all variables initialized to 1.0, meaning
 // the triangle will initially be white
@@ -33,6 +37,7 @@ void changeSize(int w, int h) {
 
 	// Set the correct perspective.
 	gluPerspective(45.0f, ratio, 0.1f, 100.0f);
+    //GLKMatrix4MakePerspective();
 
 	// Get Back to the Modelview
 	glMatrixMode(GL_MODELVIEW);
@@ -69,6 +74,7 @@ void processNormalKeys(unsigned char key, int x, int y) {
 
 	if (key == 27)
 		exit(0);
+        
 }
 
 void processSpecialKeys(int key, int x, int y) {
@@ -89,7 +95,7 @@ void processSpecialKeys(int key, int x, int y) {
 	}
 }
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
 
 	// init GLUT and create window
 	glutInit(&argc, argv);
@@ -109,4 +115,6 @@ void main(int argc, char **argv) {
 
 	// enter GLUT event processing cycle
 	glutMainLoop();
+    
+    return 0;
 }
