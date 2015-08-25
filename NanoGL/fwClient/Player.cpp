@@ -65,13 +65,13 @@ void Player::MoveDown()
 
 void Player::TurnLeft()
 {
-	m_fAngle += 0.1f;
+    m_fAngle += 80.0f * m_dTime;
 }
 
 
 void Player::TrunRight()
 {
-	m_fAngle -= 0.1f;
+	m_fAngle -= 80.0f * m_dTime;
 }
 
 
