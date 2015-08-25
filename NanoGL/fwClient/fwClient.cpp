@@ -11,7 +11,7 @@
 #pragma comment( lib, "glfw3dll.lib")
 #pragma comment( lib, "opengl32.lib")
 #pragma comment( lib, "glu32.lib")
-//#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
+#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
 
 #include "Player.h"
 #include "World.h"
