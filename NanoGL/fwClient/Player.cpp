@@ -32,6 +32,8 @@ void Player::Draw()
 	glRotatef(m_fAngle, 0.f, 0.f, 1.f);
 	GLUquadricObj *qobj = gluNewQuadric();
 	gluSphere(qobj, 3, 16, 16);
+	glTranslatef(-5.0f, 0.0f, 0.0f);
+	gluSphere(qobj, 3.5, 16, 16);
 
 	glPopMatrix();
 }
