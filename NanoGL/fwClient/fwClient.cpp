@@ -16,10 +16,10 @@
 #include "Player.h"
 #include "World.h"
 
-float fTransZ = 0.0f;
+float fTransZ = -100.0f;
 float fTransX = 0.0f;
 float fTransY = 0.0f;
-float fEyeAngleX = 0.0f;
+float fEyeAngleX = -60.0f;
 float fEyeAngleZ = 0.0f;
 int bRClick = 0;
 float fMousePosX = 0.0f;
@@ -164,8 +164,6 @@ int main(void)
 			glfwPollEvents();
 			CheckInput(window);
 		}
-	
-	
 	}
 	glfwDestroyWindow(window);
 	glfwTerminate();
