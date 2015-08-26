@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CFFE9894-4725-4398-B03E-FA5F66D7CB01</string>
+	<key>IDESourceControlProjectName</key>
+	<string>fwClientX</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>580BF6BA9E7821ED532EC617A14F607C9C243F6A</key>
+		<string>https://github.com/sidneeginger/NanoWorld.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NanoGL/fwClientX.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>580BF6BA9E7821ED532EC617A14F607C9C243F6A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sidneeginger/NanoWorld.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>580BF6BA9E7821ED532EC617A14F607C9C243F6A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>580BF6BA9E7821ED532EC617A14F607C9C243F6A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NanoWorld</string>
+		</dict>
+	</array>
+</dict>
+</plist>
