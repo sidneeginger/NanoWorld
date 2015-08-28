@@ -44,7 +44,7 @@ public:
 
 	void Wait()
 	{
-		ASSERT(_thread);
+		//ASSERT(_thread);
 
 		_thread->join();
 		delete _thread;
@@ -93,7 +93,7 @@ protected:
 
 	void Run()
 	{
-		TC_LOG_DEBUG("misc", "Network Thread Starting");
+		//TC_LOG_DEBUG("misc", "Network Thread Starting");
 
 		typename SocketSet::iterator i, t;
 
@@ -127,7 +127,7 @@ protected:
 			sleepTime = diff > 10 ? 0 : 10 - diff;
 		}
 
-		TC_LOG_DEBUG("misc", "Network Thread exits");
+		//TC_LOG_DEBUG("misc", "Network Thread exits");
 		_newSockets.clear();
 		_Sockets.clear();
 	}

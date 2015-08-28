@@ -48,6 +48,9 @@
     <ClInclude Include="Socket.h">
       <Filter>头文件\Network</Filter>
     </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

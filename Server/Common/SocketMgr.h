@@ -15,16 +15,16 @@ class SocketMgr
 public:
 	virtual ~SocketMgr()
 	{
-		ASSERT(!_threads && !_acceptor && !_threadCount, "StopNetwork must be called prior to SocketMgr destruction");
+		//ASSERT(!_threads && !_acceptor && !_threadCount, "StopNetwork must be called prior to SocketMgr destruction");
 	}
 
 	virtual bool StartNetwork(boost::asio::io_service& service, std::string const& bindIp, uint16 port)
 	{
-		_threadCount = sConfigMgr->GetIntDefault("Network.Threads", 1);
+		_threadCount = 1;/*sConfigMgr->GetIntDefault("Network.Threads", 1);*/
 
 		if (_threadCount <= 0)
 		{
-			TC_LOG_ERROR("misc", "Network.Threads is wrong in your config file");
+			//TC_LOG_ERROR("misc", "Network.Threads is wrong in your config file");
 			return false;
 		}
 
@@ -34,13 +34,13 @@ public:
 		}
 		catch (boost::system::system_error const& err)
 		{
-			TC_LOG_ERROR("network", "Exception caught in SocketMgr.StartNetwork (%s:%u): %s", bindIp.c_str(), port, err.what());
+			//TC_LOG_ERROR("network", "Exception caught in SocketMgr.StartNetwork (%s:%u): %s", bindIp.c_str(), port, err.what());
 			return false;
 		}
 
 		_threads = CreateThreads();
 
-		ASSERT(_threads);
+		//ASSERT(_threads);
 
 		for (int32 i = 0; i < _threadCount; ++i)
 			_threads[i].Start();
@@ -89,7 +89,7 @@ public:
 		}
 		catch (boost::system::system_error const& err)
 		{
-			TC_LOG_WARN("network", "Failed to retrieve client's remote address %s", err.what());
+			//TC_LOG_WARN("network", "Failed to retrieve client's remote address %s", err.what());
 		}
 	}
 
