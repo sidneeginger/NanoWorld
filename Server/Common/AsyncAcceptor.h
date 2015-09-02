@@ -3,6 +3,7 @@
 #include "common.h"
 #include <boost/asio.hpp>
 #include <atomic>
+#include <iostream>
 
 using boost::asio::ip::tcp;
 
@@ -35,6 +36,7 @@ public:
 				catch (boost::system::system_error const& err)
 				{
 					//TC_LOG_INFO("network", "Failed to initialize client's socket %s", err.what());
+					std::cerr << err.what() << std::endl;
 				}
 			}
 

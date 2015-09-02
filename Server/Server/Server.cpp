@@ -34,6 +34,7 @@
 #include <boost/asio.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/bind.hpp>
+#include <iostream>
 
 
 #include "WorldSocketMgr.h"
@@ -43,8 +44,8 @@ int main()
 {
 	boost::asio::io_service io;
 
-	WorldSocketMgr mgr;
-	mgr.StartNetwork(io, "127.0.0.1", 5758);
+	sWorldMgr.StartNetwork(io, "127.0.0.1", 5758);
+	std::cout << "World Manager Start." << std::endl;
 	io.run();
 
 	return 0;

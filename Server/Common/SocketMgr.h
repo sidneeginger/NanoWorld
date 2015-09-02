@@ -34,6 +34,7 @@ public:
 		}
 		catch (boost::system::system_error const& err)
 		{
+			std::cerr << err.what() << std::endl;
 			//TC_LOG_ERROR("network", "Exception caught in SocketMgr.StartNetwork (%s:%u): %s", bindIp.c_str(), port, err.what());
 			return false;
 		}
@@ -90,6 +91,7 @@ public:
 		catch (boost::system::system_error const& err)
 		{
 			//TC_LOG_WARN("network", "Failed to retrieve client's remote address %s", err.what());
+			std::cerr << err.what() << std::endl;
 		}
 	}
 

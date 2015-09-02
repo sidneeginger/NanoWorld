@@ -11,6 +11,11 @@ public:
 	~WorldSocketMgr();
 
 public:
+	static WorldSocketMgr& Instance()
+	{
+		static WorldSocketMgr instance;
+		return instance;
+	}
 	bool StartNetwork(boost::asio::io_service& service, std::string const& bindIp, uint16 port) override;
 
 protected:
@@ -21,3 +26,4 @@ private:
 
 };
 
+#define sWorldMgr WorldSocketMgr::Instance()

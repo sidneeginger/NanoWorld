@@ -30,5 +30,5 @@ bool WorldSocketMgr::StartNetwork(boost::asio::io_service& service, std::string 
 
 void WorldSocketMgr::OnSocketAccept(tcp::socket&& sock)
 {
-	//sSessionMgr.OnSocketOpen(std::forward<tcp::socket>(sock));
+	sWorldMgr.OnSocketOpen(std::forward<tcp::socket>(sock));
 }
