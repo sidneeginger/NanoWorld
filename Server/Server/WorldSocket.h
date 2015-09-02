@@ -12,5 +12,7 @@ public:
 
 protected:
 	void ReadHandler() override;
+public:
+	int WriteLoginInfo();
 };
 

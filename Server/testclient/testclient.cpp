@@ -39,6 +39,9 @@ public:
 				boost::asio::buffer(recv_buffer_),
 				boost::bind(&MyClient::handle_read, this,
 					boost::asio::placeholders::error));
+
+			char c = recv_buffer_[0];
+			std::cout << c;
 		}
 		else
 		{
@@ -74,6 +77,10 @@ public:
 				boost::asio::buffer(recv_buffer_),
 				boost::bind(&MyClient::handle_read, this,
 					boost::asio::placeholders::error));
+
+			char c = recv_buffer_[0];
+			std::cout << c;
+
 		}
 		else
 		{
