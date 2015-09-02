@@ -33,6 +33,8 @@ void WorldSocket::ReadHandler()
 		std::cout << c1;
 	}
 	WriteLoginInfo();
+
+	AsyncRead();
 }
 
 int WorldSocket::WriteLoginInfo()
