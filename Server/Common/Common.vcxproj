@@ -156,6 +156,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Util.h" />
+    <ClInclude Include="WorldPacket.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ByteBuffer.cpp" />

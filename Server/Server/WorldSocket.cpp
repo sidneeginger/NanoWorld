@@ -164,15 +164,17 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 	{
 	case 0x1A:
 		{
-			uint8 buf[100] = { 0 };
+		/*	uint8 buf[100] = { 0 };
 			for (int i = 0; i < 8; i++)
 			{
 				packet >> buf[i];
-			}
+			}*/
 		
 			float f1, f2;
-			memcpy(&f1, &buf[0], 4);
-			memcpy(&f2, &buf[4], 4);
+			/*memcpy(&f1, &buf[0], 4);
+			memcpy(&f2, &buf[4], 4);*/
+			packet >> f1;
+			packet >> f2;
 			std::cout << f1 << " " << f2 << std::endl;
 		}
 		break;

@@ -10,6 +10,7 @@
 #include <thread>
 #include "../Common/MessageBuffer.h"
 #include "../Common/Timer.h"
+#include "../Common/WorldPacket.h"
 
 using namespace boost::asio::ip;
 
@@ -116,8 +117,12 @@ public:
 		uint16 uLen = 8;
 		buffer.Write(&uCmd, 2);
 		buffer.Write(&uLen, 2);
-		buffer.Write(&fposX, sizeof(fposX));
-		buffer.Write(&fposY, sizeof(fposY));
+		
+
+		WorldPacket packet;
+		packet << fposX;
+		packet << fposY;
+		buffer.Write(packet.contents(), packet.size());
 
 		auto len = buffer.GetActiveSize();
 
