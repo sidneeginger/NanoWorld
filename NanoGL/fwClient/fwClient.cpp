@@ -161,7 +161,7 @@ int main(void)
 		if (fDtime > (1.0f/60.0f) )
 		{
 			fTime = fNow;
-			printf("time %f dTime %f\n", fNow, fDtime);
+			//printf("time %f dTime %f\n", fNow, fDtime);
 			GLRender();
 			glfwSwapBuffers(window);
 			glfwPollEvents();
@@ -175,11 +175,11 @@ int main(void)
 
 void Lighting(void)
 {
-	GLfloat  ambientLight[] = { 0.3f, 0.3f, 0.3f, 1.0f };
+	GLfloat  ambientLight[] = { 0.6f, 0.6f, 0.6f, 1.0f };
 	GLfloat  diffuseLight[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 	GLfloat  specular[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 	GLfloat  specref[] = { 0.3f, 0.3f, 0.3f, 1.0f };
-	GLfloat	 lightPos[] = { 50.0f, 5.0f, 70.0f, 1.0f };
+	GLfloat	 lightPos[] = { 150.0f, 5.0f, 170.0f, 1.0f };
 
 	glEnable(GL_NORMALIZE);
 	//glEnable(GL_POLYGON_SMOOTH);
@@ -223,7 +223,7 @@ void DrawWorld()
 
 void GLRender()
 {
-	glClearColor(0.0f, 0.0f, 0.4f, 0.1f);
+	glClearColor(0.4f, 0.4f, 0.9f, 0.1f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		glPushMatrix();
