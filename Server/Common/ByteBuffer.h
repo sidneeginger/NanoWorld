@@ -1,6 +1,9 @@
 #pragma once
 
 #include "define.h"
+#include "error.h"
+#include "ByteConverter.h"
+#include "Util.h"
 
 #include <exception>
 #include <list>
@@ -597,7 +600,7 @@ public:
 		if (!src)
 			throw ByteBufferSourceException(_wpos, size(), cnt);
 
-		ASSERT(size() < 10000000);
+		//ASSERT(size() < 10000000);
 
 		FlushBits();
 

@@ -7,6 +7,9 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <boost/array.hpp>
+#include <thread>
+#include "../Common/MessageBuffer.h"
+#include "../Common/Timer.h"
 
 using namespace boost::asio::ip;
 
@@ -31,7 +34,9 @@ public:
 
 	void handle_connect(const boost::system::error_code& error)
 	{
-		Send_LoginInfo();
+		//Send_LoginInfo();
+
+		threadSendPos_ = std::thread(&MyClient::ThreadSend, this);
 
 		if (!error)
 		{
@@ -88,10 +93,55 @@ public:
 		}
 	}
 
+	void ThreadSend()
+	{
+		while (1)
+		{
+			auto nTime = getMSTime();
+			if (nTime - uTime > 200)
+			{
+				uTime = nTime;
+				SendPos();
+			}
+		}
+	}
+
+	void SendPos()
+	{
+		fposX += 9.2f;
+		fposY += 2.3f;
+		
+		MessageBuffer buffer;
+		uint16 uCmd = 0x1A;
+		uint16 uLen = 8;
+		buffer.Write(&uCmd, 2);
+		buffer.Write(&uLen, 2);
+		buffer.Write(&fposX, sizeof(fposX));
+		buffer.Write(&fposY, sizeof(fposY));
+
+		auto len = buffer.GetActiveSize();
+
+		boost::asio::async_write(socket_,
+			boost::asio::buffer(buffer.GetReadPointer(),
+				buffer.GetActiveSize()),
+			boost::bind(&MyClient::handle_write, this,
+				boost::asio::placeholders::error));
+	}
+
 private:
 	boost::asio::io_service& io_service_;
 	boost::asio::ip::tcp::socket socket_;
 	boost::array<char, 1> recv_buffer_;
+	std::vector<char> Writebuffer_;
+	std::thread threadSendPos_;
+	float fposX;
+	float fposY;
+	float fPosZ;
+	float fPosDir;
+	uint32 uTime;
+
+
+
 };
 
 

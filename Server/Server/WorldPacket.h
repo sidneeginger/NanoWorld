@@ -3,11 +3,20 @@
 
 #include "ByteBuffer.h"
 
+enum ConnectionType
+{
+	CONNECTION_TYPE_REALM = 0,
+	CONNECTION_TYPE_INSTANCE = 1,
+	MAX_CONNECTION_TYPES,
+
+	CONNECTION_TYPE_DEFAULT = -1
+};
+
 class WorldPacket : public ByteBuffer
 {
 public:
 	// just container for later use
-	WorldPacket() : ByteBuffer(0), m_opcode(UNKNOWN_OPCODE), _connection(CONNECTION_TYPE_DEFAULT)
+	WorldPacket() : ByteBuffer(0), m_opcode(0), _connection(CONNECTION_TYPE_DEFAULT)
 	{
 	}
 
