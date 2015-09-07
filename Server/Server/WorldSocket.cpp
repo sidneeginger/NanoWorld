@@ -160,6 +160,26 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 
 	WorldPacket packet(cmd, std::move(_packetBuffer), CONNECTION_TYPE_INSTANCE);
 
+	switch (cmd)
+	{
+	case 0x1A:
+		{
+			uint8 buf[100] = { 0 };
+			for (int i = 0; i < 8; i++)
+			{
+				packet >> buf[i];
+			}
+		
+			float f1, f2;
+			memcpy(&f1, &buf[0], 4);
+			memcpy(&f2, &buf[4], 4);
+			std::cout << f1 << " " << f2 << std::endl;
+		}
+		break;
+	default:
+		break;
+	}
+
 	//if (_initialized)
 	//{
 	//	ClientPktHeader* header = reinterpret_cast<ClientPktHeader*>(_headerBuffer.GetReadPointer());
