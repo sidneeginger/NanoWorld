@@ -17,9 +17,10 @@ public:
 	}
 
 public:
-	void Write()
+	void Write(MessageBuffer& buffer)
 	{
-		
+		std::unique_lock<std::mutex> guard(_writeLock);
+		QueuePacket(std::move(buffer), guard);
 	}
 
 	void Start() override
