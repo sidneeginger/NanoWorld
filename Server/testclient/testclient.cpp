@@ -12,6 +12,8 @@
 #include "../Common/Timer.h"
 #include "../Common/WorldPacket.h"
 
+#include "../nwlink/WorldLink.h"
+
 using namespace boost::asio::ip;
 
 class MyClient
@@ -19,7 +21,7 @@ class MyClient
 public:
 	MyClient(boost::asio::io_service& io) : socket_(io), io_service_(io)
 	{
-		
+
 	}
 
 	void Connect(std::string strIP, std::string strPort)
@@ -145,20 +147,34 @@ private:
 	float fPosDir;
 	uint32 uTime;
 
-
-
+public:
+	void Run();
+	void Init();
 };
 
 
 int main()
 {
-	boost::asio::io_service io_service;
-	
-	MyClient client(io_service);
-	client.Connect("127.0.0.1", "5758");
+	boost::asio::io_service io;
+	//MyClient client(io);
+	//client.Init();
+	//client.Run();
 
-	io_service.run();
+	CWorldLink link(io);
+	link.Init();
+	io.run();
+
 
     return 0;
 }
 
+void MyClient::Run()
+{
+	io_service_.run();
+}
+
+
+void MyClient::Init()
+{
+	Connect("127.0.0.1", "5758");
+}

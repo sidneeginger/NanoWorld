@@ -23,8 +23,18 @@ template<class T>
 class Socket : public std::enable_shared_from_this<T>
 {
 public:
-	explicit Socket(tcp::socket&& socket) : _socket(std::move(socket)), _remoteAddress(_socket.remote_endpoint().address()),
-		_remotePort(_socket.remote_endpoint().port()), _readBuffer(), _closed(false), _closing(false), _isWritingAsync(false)
+	explicit Socket(tcp::socket&& socket) : _socket(std::move(socket)), 
+		_remoteAddress(_socket.remote_endpoint().address()),
+		_remotePort(_socket.remote_endpoint().port()), 
+		_readBuffer(), _closed(false), _closing(false), _isWritingAsync(false)
+	{
+		_readBuffer.Resize(READ_BLOCK_SIZE);
+	}
+
+	explicit Socket(tcp::socket&& socket, bool bClient) : _socket(std::move(socket)),
+		//_remoteAddress(_socket.remote_endpoint().address()),
+		//_remotePort(_socket.remote_endpoint().port()),
+		_readBuffer(), _closed(false), _closing(false), _isWritingAsync(false)
 	{
 		_readBuffer.Resize(READ_BLOCK_SIZE);
 	}
@@ -66,6 +76,22 @@ public:
 	uint16 GetRemotePort() const
 	{
 		return _remotePort;
+	}
+
+	void Connect(std::string strIP, std::string strPort)
+	{
+		tcp::resolver resolver(io_service());
+		tcp::resolver::query query(strIP, strPort);
+		tcp::resolver::iterator iterator = resolver.resolve(query);
+
+		boost::asio::async_connect(_socket, iterator,
+			boost::bind(&Socket<T>::ConnectHandlerInternal, this->shared_from_this(),
+				boost::asio::placeholders::error));
+	}
+
+	void ConnectHandlerInternal(boost::system::error_code error)
+	{
+		AsyncRead();
 	}
 
 	void AsyncRead()
