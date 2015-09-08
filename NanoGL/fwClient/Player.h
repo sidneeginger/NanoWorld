@@ -4,7 +4,7 @@ class Player
 public:
 	Player();
 	~Player();
-	void Draw();
+	void Draw(float fTime);
 
 	float m_fX;
 	float m_fY;

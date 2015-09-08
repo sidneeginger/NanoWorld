@@ -19,12 +19,12 @@ Player::~Player()
 }
 
 
-void Player::Draw()
+void Player::Draw(float fTime)
 {
 	glPushMatrix();
-	auto ftime = glfwGetTime();
-	m_dTime = ftime - m_fTime;
-	m_fTime = ftime;
+	//auto ftime = glfwGetTime();
+	m_dTime = fTime;
+	//m_fTime = ftime;
 
 	glColor3f(0.65f, 0.65f, 0.85f);
 	

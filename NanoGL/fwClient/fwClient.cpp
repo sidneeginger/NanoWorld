@@ -124,7 +124,7 @@ static void win_size(GLFWwindow * window, int nW, int nH)
 	CalcView(window);
 }
 
-void GLRender();
+void GLRender(float dTime);
 
 int main(void)
 {
@@ -161,8 +161,8 @@ int main(void)
 		if (fDtime > (1.0f/60.0f) )
 		{
 			fTime = fNow;
-			//printf("time %f dTime %f\n", fNow, fDtime);
-			GLRender();
+			printf("time %f dTime %f\n", fNow, fDtime);
+			GLRender(fDtime);
 			glfwSwapBuffers(window);
 			glfwPollEvents();
 			CheckInput(window);
@@ -210,18 +210,18 @@ void Lighting(void)
 	glMateriali(GL_FRONT, GL_SHININESS, 64);
 }
 
-void DrawWorld()
+void DrawWorld(float fTime)
 {
 	glPushMatrix();
 	Lighting();
 
-	player.Draw();
+	player.Draw(fTime);
 	world.Draw();
 
 	glPopMatrix();
 }
 
-void GLRender()
+void GLRender(float fdTime)
 {
 	glClearColor(0.4f, 0.4f, 0.9f, 0.1f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -241,7 +241,7 @@ void GLRender()
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_LIGHTING);
 
-		DrawWorld();
+		DrawWorld(fdTime);
 
 	glPopMatrix();
 		glFinish();
