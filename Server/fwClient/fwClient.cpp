@@ -13,6 +13,8 @@
 #pragma comment( lib, "glu32.lib")
 //#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
 
+#include "NWApp.h"
+
 #include "Player.h"
 #include "World.h"
 
@@ -128,6 +130,11 @@ void GLRender(float dTime);
 
 int main(void)
 {
+	NWApp app;
+	app.InitWindows(640, 480);
+	app.Run();
+
+
 	GLFWwindow* window;
 	glfwSetErrorCallback(error_callback);
 	if (!glfwInit())

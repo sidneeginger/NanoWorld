@@ -153,6 +153,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GLApp.h" />
+    <ClInclude Include="NWApp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -160,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fwClient.cpp" />
+    <ClCompile Include="GLApp.cpp" />
+    <ClCompile Include="NWApp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="World.cpp" />

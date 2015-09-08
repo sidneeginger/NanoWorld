@@ -30,6 +30,12 @@
     <ClInclude Include="World.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GLApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NWApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +48,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NWApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
