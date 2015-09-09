@@ -11,11 +11,22 @@
 
 NWApp::NWApp()
 {
+	
 }
 
 
 NWApp::~NWApp()
 {
+}
+
+int NWApp::Init()
+{
+	m_pIo = new boost::asio::io_service;
+	m_plink = new CWorldLink(*m_pIo);
+	m_plink->Init();
+	threadPool.push_back(std::thread(boost::bind(&boost::asio::io_service::run, m_pIo)));
+		
+	return 0;
 }
 
 void NWApp::Draw()
@@ -31,6 +42,8 @@ void NWApp::CalcActor()
 	cam.fCamZ = m_player.m_fZ;
 	cam.fCamAng = m_player.m_fAngle;
 	SetCam(cam);
+
+
 }
 
 

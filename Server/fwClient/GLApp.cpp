@@ -56,6 +56,8 @@ int GLApp::InitWindows(int nWidth, int nHeight)
 
 	glClearDepth(1.0f);
 
+	Init();
+
 	return 0;
 }
 
@@ -242,4 +244,10 @@ void GLApp::Draw()
 
 void GLApp::CalcActor()
 {
+}
+
+
+int GLApp::Init()
+{
+	return 0;
 }

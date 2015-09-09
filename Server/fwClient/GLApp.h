@@ -62,4 +62,7 @@ protected:
 	virtual void CheckInput();
 	virtual void Draw();
 	virtual void CalcActor();
+	virtual int Init();
+public:
+	
 };
