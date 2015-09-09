@@ -176,8 +176,11 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		// Login
 		uint32 uID;
 		packet >> uID;
-		
-		std::cout << "Player Login " << uID << std::endl;
+
+		uint32 uSession = (uint32)this;
+		std::cout << "Player Login " << uID << "  Session "<<  uSession <<std::endl;
+
+		//WriteLoginInfo();
 	}
 		break;
 	case 0x1A:
