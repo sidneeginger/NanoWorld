@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "World.h"
 #include <GLFW/glfw3.h>
 

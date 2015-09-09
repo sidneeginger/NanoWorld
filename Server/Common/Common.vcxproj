@@ -72,11 +72,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
     <LibraryPath>D:\AddLib\Boost1590\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)./lib</OutDir>
+    <OutDir>$(SolutionDir)./lib/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
     <LibraryPath>D:\AddLib\Boost1590\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)./lib/</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

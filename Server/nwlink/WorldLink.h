@@ -18,9 +18,6 @@ public:
 		: socket_(io), io_service_(io)
 	{
 		pClient = std::make_shared<ClientSocket>(std::move(socket_));
-
-		fposX = 0.0f;
-		fposY = 0.0f;
 	}
 	~CWorldLink();
 
@@ -30,10 +27,7 @@ private:
 	boost::asio::io_service& io_service_;
 	boost::asio::ip::tcp::socket socket_;
 	std::shared_ptr<ClientSocket> pClient;
-	float fposX;
-	float fposY;
-	std::thread threadSendPos_;
-	uint32 uTime;
+
 public:
 
 	void Init()
