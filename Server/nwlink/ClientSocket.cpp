@@ -7,3 +7,8 @@ void ClientSocket::ConnectHandler()
 {
 	_pworldLink->SendLoginInfo();
 }
+
+void ClientSocket::ReadHandler()
+{
+
+}

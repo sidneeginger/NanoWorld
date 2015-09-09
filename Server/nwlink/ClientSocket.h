@@ -33,10 +33,7 @@ public:
 	virtual void ConnectHandler();
 
 protected:
-	void ReadHandler() override
-	{
-		// read server info
-	}
+	void ReadHandler() override;
 	bool ReadHeaderHandler()
 	{
 

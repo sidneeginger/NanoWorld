@@ -27,23 +27,6 @@ void WorldSocket::Start()
 
 void WorldSocket::ReadHandler()
 {
-	//BitStream stream(std::move(GetReadBuffer()));
-
-	//while (!stream.IsRead())
-	//{
-	//	auto c1 = stream.ReadBytes(4);
-	//	//std::cout << c1 << " ";
-	//	float fV;
-	//	memcpy(&fV, c1.get(), 4);
-	//	std::cout << fV << " ";
-	//}
-	////WriteLoginInfo();
-	//std::cout << " " << std::endl;
-
-	//GetReadBuffer().Resize(size_t(BufferSizes::Read));
-
-	//AsyncRead();
-
 	if (!IsOpen())
 		return;
 
