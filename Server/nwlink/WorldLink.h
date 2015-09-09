@@ -33,27 +33,11 @@ public:
 	void Init()
 	{
 		pClient->Connect("127.0.0.1", "5758");
+		pClient->SetWorldLink(std::shared_ptr<CWorldLink>(this));
 	}
-	void SendPlayerPos(float fx, float fy, float fz, float fa)
-	{
-		MessageBuffer buffer;
-		uint16 uCmd = 0x1A;
-		uint16 uLen = 0;
-		buffer.Write(&uCmd, 2);
 
-		WorldPacket packet;
-		packet << fx;
-		packet << fy;
-		packet << fz;
-		packet << fa;
-
-		uLen = packet.size();
-		buffer.Write(&uLen, 2);
-		buffer.Write(packet.contents(), packet.size());
-
-		auto len = buffer.GetActiveSize();
-
-		pClient->Write(buffer);
-	}
+	void SendPlayerPos(float fx, float fy, float fz, float fa);
+	void SendLoginInfo();
+	void SendLogout();
 };
 

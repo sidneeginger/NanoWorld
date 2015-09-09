@@ -22,6 +22,7 @@ protected:
 	virtual void CalcActor();
 	virtual void CheckInput();
 	virtual int Init();
+	virtual int Finish();
 
 private:
 	void DrawWorld();

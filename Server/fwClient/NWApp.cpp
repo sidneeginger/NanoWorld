@@ -69,6 +69,12 @@ void NWApp::CalcActor()
 }
 
 
+int NWApp::Finish()
+{
+	m_plink->SendLogout();
+	return 0;
+}
+
 void NWApp::CheckInput()
 {
 	auto window = GetWindow();

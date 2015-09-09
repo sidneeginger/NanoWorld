@@ -1,6 +1,7 @@
 #pragma once
 #include "../Common/Socket.h"
 
+class WorldSession;
 enum class BufferSizes : uint32
 {
 	SRP_6_V = 0x80,
@@ -63,5 +64,6 @@ public:
 private:
 	MessageBuffer _headerBuffer;
 	MessageBuffer _packetBuffer;
+	WorldSession* _session;
 };
 

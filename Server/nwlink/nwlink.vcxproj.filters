@@ -38,5 +38,8 @@
     <ClCompile Include="WorldLink.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ClientSocket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

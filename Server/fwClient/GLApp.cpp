@@ -104,6 +104,7 @@ int GLApp::Run()
 	
 	}
 
+	Finish();
 	glfwDestroyWindow(m_pWindow);
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
@@ -249,6 +250,11 @@ void GLApp::CalcActor()
 
 
 int GLApp::Init()
+{
+	return 0;
+}
+
+int GLApp::Finish()
 {
 	return 0;
 }

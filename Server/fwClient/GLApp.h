@@ -63,6 +63,7 @@ protected:
 	virtual void Draw();
 	virtual void CalcActor();
 	virtual int Init();
+	virtual int Finish();
 public:
 	
 };

@@ -91,6 +91,7 @@ public:
 
 	void ConnectHandlerInternal(boost::system::error_code error)
 	{
+		ConnectHandler();
 		AsyncRead();
 	}
 
@@ -141,6 +142,7 @@ protected:
 	virtual void OnClose() { }
 
 	virtual void ReadHandler() = 0;
+	virtual void ConnectHandler() {};
 
 	bool AsyncProcessQueue(std::unique_lock<std::mutex>&)
 	{

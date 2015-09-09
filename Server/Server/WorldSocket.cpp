@@ -162,6 +162,24 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 
 	switch (cmd)
 	{
+	case 0x1C:
+	{
+		// Logout
+		uint32 uID;
+		packet >> uID;
+
+		std::cout << "Player LogOut " << uID << std::endl;
+	}
+		break;
+	case 0x1B:
+	{
+		// Login
+		uint32 uID;
+		packet >> uID;
+		
+		std::cout << "Player Login " << uID << std::endl;
+	}
+		break;
 	case 0x1A:
 		{
 			float fx, fy, fz, fa;
