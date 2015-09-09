@@ -4,40 +4,50 @@ struct GLFWwindow;
 class GLApp
 {
 public:
+	struct Camera
+	{
+		float fCamX;
+		float fCamY;
+		float fCamZ;
+		float fCamAng;
+	};
+
+public:
 	GLApp();
 	~GLApp();
-	int InitWindows(int nWidth, int nHeight);
-
-	int RefreshRate() const { return m_nRefreshRate; }
-	void RefreshRate(int val) { m_nRefreshRate = val; }
-
-	static GLApp& Instance()
-	{
-		static GLApp instance;
-		return instance;
-	}
 
 private:
 	GLFWwindow* m_pWindow;
 	int m_nRefreshRate;
 	float m_fDTime;
-	float fTransZ = -100.0f;
-	float fTransX = 0.0f;
-	float fTransY = 0.0f;
-	float fEyeAngleX = -60.0f;
-	float fEyeAngleZ = 0.0f;
-	int bRClick = 0;
-	float fMousePosX = 0.0f;
-	float fMousePosY = 0.0f;
-	bool bTrack = false;
+	Camera m_cam;
+
+	static float fTransZ;
+	static float fTransX;
+	static float fTransY;
+	static float fEyeAngleX;
+	static float fEyeAngleZ;
+	static int bRClick;
+	static float fMousePosX;
+	static float fMousePosY;
+	static bool bTrack;
+
+private:
+	void Lighting();
+	void Render();
 
 protected:
-
 	bool GetEyeTrack() { return bTrack; };
 	float GetDifftime() { return m_fDTime; };
+	Camera GetCame() { return m_cam; };
+	void SetCam(Camera& cam) { m_cam = cam; };
+	GLFWwindow* GetWindow() { return m_pWindow; };
 
 public:
 	int Run();
+	int InitWindows(int nWidth, int nHeight);
+	int RefreshRate() const { return m_nRefreshRate; }
+	void RefreshRate(int val) { m_nRefreshRate = val; }
 
 protected:
 	static void error_callback(int error, const char* description);
@@ -49,14 +59,7 @@ protected:
 	static void CalcView(GLFWwindow * window);
 
 protected:
-	void Handle_Error(int error, const char* description);
-	void Handle_Keys(int key, int scancode, int action, int mods);
-
-protected:
-	virtual void Render() ;
 	virtual void CheckInput();
-public:
-	void Lighting();
+	virtual void Draw();
+	virtual void CalcActor();
 };
-
-#define sGLApp GLApp::Instance()

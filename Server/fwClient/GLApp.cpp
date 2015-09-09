@@ -10,6 +10,16 @@
 //#pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" ) 
 
 
+bool GLApp::bTrack = false;
+float GLApp::fTransZ = 0.0f;
+float GLApp::fTransX = 0.0f;
+float GLApp::fTransY = 0.0f;
+ float GLApp::fEyeAngleX = -60.0f;
+ float GLApp::fEyeAngleZ = 0.0f;
+ int GLApp::bRClick = 0;
+ float GLApp::fMousePosX = 0.0f;
+ float GLApp::fMousePosY = 0.0f;
+
 GLApp::GLApp()
 	: m_nRefreshRate(60)
 {
@@ -51,12 +61,12 @@ int GLApp::InitWindows(int nWidth, int nHeight)
 
 void GLApp::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-
+	fTransZ += yoffset * 5.5f;
 }
 
 void GLApp::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-	/*if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+	if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
 	{
 		bRClick = 1;
 		double x, y;
@@ -65,7 +75,7 @@ void GLApp::mouse_button_callback(GLFWwindow* window, int button, int action, in
 		fMousePosY = y;
 	}
 	else
-		bRClick = 0;*/
+		bRClick = 0;
 }
 
 
@@ -82,10 +92,11 @@ int GLApp::Run()
 		if (m_fDTime >= fRateTime)
 		{
 			fTime = fNow;
+			CheckInput();
+			CalcActor();
 			Render();
 			glfwSwapBuffers(m_pWindow);
 			glfwPollEvents();
-			CheckInput();
 		}
 	
 	}
@@ -99,24 +110,13 @@ int GLApp::Run()
 
 void GLApp::error_callback(int error, const char* description)
 {
-	sGLApp.Handle_Error(error, description);
-}
-
-void GLApp::Handle_Error(int error, const char* description)
-{
 	fputs(description, stderr);
 }
 
 void GLApp::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-	sGLApp.Handle_Keys(key, scancode, action, mods);
-}
-
-
-void GLApp::Handle_Keys(int key, int scancode, int action, int mods)
-{
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-		glfwSetWindowShouldClose(m_pWindow, GL_TRUE);
+		glfwSetWindowShouldClose(window, GL_TRUE);
 	else if (key == GLFW_KEY_C && action == GLFW_PRESS)
 		bTrack = !bTrack;
 }
@@ -128,20 +128,20 @@ void GLApp::win_size(GLFWwindow * window, int nW, int nH)
 
 void GLApp::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
 {
-	//if (1 == bRClick)
-	//{
-	//	fEyeAngleX += (ypos - fMousePosY) * 0.5f;
+	if (1 == bRClick)
+	{
+		fEyeAngleX += (ypos - fMousePosY) * 0.5f;
 
 
-	//	//if (fEyeAngleX >= 0) fEyeAngleX = 0;
-	//	//if (fEyeAngleX <= -90) fEyeAngleX = -90;
+		//if (fEyeAngleX >= 0) fEyeAngleX = 0;
+		//if (fEyeAngleX <= -90) fEyeAngleX = -90;
 
-	//	fEyeAngleZ += (xpos - fMousePosX);
-	//	fMousePosX = xpos;
-	//	fMousePosY = ypos;
+		fEyeAngleZ += (xpos - fMousePosX);
+		fMousePosX = xpos;
+		fMousePosY = ypos;
 
-	//	printf("X %f Y %f\n", fEyeAngleX, fEyeAngleZ);
-	//}
+		printf("X %f Y %f\n", fEyeAngleX, fEyeAngleZ);
+	}
 }
 
 void GLApp::CalcView(GLFWwindow * window)
@@ -164,7 +164,29 @@ void GLApp::CalcView(GLFWwindow * window)
 
 void GLApp::Render()
 {
+	glClearColor(0.4f, 0.4f, 0.9f, 0.1f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	glPushMatrix();
+
+	glTranslatef(0, 0, (-100.0f + fTransZ));
+	glRotatef((GLfloat)fEyeAngleX + 90, 1.0f, 0.0f, 0.0f);
+	//glRotatef((GLfloat)fEyeAngleZ + 180, 0.0f, 1.0f, 0.0f);
+	if (bTrack)
+	{
+		glRotatef(-m_cam.fCamAng - 90, 0.0f, 1.0f, 0.0f);
+	}
+	gluLookAt(m_cam.fCamX, m_cam.fCamY, 10, 0, -1000, 0, 0, 0, 1);
+	//gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
+
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	Lighting();
+
+	Draw();
+
+	glPopMatrix();
+	glFinish();
 }
 
 
@@ -209,4 +231,15 @@ void GLApp::Lighting()
 	// with a high shine
 	glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
 	glMateriali(GL_FRONT, GL_SHININESS, 64);
+}
+
+
+void GLApp::Draw()
+{
+
+}
+
+
+void GLApp::CalcActor()
+{
 }

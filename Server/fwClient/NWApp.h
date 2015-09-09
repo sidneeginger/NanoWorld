@@ -14,8 +14,11 @@ private:
 	World m_world;
 
 protected:
-	void Render();
-public:
+	virtual void Draw();
+	virtual void CalcActor();
+	virtual void CheckInput();
+
+private:
 	void DrawWorld();
 };
 

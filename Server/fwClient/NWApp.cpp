@@ -18,37 +18,46 @@ NWApp::~NWApp()
 {
 }
 
-void NWApp::Render()
+void NWApp::Draw()
 {
-	glClearColor(0.4f, 0.4f, 0.9f, 0.1f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glPushMatrix();
-
-	//glTranslatef(0, 0, (-100.0f + fTransZ));
-	//glRotatef((GLfloat)fEyeAngleX + 90, 1.0f, 0.0f, 0.0f);
-	//glRotatef((GLfloat)fEyeAngleZ + 180, 0.0f, 1.0f, 0.0f);
-	//if (bTrack)
-	//{
-	//	glRotatef(-m_player.m_fAngle - 90, 0.0f, 1.0f, 0.0f);
-	//}
-	gluLookAt(m_player.m_fX, m_player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
-	//gluLookAt(player.m_fX, player.m_fY, 10, 0, -1000, 0, 0, 0, 1);
-
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_LIGHTING);
-
 	DrawWorld();
-
-	glPopMatrix();
-	glFinish();
 }
 
+void NWApp::CalcActor()
+{
+	Camera cam = GetCame();
+	cam.fCamX = m_player.m_fX;
+	cam.fCamY = m_player.m_fY;
+	cam.fCamZ = m_player.m_fZ;
+	cam.fCamAng = m_player.m_fAngle;
+	SetCam(cam);
+}
+
+
+void NWApp::CheckInput()
+{
+	auto window = GetWindow();
+	int state = 0;
+	state = glfwGetKey(window, GLFW_KEY_W);
+	if (state == GLFW_PRESS)
+		m_player.MoveUp();
+
+	state = glfwGetKey(window, GLFW_KEY_S);
+	if (state == GLFW_PRESS)
+		m_player.MoveDown();
+
+	state = glfwGetKey(window, GLFW_KEY_A);
+	if (state == GLFW_PRESS)
+		m_player.TurnLeft();
+
+	state = glfwGetKey(window, GLFW_KEY_D);
+	if (state == GLFW_PRESS)
+		m_player.TrunRight();
+}
 
 void NWApp::DrawWorld()
 {
 	glPushMatrix();
-	Lighting();
 
 	m_player.Draw(GetDifftime());
 	m_world.Draw();
