@@ -43,7 +43,28 @@ void NWApp::CalcActor()
 	cam.fCamAng = m_player.m_fAngle;
 	SetCam(cam);
 
+	if (m_player.GetMoveStatus() & MoveUp)
+	{
+		m_player.MoveUp();
+	}
+	else if (m_player.GetMoveStatus() & MoveDown)
+	{
+		m_player.MoveDown();
+	}
 
+	if (m_player.GetMoveStatus() & MoveTurnLeft)
+	{
+		m_player.TurnLeft();
+	}
+	else if (m_player.GetMoveStatus() & MoveTurnRight)
+	{
+		m_player.TrunRight();
+	}
+
+	if (m_player.GetMoveStatus())
+	{
+		m_plink->SendPlayerPos(m_player.m_fX, m_player.m_fY, m_player.m_fZ, m_player.m_fAngle);
+	}
 }
 
 
@@ -53,19 +74,27 @@ void NWApp::CheckInput()
 	int state = 0;
 	state = glfwGetKey(window, GLFW_KEY_W);
 	if (state == GLFW_PRESS)
-		m_player.MoveUp();
+		m_player.SetMoveStatus(MoveUp);
+	else
+		m_player.CleanMoveStatus(MoveUp);
 
 	state = glfwGetKey(window, GLFW_KEY_S);
 	if (state == GLFW_PRESS)
-		m_player.MoveDown();
+		m_player.SetMoveStatus(MoveDown);
+	else
+		m_player.CleanMoveStatus(MoveDown);
 
 	state = glfwGetKey(window, GLFW_KEY_A);
 	if (state == GLFW_PRESS)
-		m_player.TurnLeft();
+		m_player.SetMoveStatus(MoveTurnLeft);
+	else
+		m_player.CleanMoveStatus(MoveTurnLeft);
 
 	state = glfwGetKey(window, GLFW_KEY_D);
 	if (state == GLFW_PRESS)
-		m_player.TrunRight();
+		m_player.SetMoveStatus(MoveTurnRight);
+	else
+		m_player.CleanMoveStatus(MoveTurnRight);
 }
 
 void NWApp::DrawWorld()

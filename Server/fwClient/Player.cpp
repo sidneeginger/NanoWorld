@@ -66,12 +66,20 @@ void Player::MoveDown()
 void Player::TurnLeft()
 {
 	m_fAngle += 90.0f * m_dTime;
+	if (m_fAngle >= 360.0f)
+	{
+		m_fAngle = 0.0f;
+	}
 }
 
 
 void Player::TrunRight()
 {
 	m_fAngle -= 90.0f * m_dTime;
+	if (m_fAngle <= 0.0f)
+	{
+		m_fAngle = 360.0f;
+	}
 }
 
 

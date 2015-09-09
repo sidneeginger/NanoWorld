@@ -39,38 +39,22 @@ public:
 	void Init()
 	{
 		pClient->Connect("127.0.0.1", "5758");
-		if(pClient->IsOpen())
-			threadSendPos_ = std::thread(&CWorldLink::ThreadSend, this);
 	}
-
-	void ThreadSend()
+	void SendPlayerPos(float fx, float fy, float fz, float fa)
 	{
-		while (1)
-		{
-			auto nTime = getMSTime();
-			if (nTime - uTime > 200)
-			{
-				uTime = nTime;
-				SendPos();
-			}
-		}
-	}
-
-	void SendPos()
-	{
-		fposX += 9.2f;
-		fposY += 2.3f;
-
 		MessageBuffer buffer;
 		uint16 uCmd = 0x1A;
-		uint16 uLen = 8;
+		uint16 uLen = 0;
 		buffer.Write(&uCmd, 2);
-		buffer.Write(&uLen, 2);
-
 
 		WorldPacket packet;
-		packet << fposX;
-		packet << fposY;
+		packet << fx;
+		packet << fy;
+		packet << fz;
+		packet << fa;
+
+		uLen = packet.size();
+		buffer.Write(&uLen, 2);
 		buffer.Write(packet.contents(), packet.size());
 
 		auto len = buffer.GetActiveSize();
