@@ -4,6 +4,8 @@
 #include <map>
 #include <set>
 #include <list>
+#include "LockedQueue.h"
+#include "WorldSession.h"
 
 enum ShutdownExitCode
 {
@@ -12,6 +14,7 @@ enum ShutdownExitCode
 	RESTART_EXIT_CODE = 2
 };
 
+typedef std::unordered_map<uint32, WorldSession*> SessionMap;
 class World
 {
 public:
@@ -33,6 +36,17 @@ private:
 	static std::atomic<bool> m_stopEvent;
 	static uint8 m_ExitCode;
 	uint32 m_updateTime, m_updateTimeSum;
+	
+	LockedQueue<WorldSession*> addSessQueue;
+	SessionMap m_session;
+	void AddSession_(WorldSession* s);
+
+public:
+	void AddSession(WorldSession* s);
+	void UpdateMove(WorldSession* s);
+	
+protected:
+	void UpdateSession(uint32 diff);
 };
 
 #define sWorld World::instance()

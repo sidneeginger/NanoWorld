@@ -96,6 +96,19 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 
 	switch (cmd)
 	{
+	case  SMSG_MOVE_UPDATE:
+	{
+		uint32 sID = 0;
+		float fx, fy, fz, fa;
+		packet >> sID;
+		packet >> fx;
+		packet >> fy;
+		packet >> fz;
+		packet >> fa;
+
+		std::cout << "ID " << sID << " x" << fx << " y" << fy << " z" << fz << " a" << fa << std::endl;
+	}
+		break;
 	case  SMSG_LOGINACK:
 	{
 		uint32 sID = 0;

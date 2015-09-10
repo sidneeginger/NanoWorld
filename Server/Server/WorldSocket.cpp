@@ -4,6 +4,8 @@
 #include "bitstream.h"
 #include "WorldPacket.h"
 #include "../Common/cmdcode.h"
+#include "WorldSession.h"
+#include "World.h"
 
 WorldSocket::WorldSocket(tcp::socket&& socket) 
 	: Socket(std::move(socket))
@@ -174,21 +176,22 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 
 		uint32 uSession = (uint32)this;
 		std::cout << "Player Login " << uID << "  Session " << uSession << std::endl;
-
+		_session = new WorldSession(uSession, this);
+		sWorld->AddSession(_session);
 		WriteLoginInfo(uSession);
-		//WriteLoginInfo(uSession);
 	}
 		break;
 	case CMSG_MOVE_START:
 		{
-			float fx, fy, fz, fa;
+			Position pos;
 		
-			packet >> fx;
-			packet >> fy;
-			packet >> fz;
-			packet >> fa;
+			packet >> pos.x;
+			packet >> pos.y;
+			packet >> pos.z;
+			packet >> pos.angle;
 
-			std::cout << fx << " " << fy << " " << fz << " " << fa <<std::endl;
+			_session->SetPlayerPos(pos);
+			//std::cout << fx << " " << fy << " " << fz << " " << fa <<std::endl;
 		}
 		break;
 	default:
