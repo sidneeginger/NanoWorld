@@ -85,8 +85,8 @@ public:
 		tcp::resolver::iterator iterator = resolver.resolve(query);
         
 
-		boost::asio::async_connect(_socket, iterator,
-			boost::bind(&Socket<T>::ConnectHandlerInternal, this->shared_from_this(),
+		boost::asio::detail::socket_ops::sync_connect(_socket, iterator,
+			bind(&Socket<T>::ConnectHandlerInternal, this->shared_from_this(),
 				boost::asio::placeholders::error));
 	}
 

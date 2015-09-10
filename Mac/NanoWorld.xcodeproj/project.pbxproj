@@ -28,18 +28,27 @@
 			remoteGlobalIDString = 95DE25C51BA1D34600B7FD7F;
 			remoteInfo = fwClient;
 		};
+		95DE260E1BA1D7E100B7FD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE260A1BA1D7E000B7FD7F /* Server.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95DE26001BA1D7E000B7FD7F;
+			remoteInfo = Server;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = nwlink.xcodeproj; path = nwlink/nwlink.xcodeproj; sourceTree = "<group>"; };
 		95DE258B1BA1D19000B7FD7F /* common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = common.xcodeproj; path = common/common.xcodeproj; sourceTree = "<group>"; };
 		95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fwClient.xcodeproj; path = fwClient/fwClient.xcodeproj; sourceTree = "<group>"; };
+		95DE260A1BA1D7E000B7FD7F /* Server.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Server.xcodeproj; path = Server/Server.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		95DE253A1BA1D05100B7FD7F = {
 			isa = PBXGroup;
 			children = (
+				95DE260A1BA1D7E000B7FD7F /* Server.xcodeproj */,
 				95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */,
 				95DE258B1BA1D19000B7FD7F /* common.xcodeproj */,
 				95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */,
@@ -66,6 +75,14 @@
 			isa = PBXGroup;
 			children = (
 				95DE25D41BA1D34700B7FD7F /* fwClient */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95DE260B1BA1D7E000B7FD7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE260F1BA1D7E100B7FD7F /* Server */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +117,10 @@
 					ProductGroup = 95DE25761BA1D14900B7FD7F /* Products */;
 					ProjectRef = 95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */;
 				},
+				{
+					ProductGroup = 95DE260B1BA1D7E000B7FD7F /* Products */;
+					ProjectRef = 95DE260A1BA1D7E000B7FD7F /* Server.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -127,6 +148,13 @@
 			fileType = "compiled.mach-o.executable";
 			path = fwClient;
 			remoteRef = 95DE25D31BA1D34700B7FD7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95DE260F1BA1D7E100B7FD7F /* Server */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Server;
+			remoteRef = 95DE260E1BA1D7E100B7FD7F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

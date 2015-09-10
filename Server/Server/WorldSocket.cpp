@@ -175,7 +175,7 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		uint32 uID;
 		packet >> uID;
 
-		uint32 uSession = (uint32)this;
+		uint32 uSession = (uint32)uint64(this);
 		std::cout << "Player Login " << uID << "  Session " << uSession << std::endl;
 		_session = new WorldSession(uSession, this);
 		sWorld->AddSession(_session);
