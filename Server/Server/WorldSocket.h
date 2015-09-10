@@ -1,41 +1,15 @@
 #pragma once
 #include "../Common/Socket.h"
+#include "../Common/Packet.h"
 
 class WorldSession;
+class WorldPacket;
 enum class BufferSizes : uint32
 {
 	SRP_6_V = 0x80,
 	SRP_6_S = 0x20,
 	Read = 0x4000
 };
-
-#pragma pack(push, 1)
-
-union ClientPktHeader
-{
-	struct
-	{
-		uint16 Size;
-		uint32 Command;
-	} Setup;
-
-	struct
-	{
-		uint32 Command : 13;
-		uint32 Size : 19;
-	} Normal;
-
-	struct  
-	{
-		uint16 uCmd;
-		uint16 uLen;
-	} Nano;
-
-	static bool IsValidSize(uint32 size) { return size < 10240; }
-	static bool IsValidOpcode(uint32 opcode) { return opcode < 1024; }
-};
-
-#pragma pack(pop)
 
 class WorldSocket : public Socket<WorldSocket>
 {
@@ -59,7 +33,10 @@ protected:
 	ReadDataHandlerResult ReadDataHandler();
 
 public:
-	int WriteLoginInfo();
+	int WriteLoginInfo(uint32);
+	void Write(MessageBuffer& buffer);
+
+	void SendPacket(WorldPacket& packet);
 
 private:
 	MessageBuffer _headerBuffer;

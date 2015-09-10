@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "WorldLink.h"
-
+#include "../Common/cmdcode.h"
 
 CWorldLink::~CWorldLink()
 {
@@ -9,57 +9,31 @@ CWorldLink::~CWorldLink()
 
 void CWorldLink::SendPlayerPos(float fx, float fy, float fz, float fa)
 {
-	MessageBuffer buffer;
-	uint16 uCmd = 0x1A;
-	uint16 uLen = 0;
-	buffer.Write(&uCmd, 2);
-
 	WorldPacket packet;
+	packet.SetOpcode(CMSG_MOVE_START);
 	packet << fx;
 	packet << fy;
 	packet << fz;
 	packet << fa;
 
-	uLen = packet.size();
-	buffer.Write(&uLen, 2);
-	buffer.Write(packet.contents(), packet.size());
-
-	auto len = buffer.GetActiveSize();
-
-	pClient->Write(buffer);
+	SendPacket(packet);
 }
 
 
 void CWorldLink::SendLoginInfo()
 {
-	MessageBuffer buffer;
-	uint16 uCmd = 0x1B;
-	uint16 uLen = 0;
-	buffer.Write(&uCmd, 2);
-
 	WorldPacket packet;
+	packet.SetOpcode(CMSG_LOGIN);
 	packet << uint32(12345);
 
-	uLen = packet.size();
-	buffer.Write(&uLen, 2);
-	buffer.Write(packet.contents(), packet.size());
-
-	pClient->Write(buffer);
+	SendPacket(packet);
 }
 
 void CWorldLink::SendLogout()
 {
-	MessageBuffer buffer;
-	uint16 uCmd = 0x1C;
-	uint16 uLen = 0;
-	buffer.Write(&uCmd, 2);
-
 	WorldPacket packet;
+	packet.SetOpcode(CMSG_LOGOUT);
 	packet << uint32(12345);
 
-	uLen = packet.size();
-	buffer.Write(&uLen, 2);
-	buffer.Write(packet.contents(), packet.size());
-
-	pClient->Write(buffer);
+	SendPacket(packet);
 }

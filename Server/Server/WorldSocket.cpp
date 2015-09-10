@@ -3,7 +3,7 @@
 #include <iostream>
 #include "bitstream.h"
 #include "WorldPacket.h"
-
+#include "../Common/cmdcode.h"
 
 WorldSocket::WorldSocket(tcp::socket&& socket) 
 	: Socket(std::move(socket))
@@ -86,21 +86,33 @@ void WorldSocket::ReadHandler()
 	AsyncRead();
 }
 
-int WorldSocket::WriteLoginInfo()
+void WorldSocket::Write(MessageBuffer& buffer)
 {
-	MessageBuffer buffer;
-	
-	char buf[12] = { 0 };
-	for (int i = 0; i < 12; i++)
-	{
-		buf[i] = 'A' + i;
-	}
-
-	buffer.Write(buf, 12);
-
 	std::unique_lock<std::mutex> guard(_writeLock);
 	QueuePacket(std::move(buffer), guard);
+}
 
+
+void WorldSocket::SendPacket(WorldPacket& packet)
+{
+	MessageBuffer buffer;
+	uint16 uCmd = packet.GetOpcode();
+	uint16 uLen = 0;
+	buffer.Write(&uCmd, 2);
+	uLen = packet.size();
+	buffer.Write(&uLen, 2);
+	buffer.Write(packet.contents(), packet.size());
+
+	Write(buffer);
+}
+
+int WorldSocket::WriteLoginInfo(uint32 uSession)
+{
+	WorldPacket packet;
+	packet.SetOpcode(SMSG_LOGINACK);
+	packet << uSession;
+
+	SendPacket(packet);
 	return 0;
 }
 
@@ -145,7 +157,7 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 
 	switch (cmd)
 	{
-	case 0x1C:
+	case CMSG_LOGOUT:
 	{
 		// Logout
 		uint32 uID;
@@ -154,19 +166,20 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		std::cout << "Player LogOut " << uID << std::endl;
 	}
 		break;
-	case 0x1B:
+	case CMSG_LOGIN:
 	{
 		// Login
 		uint32 uID;
 		packet >> uID;
 
 		uint32 uSession = (uint32)this;
-		std::cout << "Player Login " << uID << "  Session "<<  uSession <<std::endl;
+		std::cout << "Player Login " << uID << "  Session " << uSession << std::endl;
 
-		//WriteLoginInfo();
+		WriteLoginInfo(uSession);
+		//WriteLoginInfo(uSession);
 	}
 		break;
-	case 0x1A:
+	case CMSG_MOVE_START:
 		{
 			float fx, fy, fz, fa;
 		
