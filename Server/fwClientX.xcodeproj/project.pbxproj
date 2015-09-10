@@ -16,7 +16,19 @@
 		959C98E91B8CAA33001650D0 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959C98E81B8CAA33001650D0 /* IOKit.framework */; };
 		959C98EB1B8CAA40001650D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959C98EA1B8CAA40001650D0 /* Cocoa.framework */; };
 		959C98ED1B8CAA4E001650D0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959C98EC1B8CAA4E001650D0 /* CoreVideo.framework */; };
+		95E747711BA0833D0007E39B /* GLApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E7476D1BA0833D0007E39B /* GLApp.cpp */; };
+		95E747721BA0833D0007E39B /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E7476F1BA0833D0007E39B /* NWApp.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95E7478A1BA083CF0007E39B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95E7477C1BA083CE0007E39B;
+			remoteInfo = nwlinkx;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		959C98C91B8CA430001650D0 /* CopyFiles */ = {
@@ -46,6 +58,11 @@
 		959C98E81B8CAA33001650D0 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		959C98EA1B8CAA40001650D0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		959C98EC1B8CAA4E001650D0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		95E7476D1BA0833D0007E39B /* GLApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLApp.cpp; path = fwClient/GLApp.cpp; sourceTree = SOURCE_ROOT; };
+		95E7476E1BA0833D0007E39B /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = fwClient/GLApp.h; sourceTree = SOURCE_ROOT; };
+		95E7476F1BA0833D0007E39B /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = fwClient/NWApp.cpp; sourceTree = SOURCE_ROOT; };
+		95E747701BA0833D0007E39B /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = fwClient/NWApp.h; sourceTree = SOURCE_ROOT; };
+		95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = nwlinkx.xcodeproj; path = nwlinkx/nwlinkx.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +84,7 @@
 		959C98C21B8CA430001650D0 = {
 			isa = PBXGroup;
 			children = (
+				95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */,
 				959C98EC1B8CAA4E001650D0 /* CoreVideo.framework */,
 				959C98EA1B8CAA40001650D0 /* Cocoa.framework */,
 				959C98E81B8CAA33001650D0 /* IOKit.framework */,
@@ -89,6 +107,10 @@
 		959C98CD1B8CA430001650D0 /* fwClientX */ = {
 			isa = PBXGroup;
 			children = (
+				95E7476D1BA0833D0007E39B /* GLApp.cpp */,
+				95E7476E1BA0833D0007E39B /* GLApp.h */,
+				95E7476F1BA0833D0007E39B /* NWApp.cpp */,
+				95E747701BA0833D0007E39B /* NWApp.h */,
 				959C98D71B8CA4C5001650D0 /* Player.cpp */,
 				959C98D81B8CA4C5001650D0 /* Player.h */,
 				959C98D91B8CA4C5001650D0 /* stdafx.cpp */,
@@ -99,6 +121,14 @@
 				959C98D51B8CA493001650D0 /* fwClient.cpp */,
 			);
 			path = fwClientX;
+			sourceTree = "<group>";
+		};
+		95E747871BA083CE0007E39B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95E7478B1BA083CF0007E39B /* nwlinkx */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +175,12 @@
 			mainGroup = 959C98C21B8CA430001650D0;
 			productRefGroup = 959C98CC1B8CA430001650D0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 95E747871BA083CE0007E39B /* Products */;
+					ProjectRef = 95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				959C98CA1B8CA430001650D0 /* fwClientX */,
@@ -152,12 +188,24 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		95E7478B1BA083CF0007E39B /* nwlinkx */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = nwlinkx;
+			remoteRef = 95E7478A1BA083CF0007E39B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		959C98C71B8CA430001650D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E747711BA0833D0007E39B /* GLApp.cpp in Sources */,
 				959C98DF1B8CA4C5001650D0 /* stdafx.cpp in Sources */,
+				95E747721BA0833D0007E39B /* NWApp.cpp in Sources */,
 				959C98DE1B8CA4C5001650D0 /* Player.cpp in Sources */,
 				959C98E01B8CA4C5001650D0 /* World.cpp in Sources */,
 				959C98D61B8CA493001650D0 /* fwClient.cpp in Sources */,
@@ -251,10 +299,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/Tornado/Documents/NanoWorld/NanoWorld/NanoGL/include,
+					"$(PROJECT_DIR)/include",
+					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/lib",
+					/Users/Tornado/Code/boost_inc/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -265,10 +318,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/Tornado/Documents/NanoWorld/NanoWorld/NanoGL/include,
+					"$(PROJECT_DIR)/include",
+					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/lib",
+					/Users/Tornado/Code/boost_inc/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

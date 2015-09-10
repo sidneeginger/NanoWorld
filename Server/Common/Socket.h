@@ -83,6 +83,7 @@ public:
 		tcp::resolver resolver(io_service());
 		tcp::resolver::query query(strIP, strPort);
 		tcp::resolver::iterator iterator = resolver.resolve(query);
+        
 
 		boost::asio::async_connect(_socket, iterator,
 			boost::bind(&Socket<T>::ConnectHandlerInternal, this->shared_from_this(),

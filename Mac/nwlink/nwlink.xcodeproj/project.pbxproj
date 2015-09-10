@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95DE25F01BA1D51800B7FD7F /* ClientSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25E91BA1D51800B7FD7F /* ClientSocket.cpp */; };
+		95DE25F11BA1D51800B7FD7F /* ClientSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25EA1BA1D51800B7FD7F /* ClientSocket.h */; };
+		95DE25F21BA1D51800B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25EB1BA1D51800B7FD7F /* stdafx.cpp */; };
+		95DE25F31BA1D51800B7FD7F /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25EC1BA1D51800B7FD7F /* stdafx.h */; };
+		95DE25F41BA1D51800B7FD7F /* targetver.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25ED1BA1D51800B7FD7F /* targetver.h */; };
+		95DE25F51BA1D51800B7FD7F /* WorldLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25EE1BA1D51800B7FD7F /* WorldLink.cpp */; };
+		95DE25F61BA1D51800B7FD7F /* WorldLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25EF1BA1D51800B7FD7F /* WorldLink.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		95DE256E1BA1D14900B7FD7F /* libnwlink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnwlink.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DE25E91BA1D51800B7FD7F /* ClientSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClientSocket.cpp; path = ../../Server/nwlink/ClientSocket.cpp; sourceTree = "<group>"; };
+		95DE25EA1BA1D51800B7FD7F /* ClientSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClientSocket.h; path = ../../Server/nwlink/ClientSocket.h; sourceTree = "<group>"; };
+		95DE25EB1BA1D51800B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../Server/nwlink/stdafx.cpp; sourceTree = "<group>"; };
+		95DE25EC1BA1D51800B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../Server/nwlink/stdafx.h; sourceTree = "<group>"; };
+		95DE25ED1BA1D51800B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../Server/nwlink/targetver.h; sourceTree = "<group>"; };
+		95DE25EE1BA1D51800B7FD7F /* WorldLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldLink.cpp; path = ../../Server/nwlink/WorldLink.cpp; sourceTree = "<group>"; };
+		95DE25EF1BA1D51800B7FD7F /* WorldLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldLink.h; path = ../../Server/nwlink/WorldLink.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95DE256B1BA1D14900B7FD7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95DE25651BA1D14900B7FD7F = {
+			isa = PBXGroup;
+			children = (
+				95DE25E81BA1D4F900B7FD7F /* nwlink */,
+				95DE256F1BA1D14900B7FD7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95DE256F1BA1D14900B7FD7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE256E1BA1D14900B7FD7F /* libnwlink.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95DE25E81BA1D4F900B7FD7F /* nwlink */ = {
+			isa = PBXGroup;
+			children = (
+				95DE25E91BA1D51800B7FD7F /* ClientSocket.cpp */,
+				95DE25EA1BA1D51800B7FD7F /* ClientSocket.h */,
+				95DE25EB1BA1D51800B7FD7F /* stdafx.cpp */,
+				95DE25EC1BA1D51800B7FD7F /* stdafx.h */,
+				95DE25ED1BA1D51800B7FD7F /* targetver.h */,
+				95DE25EE1BA1D51800B7FD7F /* WorldLink.cpp */,
+				95DE25EF1BA1D51800B7FD7F /* WorldLink.h */,
+			);
+			name = nwlink;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		95DE256C1BA1D14900B7FD7F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95DE25F31BA1D51800B7FD7F /* stdafx.h in Headers */,
+				95DE25F11BA1D51800B7FD7F /* ClientSocket.h in Headers */,
+				95DE25F41BA1D51800B7FD7F /* targetver.h in Headers */,
+				95DE25F61BA1D51800B7FD7F /* WorldLink.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		95DE256D1BA1D14900B7FD7F /* nwlink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95DE25721BA1D14900B7FD7F /* Build configuration list for PBXNativeTarget "nwlink" */;
+			buildPhases = (
+				95DE256A1BA1D14900B7FD7F /* Sources */,
+				95DE256B1BA1D14900B7FD7F /* Frameworks */,
+				95DE256C1BA1D14900B7FD7F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nwlink;
+			productName = nwlink;
+			productReference = 95DE256E1BA1D14900B7FD7F /* libnwlink.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95DE25661BA1D14900B7FD7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Tornadocean;
+				TargetAttributes = {
+					95DE256D1BA1D14900B7FD7F = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 95DE25691BA1D14900B7FD7F /* Build configuration list for PBXProject "nwlink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 95DE25651BA1D14900B7FD7F;
+			productRefGroup = 95DE256F1BA1D14900B7FD7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95DE256D1BA1D14900B7FD7F /* nwlink */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95DE256A1BA1D14900B7FD7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95DE25F01BA1D51800B7FD7F /* ClientSocket.cpp in Sources */,
+				95DE25F21BA1D51800B7FD7F /* stdafx.cpp in Sources */,
+				95DE25F51BA1D51800B7FD7F /* WorldLink.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		95DE25701BA1D14900B7FD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		95DE25711BA1D14900B7FD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		95DE25731BA1D14900B7FD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/Tornado/Code/boost_inc/include,
+				);
+				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95DE25741BA1D14900B7FD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/Tornado/Code/boost_inc/include,
+				);
+				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95DE25691BA1D14900B7FD7F /* Build configuration list for PBXProject "nwlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95DE25701BA1D14900B7FD7F /* Debug */,
+				95DE25711BA1D14900B7FD7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95DE25721BA1D14900B7FD7F /* Build configuration list for PBXNativeTarget "nwlink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95DE25731BA1D14900B7FD7F /* Debug */,
+				95DE25741BA1D14900B7FD7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95DE25661BA1D14900B7FD7F /* Project object */;
+}

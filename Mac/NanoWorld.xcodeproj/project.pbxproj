@@ -1,0 +1,162 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		95DE25791BA1D14A00B7FD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95DE256E1BA1D14900B7FD7F;
+			remoteInfo = nwlink;
+		};
+		95DE258F1BA1D19100B7FD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE258B1BA1D19000B7FD7F /* common.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95DE25841BA1D19000B7FD7F;
+			remoteInfo = common;
+		};
+		95DE25D31BA1D34700B7FD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95DE25C51BA1D34600B7FD7F;
+			remoteInfo = fwClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = nwlink.xcodeproj; path = nwlink/nwlink.xcodeproj; sourceTree = "<group>"; };
+		95DE258B1BA1D19000B7FD7F /* common.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = common.xcodeproj; path = common/common.xcodeproj; sourceTree = "<group>"; };
+		95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fwClient.xcodeproj; path = fwClient/fwClient.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		95DE253A1BA1D05100B7FD7F = {
+			isa = PBXGroup;
+			children = (
+				95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */,
+				95DE258B1BA1D19000B7FD7F /* common.xcodeproj */,
+				95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		95DE25761BA1D14900B7FD7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE257A1BA1D14A00B7FD7F /* libnwlink.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95DE258C1BA1D19000B7FD7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE25901BA1D19100B7FD7F /* libcommon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95DE25D01BA1D34600B7FD7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE25D41BA1D34700B7FD7F /* fwClient */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		95DE253B1BA1D05100B7FD7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 95DE253E1BA1D05100B7FD7F /* Build configuration list for PBXProject "NanoWorld" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 95DE253A1BA1D05100B7FD7F;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 95DE258C1BA1D19000B7FD7F /* Products */;
+					ProjectRef = 95DE258B1BA1D19000B7FD7F /* common.xcodeproj */;
+				},
+				{
+					ProductGroup = 95DE25D01BA1D34600B7FD7F /* Products */;
+					ProjectRef = 95DE25CF1BA1D34600B7FD7F /* fwClient.xcodeproj */;
+				},
+				{
+					ProductGroup = 95DE25761BA1D14900B7FD7F /* Products */;
+					ProjectRef = 95DE25751BA1D14900B7FD7F /* nwlink.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		95DE257A1BA1D14A00B7FD7F /* libnwlink.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libnwlink.a;
+			remoteRef = 95DE25791BA1D14A00B7FD7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95DE25901BA1D19100B7FD7F /* libcommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcommon.a;
+			remoteRef = 95DE258F1BA1D19100B7FD7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95DE25D41BA1D34700B7FD7F /* fwClient */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fwClient;
+			remoteRef = 95DE25D31BA1D34700B7FD7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		95DE253F1BA1D05100B7FD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		95DE25401BA1D05100B7FD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95DE253E1BA1D05100B7FD7F /* Build configuration list for PBXProject "NanoWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95DE253F1BA1D05100B7FD7F /* Debug */,
+				95DE25401BA1D05100B7FD7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95DE253B1BA1D05100B7FD7F /* Project object */;
+}
