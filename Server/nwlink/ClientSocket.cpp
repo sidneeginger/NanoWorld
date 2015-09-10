@@ -105,7 +105,7 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 		packet >> fy;
 		packet >> fz;
 		packet >> fa;
-
+		_pworldLink->UpdateObjectMove(sID, fx, fy, fz, fa);
 		std::cout << "ID " << sID << " x" << fx << " y" << fy << " z" << fz << " a" << fa << std::endl;
 	}
 		break;

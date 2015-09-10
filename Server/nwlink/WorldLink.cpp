@@ -37,3 +37,41 @@ void CWorldLink::SendLogout()
 
 	SendPacket(packet);
 }
+
+void CWorldLink::UpdateObjectMove(uint32 uid, float x, float y, float z, float a)
+{
+	std::unique_lock<std::mutex> guard(_ObjectLock);
+	auto find = m_mapObject.find(uid);
+	if (find == m_mapObject.end())
+	{
+		auto ob = new Object();
+		ob->uid = uid;
+		ob->x = x;
+		ob->y = y;
+		ob->z = z;
+		ob->a = a;
+		m_mapObject[uid] = ob;
+	}
+	else
+	{
+		auto ob = find->second;
+		ob->uid = uid;
+		ob->x = x;
+		ob->y = y;
+		ob->z = z;
+		ob->a = a;
+	}
+}
+
+ObjectList CWorldLink::GetObjectList()
+{
+	ObjectList list;
+	std::unique_lock<std::mutex> guard(_ObjectLock);
+	for (auto& ob : m_mapObject)
+	{
+		Object lOB = *ob.second;
+		list.push_back(lOB);
+	}
+
+	return list;
+}

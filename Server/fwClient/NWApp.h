@@ -3,6 +3,9 @@
 #include "Player.h"
 #include "World.h"
 #include "../nwlink/WorldLink.h"
+#include <unordered_map>
+
+typedef std::unordered_map<uint32, Player*> PlayerMap;
 
 class NWApp : public GLApp
 {
@@ -16,6 +19,7 @@ private:
 	CWorldLink* m_plink;
 	boost::asio::io_service* m_pIo;
 	std::vector<std::thread> threadPool;
+	PlayerMap m_otherPlayers;
 
 protected:
 	virtual void Draw();
@@ -26,5 +30,6 @@ protected:
 
 private:
 	void DrawWorld();
+	void UpdateObjects(ObjectList& list);
 };
 

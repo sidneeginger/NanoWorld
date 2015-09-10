@@ -9,7 +9,20 @@
 #include "../Common/WorldPacket.h"
 #include "../Common/MessageBuffer.h"
 #include "../Common/Timer.h"
+#include <unordered_map>
+#include <vector>
 
+struct Object
+{
+	uint32 uid;
+	float x;
+	float y;
+	float z;
+	float a;
+};
+
+typedef std::unordered_map<uint32, Object*> ObjectMap;
+typedef std::vector<Object> ObjectList;
 
 class CWorldLink
 {
@@ -31,6 +44,8 @@ private:
 	boost::asio::ip::tcp::socket socket_;
 	std::shared_ptr<ClientSocket> pClient;
 	uint32 _sessionID;
+	std::mutex _ObjectLock;
+	ObjectMap m_mapObject;
 
 	void SendPacket(WorldPacket& packet)
 	{
@@ -48,5 +63,7 @@ public:
 	void SendPlayerPos(float fx, float fy, float fz, float fa);
 	void SendLoginInfo();
 	void SendLogout();
+	void UpdateObjectMove(uint32 uid, float x, float y, float z, float a);
+	ObjectList GetObjectList();
 };
 

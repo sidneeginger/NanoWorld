@@ -66,6 +66,38 @@ void NWApp::CalcActor()
 	{
 		m_plink->SendPlayerPos(m_player.m_fX, m_player.m_fY, m_player.m_fZ, m_player.m_fAngle);
 	}
+
+	auto list = m_plink->GetObjectList();
+	if (list.size() > 0)
+	{
+		UpdateObjects(list);
+	}
+}
+
+
+void NWApp::UpdateObjects(ObjectList& list)
+{
+	for (auto& it : list)
+	{
+		auto find = m_otherPlayers.find(it.uid);
+		if (find == m_otherPlayers.end())
+		{
+			auto oPlayer = new Player();
+			oPlayer->m_fX = it.x;
+			oPlayer->m_fY = it.y;
+			oPlayer->m_fZ = it.z;
+			oPlayer->m_fAngle = it.a;
+			m_otherPlayers[it.uid] = oPlayer;
+		}
+		else
+		{
+			auto oPlayer = find->second;
+			oPlayer->m_fX = it.x;
+			oPlayer->m_fY = it.y;
+			oPlayer->m_fZ = it.z;
+			oPlayer->m_fAngle = it.a;
+		}
+	}
 }
 
 
@@ -109,6 +141,10 @@ void NWApp::DrawWorld()
 	glPushMatrix();
 
 	m_player.Draw(GetDifftime());
+	for ( auto& others : m_otherPlayers)
+	{
+		others.second->Draw(GetDifftime());
+	}
 	m_world.Draw();
 
 	glPopMatrix();
