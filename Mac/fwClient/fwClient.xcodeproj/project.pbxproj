@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95DE25E11BA1D39400B7FD7F /* fwClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25D51BA1D39400B7FD7F /* fwClient.cpp */; };
-		95DE25E21BA1D39400B7FD7F /* GLApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25D61BA1D39400B7FD7F /* GLApp.cpp */; };
-		95DE25E31BA1D39400B7FD7F /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25D81BA1D39400B7FD7F /* NWApp.cpp */; };
-		95DE25E41BA1D39400B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25DA1BA1D39400B7FD7F /* Player.cpp */; };
-		95DE25E51BA1D39400B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25DC1BA1D39400B7FD7F /* stdafx.cpp */; };
-		95DE25E61BA1D39400B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25DF1BA1D39400B7FD7F /* World.cpp */; };
+		95DE262F1BA1DE1100B7FD7F /* libnwlink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE262E1BA1DE1100B7FD7F /* libnwlink.a */; };
+		95DE263F1BA1E06800B7FD7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE263E1BA1E06800B7FD7F /* OpenGL.framework */; };
+		95DE26411BA1E07100B7FD7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26401BA1E07100B7FD7F /* IOKit.framework */; };
+		95DE26431BA1E0A700B7FD7F /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26421BA1E0A700B7FD7F /* libglfw3.a */; };
+		95DE26451BA1E0B800B7FD7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26441BA1E0B800B7FD7F /* Cocoa.framework */; };
+		95DE26471BA1E0C300B7FD7F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */; };
+		95DE26541BA1E18400B7FD7F /* fwClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26481BA1E18400B7FD7F /* fwClient.cpp */; };
+		95DE26551BA1E18400B7FD7F /* GLApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26491BA1E18400B7FD7F /* GLApp.cpp */; };
+		95DE26561BA1E18400B7FD7F /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264B1BA1E18400B7FD7F /* NWApp.cpp */; };
+		95DE26571BA1E18400B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264D1BA1E18400B7FD7F /* Player.cpp */; };
+		95DE26581BA1E18400B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264F1BA1E18400B7FD7F /* stdafx.cpp */; };
+		95DE26591BA1E18400B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26521BA1E18400B7FD7F /* World.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,18 +35,24 @@
 
 /* Begin PBXFileReference section */
 		95DE25C51BA1D34600B7FD7F /* fwClient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fwClient; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DE25D51BA1D39400B7FD7F /* fwClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fwClient.cpp; path = ../../../Server/fwClient/fwClient.cpp; sourceTree = "<group>"; };
-		95DE25D61BA1D39400B7FD7F /* GLApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLApp.cpp; path = ../../../Server/fwClient/GLApp.cpp; sourceTree = "<group>"; };
-		95DE25D71BA1D39400B7FD7F /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = ../../../Server/fwClient/GLApp.h; sourceTree = "<group>"; };
-		95DE25D81BA1D39400B7FD7F /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = ../../../Server/fwClient/NWApp.cpp; sourceTree = "<group>"; };
-		95DE25D91BA1D39400B7FD7F /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = ../../../Server/fwClient/NWApp.h; sourceTree = "<group>"; };
-		95DE25DA1BA1D39400B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/fwClient/Player.cpp; sourceTree = "<group>"; };
-		95DE25DB1BA1D39400B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/fwClient/Player.h; sourceTree = "<group>"; };
-		95DE25DC1BA1D39400B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/fwClient/stdafx.cpp; sourceTree = "<group>"; };
-		95DE25DD1BA1D39400B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/fwClient/stdafx.h; sourceTree = "<group>"; };
-		95DE25DE1BA1D39400B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/fwClient/targetver.h; sourceTree = "<group>"; };
-		95DE25DF1BA1D39400B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/fwClient/World.cpp; sourceTree = "<group>"; };
-		95DE25E01BA1D39400B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/fwClient/World.h; sourceTree = "<group>"; };
+		95DE262E1BA1DE1100B7FD7F /* libnwlink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnwlink.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libnwlink.a"; sourceTree = "<group>"; };
+		95DE263E1BA1E06800B7FD7F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		95DE26401BA1E07100B7FD7F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		95DE26421BA1E0A700B7FD7F /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Server/lib/libglfw3.a; sourceTree = "<group>"; };
+		95DE26441BA1E0B800B7FD7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		95DE26481BA1E18400B7FD7F /* fwClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fwClient.cpp; path = ../../../Server/fwClient/fwClient.cpp; sourceTree = "<group>"; };
+		95DE26491BA1E18400B7FD7F /* GLApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLApp.cpp; path = ../../../Server/fwClient/GLApp.cpp; sourceTree = "<group>"; };
+		95DE264A1BA1E18400B7FD7F /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = ../../../Server/fwClient/GLApp.h; sourceTree = "<group>"; };
+		95DE264B1BA1E18400B7FD7F /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = ../../../Server/fwClient/NWApp.cpp; sourceTree = "<group>"; };
+		95DE264C1BA1E18400B7FD7F /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = ../../../Server/fwClient/NWApp.h; sourceTree = "<group>"; };
+		95DE264D1BA1E18400B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/fwClient/Player.cpp; sourceTree = "<group>"; };
+		95DE264E1BA1E18400B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/fwClient/Player.h; sourceTree = "<group>"; };
+		95DE264F1BA1E18400B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/fwClient/stdafx.cpp; sourceTree = "<group>"; };
+		95DE26501BA1E18400B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/fwClient/stdafx.h; sourceTree = "<group>"; };
+		95DE26511BA1E18400B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/fwClient/targetver.h; sourceTree = "<group>"; };
+		95DE26521BA1E18400B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/fwClient/World.cpp; sourceTree = "<group>"; };
+		95DE26531BA1E18400B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/fwClient/World.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +60,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DE26471BA1E0C300B7FD7F /* CoreVideo.framework in Frameworks */,
+				95DE26451BA1E0B800B7FD7F /* Cocoa.framework in Frameworks */,
+				95DE26431BA1E0A700B7FD7F /* libglfw3.a in Frameworks */,
+				95DE26411BA1E07100B7FD7F /* IOKit.framework in Frameworks */,
+				95DE263F1BA1E06800B7FD7F /* OpenGL.framework in Frameworks */,
+				95DE262F1BA1DE1100B7FD7F /* libnwlink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +75,12 @@
 		95DE25BC1BA1D34600B7FD7F = {
 			isa = PBXGroup;
 			children = (
+				95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */,
+				95DE26441BA1E0B800B7FD7F /* Cocoa.framework */,
+				95DE26421BA1E0A700B7FD7F /* libglfw3.a */,
+				95DE26401BA1E07100B7FD7F /* IOKit.framework */,
+				95DE263E1BA1E06800B7FD7F /* OpenGL.framework */,
+				95DE262E1BA1DE1100B7FD7F /* libnwlink.a */,
 				95DE25C71BA1D34600B7FD7F /* fwClient */,
 				95DE25C61BA1D34600B7FD7F /* Products */,
 			);
@@ -73,18 +97,18 @@
 		95DE25C71BA1D34600B7FD7F /* fwClient */ = {
 			isa = PBXGroup;
 			children = (
-				95DE25D51BA1D39400B7FD7F /* fwClient.cpp */,
-				95DE25D61BA1D39400B7FD7F /* GLApp.cpp */,
-				95DE25D71BA1D39400B7FD7F /* GLApp.h */,
-				95DE25D81BA1D39400B7FD7F /* NWApp.cpp */,
-				95DE25D91BA1D39400B7FD7F /* NWApp.h */,
-				95DE25DA1BA1D39400B7FD7F /* Player.cpp */,
-				95DE25DB1BA1D39400B7FD7F /* Player.h */,
-				95DE25DC1BA1D39400B7FD7F /* stdafx.cpp */,
-				95DE25DD1BA1D39400B7FD7F /* stdafx.h */,
-				95DE25DE1BA1D39400B7FD7F /* targetver.h */,
-				95DE25DF1BA1D39400B7FD7F /* World.cpp */,
-				95DE25E01BA1D39400B7FD7F /* World.h */,
+				95DE26481BA1E18400B7FD7F /* fwClient.cpp */,
+				95DE26491BA1E18400B7FD7F /* GLApp.cpp */,
+				95DE264A1BA1E18400B7FD7F /* GLApp.h */,
+				95DE264B1BA1E18400B7FD7F /* NWApp.cpp */,
+				95DE264C1BA1E18400B7FD7F /* NWApp.h */,
+				95DE264D1BA1E18400B7FD7F /* Player.cpp */,
+				95DE264E1BA1E18400B7FD7F /* Player.h */,
+				95DE264F1BA1E18400B7FD7F /* stdafx.cpp */,
+				95DE26501BA1E18400B7FD7F /* stdafx.h */,
+				95DE26511BA1E18400B7FD7F /* targetver.h */,
+				95DE26521BA1E18400B7FD7F /* World.cpp */,
+				95DE26531BA1E18400B7FD7F /* World.h */,
 			);
 			path = fwClient;
 			sourceTree = "<group>";
@@ -145,12 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DE25E41BA1D39400B7FD7F /* Player.cpp in Sources */,
-				95DE25E21BA1D39400B7FD7F /* GLApp.cpp in Sources */,
-				95DE25E61BA1D39400B7FD7F /* World.cpp in Sources */,
-				95DE25E11BA1D39400B7FD7F /* fwClient.cpp in Sources */,
-				95DE25E31BA1D39400B7FD7F /* NWApp.cpp in Sources */,
-				95DE25E51BA1D39400B7FD7F /* stdafx.cpp in Sources */,
+				95DE26571BA1E18400B7FD7F /* Player.cpp in Sources */,
+				95DE26551BA1E18400B7FD7F /* GLApp.cpp in Sources */,
+				95DE26591BA1E18400B7FD7F /* World.cpp in Sources */,
+				95DE26541BA1E18400B7FD7F /* fwClient.cpp in Sources */,
+				95DE26561BA1E18400B7FD7F /* NWApp.cpp in Sources */,
+				95DE26581BA1E18400B7FD7F /* stdafx.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +267,11 @@
 					"$(PROJECT_DIR)/../../Server/include",
 					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -257,7 +285,11 @@
 					"$(PROJECT_DIR)/../../Server/include",
 					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -281,6 +313,7 @@
 				95DE25CE1BA1D34600B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

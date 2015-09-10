@@ -25,9 +25,11 @@ int main()
 	std::cout << "World Manager Start." << std::endl;
 
 	boost::asio::signal_set signals(io, SIGINT, SIGTERM);
-#if PLATFORM == PLATFORM_WINDOWS
+#ifdef _WIN32
+//#if PLATFORM == PLATFORM_WINDOWS
 	signals.add(SIGBREAK);
 #endif
+    
 	signals.async_wait(SignalHandler);
 
 	int numThreads = 1;

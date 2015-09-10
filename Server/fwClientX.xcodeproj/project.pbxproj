@@ -20,16 +20,6 @@
 		95E747721BA0833D0007E39B /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E7476F1BA0833D0007E39B /* NWApp.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		95E7478A1BA083CF0007E39B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 95E7477C1BA083CE0007E39B;
-			remoteInfo = nwlinkx;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		959C98C91B8CA430001650D0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -62,7 +52,6 @@
 		95E7476E1BA0833D0007E39B /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = fwClient/GLApp.h; sourceTree = SOURCE_ROOT; };
 		95E7476F1BA0833D0007E39B /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = fwClient/NWApp.cpp; sourceTree = SOURCE_ROOT; };
 		95E747701BA0833D0007E39B /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = fwClient/NWApp.h; sourceTree = SOURCE_ROOT; };
-		95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = nwlinkx.xcodeproj; path = nwlinkx/nwlinkx.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +73,6 @@
 		959C98C21B8CA430001650D0 = {
 			isa = PBXGroup;
 			children = (
-				95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */,
 				959C98EC1B8CAA4E001650D0 /* CoreVideo.framework */,
 				959C98EA1B8CAA40001650D0 /* Cocoa.framework */,
 				959C98E81B8CAA33001650D0 /* IOKit.framework */,
@@ -121,14 +109,6 @@
 				959C98D51B8CA493001650D0 /* fwClient.cpp */,
 			);
 			path = fwClientX;
-			sourceTree = "<group>";
-		};
-		95E747871BA083CE0007E39B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				95E7478B1BA083CF0007E39B /* nwlinkx */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,28 +155,12 @@
 			mainGroup = 959C98C21B8CA430001650D0;
 			productRefGroup = 959C98CC1B8CA430001650D0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 95E747871BA083CE0007E39B /* Products */;
-					ProjectRef = 95E747861BA083CE0007E39B /* nwlinkx.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				959C98CA1B8CA430001650D0 /* fwClientX */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		95E7478B1BA083CF0007E39B /* nwlinkx */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = nwlinkx;
-			remoteRef = 95E7478A1BA083CF0007E39B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		959C98C71B8CA430001650D0 /* Sources */ = {

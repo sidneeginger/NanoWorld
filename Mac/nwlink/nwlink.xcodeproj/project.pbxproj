@@ -14,6 +14,7 @@
 		95DE25F41BA1D51800B7FD7F /* targetver.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25ED1BA1D51800B7FD7F /* targetver.h */; };
 		95DE25F51BA1D51800B7FD7F /* WorldLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25EE1BA1D51800B7FD7F /* WorldLink.cpp */; };
 		95DE25F61BA1D51800B7FD7F /* WorldLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25EF1BA1D51800B7FD7F /* WorldLink.h */; };
+		95DE26331BA1DEA700B7FD7F /* libcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26321BA1DEA700B7FD7F /* libcommon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		95DE25ED1BA1D51800B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../Server/nwlink/targetver.h; sourceTree = "<group>"; };
 		95DE25EE1BA1D51800B7FD7F /* WorldLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldLink.cpp; path = ../../Server/nwlink/WorldLink.cpp; sourceTree = "<group>"; };
 		95DE25EF1BA1D51800B7FD7F /* WorldLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldLink.h; path = ../../Server/nwlink/WorldLink.h; sourceTree = "<group>"; };
+		95DE26321BA1DEA700B7FD7F /* libcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcommon.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libcommon.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DE26331BA1DEA700B7FD7F /* libcommon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +44,7 @@
 		95DE25651BA1D14900B7FD7F = {
 			isa = PBXGroup;
 			children = (
+				95DE26321BA1DEA700B7FD7F /* libcommon.a */,
 				95DE25E81BA1D4F900B7FD7F /* nwlink */,
 				95DE256F1BA1D14900B7FD7F /* Products */,
 			);
@@ -233,7 +237,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,7 +255,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/Users/Tornado/Code/boost_inc/include,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -271,6 +283,7 @@
 				95DE25741BA1D14900B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

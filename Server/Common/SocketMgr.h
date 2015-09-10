@@ -2,7 +2,7 @@
 
 #include "AsyncAcceptor.h"
 //#include "Config.h"
-#include "Errors.h"
+//#include "Errors.h"
 #include "NetworkThread.h"
 #include <boost/asio/ip/tcp.hpp>
 #include <memory>

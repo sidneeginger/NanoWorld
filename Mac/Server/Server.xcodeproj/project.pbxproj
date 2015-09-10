@@ -15,6 +15,7 @@
 		95DE26261BA1D81F00B7FD7F /* WorldSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261B1BA1D81F00B7FD7F /* WorldSession.cpp */; };
 		95DE26271BA1D81F00B7FD7F /* WorldSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261D1BA1D81F00B7FD7F /* WorldSocket.cpp */; };
 		95DE26281BA1D81F00B7FD7F /* WorldSocketMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261F1BA1D81F00B7FD7F /* WorldSocketMgr.cpp */; };
+		95DE26311BA1DE1E00B7FD7F /* libcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26301BA1DE1E00B7FD7F /* libcommon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,7 @@
 		95DE261E1BA1D81F00B7FD7F /* WorldSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocket.h; path = ../../../Server/Server/WorldSocket.h; sourceTree = "<group>"; };
 		95DE261F1BA1D81F00B7FD7F /* WorldSocketMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSocketMgr.cpp; path = ../../../Server/Server/WorldSocketMgr.cpp; sourceTree = "<group>"; };
 		95DE26201BA1D81F00B7FD7F /* WorldSocketMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocketMgr.h; path = ../../../Server/Server/WorldSocketMgr.h; sourceTree = "<group>"; };
+		95DE26301BA1DE1E00B7FD7F /* libcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcommon.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libcommon.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DE26311BA1DE1E00B7FD7F /* libcommon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 		95DE25F71BA1D7E000B7FD7F = {
 			isa = PBXGroup;
 			children = (
+				95DE26301BA1DE1E00B7FD7F /* libcommon.a */,
 				95DE26021BA1D7E000B7FD7F /* Server */,
 				95DE26011BA1D7E000B7FD7F /* Products */,
 			);
@@ -257,7 +261,10 @@
 					/Users/Tornado/Code/boost_inc/include,
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/common,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -271,7 +278,10 @@
 					/Users/Tornado/Code/boost_inc/include,
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/common,
 				);
-				LIBRARY_SEARCH_PATHS = /Users/Tornado/Code/boost_inc/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/Tornado/Code/boost_inc/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -295,6 +305,7 @@
 				95DE26091BA1D7E000B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

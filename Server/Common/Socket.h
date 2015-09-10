@@ -8,9 +8,10 @@
 #include <memory>
 #include <functional>
 #include <type_traits>
-#include <boost/asio/ip/tcp.hpp>
-#include <boost/asio/write.hpp>
-#include <boost/asio/read.hpp>
+//#include <boost/asio/ip/tcp.hpp>
+//#include <boost/asio/write.hpp>
+//#include <boost/asio/read.hpp>
+#include <boost/asio.hpp>
 
 using boost::asio::ip::tcp;
 
@@ -85,7 +86,7 @@ public:
 		tcp::resolver::iterator iterator = resolver.resolve(query);
         
 
-		boost::asio::detail::socket_ops::sync_connect(_socket, iterator,
+		boost::asio::async_connect(_socket, iterator,
 			bind(&Socket<T>::ConnectHandlerInternal, this->shared_from_this(),
 				boost::asio::placeholders::error));
 	}
