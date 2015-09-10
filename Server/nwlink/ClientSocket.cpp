@@ -96,6 +96,13 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 
 	switch (cmd)
 	{
+	case SMSG_Player_Remove:
+	{
+		uint32 uSession;
+		packet >> uSession;
+		_pworldLink->RemovePlayer(uSession);
+	}
+		break;
 	case  SMSG_MOVE_UPDATE:
 	{
 		uint32 sID = 0;

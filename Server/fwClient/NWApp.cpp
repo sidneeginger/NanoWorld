@@ -72,6 +72,26 @@ void NWApp::CalcActor()
 	{
 		UpdateObjects(list);
 	}
+
+	auto listRemove = m_plink->GetRemoveList();
+	if (listRemove.size() > 0)
+	{
+		RemoveObjects(listRemove);
+	}
+}
+
+
+void NWApp::RemoveObjects(IDList& list)
+{
+	for (auto& it : list)
+	{
+		auto find = m_otherPlayers.find(it);
+		if (find != m_otherPlayers.end())
+		{
+			m_otherPlayers.erase(it);
+		}
+	}
+	m_plink->CleanRemoveList();
 }
 
 

@@ -45,6 +45,7 @@ public:
 	void AddSession(WorldSession* s);
 	void UpdateMove(WorldSession* s);
 	void UpdateAllMove();
+	void KickedPlayer(WorldSession* s);
 	
 protected:
 	void UpdateSession(uint32 diff);

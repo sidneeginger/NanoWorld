@@ -11,10 +11,13 @@ public:
 	
 	Player& GetPlayer() { return m_player; }
 
+	bool PlayerKicked() const { return m_bPlayerKicked; }
+	void PlayerKicked(bool val) { m_bPlayerKicked = val; }
 private:
 	uint32 _SessoinID;
 	Player m_player;
 	WorldSocket* _pSocket;
+	bool m_bPlayerKicked;
 
 public:
 	void SetPlayerPos(Position pos)
@@ -28,5 +31,7 @@ public:
 protected:
 	void SendPostoSet();
 
+public:
+	void KickPlayer(uint32 uid);
 };
 

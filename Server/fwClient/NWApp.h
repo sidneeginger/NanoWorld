@@ -31,5 +31,6 @@ protected:
 private:
 	void DrawWorld();
 	void UpdateObjects(ObjectList& list);
+	void RemoveObjects(IDList& list);
 };
 

@@ -6,7 +6,7 @@
 #include "../Common/cmdcode.h"
 
 WorldSession::WorldSession(uint32 sessionID, WorldSocket* pSocket)
-	: _SessoinID(sessionID), _pSocket(pSocket)
+	: _SessoinID(sessionID), _pSocket(pSocket), m_bPlayerKicked(false)
 {
 }
 
@@ -29,6 +29,15 @@ void WorldSession::SendOtherPlayerPos(uint32 sID, Player& player)
 	packet << player.Pos().y;
 	packet << player.Pos().z;
 	packet << player.Pos().angle;
+
+	_pSocket->SendPacket(packet);
+}
+
+void WorldSession::KickPlayer(uint32 uid)
+{
+	WorldPacket packet;
+	packet.SetOpcode(SMSG_Player_Remove);
+	packet << uid;
 
 	_pSocket->SendPacket(packet);
 }

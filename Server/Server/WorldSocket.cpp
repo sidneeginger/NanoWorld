@@ -164,7 +164,8 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		// Logout
 		uint32 uID;
 		packet >> uID;
-
+		//_session->KickPlayer(_session->SessoinID());
+		sWorld->KickedPlayer(_session);
 		std::cout << "Player LogOut " << uID << std::endl;
 	}
 		break;

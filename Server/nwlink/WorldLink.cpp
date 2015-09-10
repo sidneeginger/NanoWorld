@@ -43,6 +43,19 @@ void CWorldLink::NofifyLogin()
 	SendPlayerPos(0, 0, 0, 0);
 }
 
+void CWorldLink::RemovePlayer(uint32 uid)
+{
+	std::unique_lock<std::mutex> guard(_ObjectLock);
+	auto find = m_mapObject.find(uid);
+	if (find != m_mapObject.end())
+	{
+		delete find->second;
+		m_listRemove.push_back(find->first);
+		m_mapObject.erase(find->first);
+
+	}
+}
+
 void CWorldLink::UpdateObjectMove(uint32 uid, float x, float y, float z, float a)
 {
 	std::unique_lock<std::mutex> guard(_ObjectLock);
@@ -79,4 +92,16 @@ ObjectList CWorldLink::GetObjectList()
 	}
 
 	return list;
+}
+
+IDList CWorldLink::GetRemoveList()
+{
+	std::unique_lock<std::mutex> guard(_ObjectLock);
+	return m_listRemove;
+}
+
+void CWorldLink::CleanRemoveList()
+{
+	std::unique_lock<std::mutex> guard(_ObjectLock);
+	m_listRemove.clear();
 }

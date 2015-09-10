@@ -23,6 +23,7 @@ struct Object
 
 typedef std::unordered_map<uint32, Object*> ObjectMap;
 typedef std::vector<Object> ObjectList;
+typedef std::vector<uint32> IDList;
 
 class CWorldLink
 {
@@ -46,6 +47,7 @@ private:
 	uint32 _sessionID;
 	std::mutex _ObjectLock;
 	ObjectMap m_mapObject;
+	IDList m_listRemove;
 
 	void SendPacket(WorldPacket& packet)
 	{
@@ -66,5 +68,9 @@ public:
 	void UpdateObjectMove(uint32 uid, float x, float y, float z, float a);
 	ObjectList GetObjectList();
 	void NofifyLogin();
+	void RemovePlayer(uint32 uid);
+	IDList GetRemoveList();
+	void CleanRemoveList();
+
 };
 

@@ -27,6 +27,15 @@ void World::UpdateSession(uint32 diff)
 	WorldSession* sess = NULL;
 	while (addSessQueue.next(sess))
 		AddSession_(sess);
+
+	for (auto& it : m_session)
+	{
+		if (it.second->PlayerKicked())
+		{
+			m_session.erase(it.first);
+			break;
+		}
+	}
 }
 
 void World::AddSession(WorldSession* s)
@@ -50,6 +59,20 @@ void World::UpdateAllMove()
 	{
 		UpdateMove(it.second);
 	}
+}
+
+
+void World::KickedPlayer(WorldSession* s)
+{
+	Player player = s->GetPlayer();
+	for (auto& it : m_session)
+	{
+		if (it.first != s->SessoinID())
+		{
+			it.second->KickPlayer(s->SessoinID());
+		}
+	}
+	s->PlayerKicked(true);
 }
 
 void World::UpdateMove(WorldSession* s)
