@@ -6,6 +6,12 @@ struct Position
 	float y;
 	float z;
 	float angle;
+
+	Position()
+		: x(0.0f), y(0.0f), z(0.0f), angle(0.0f)
+	{
+
+	}
 };
 
 class Unit

@@ -179,6 +179,10 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		_session = new WorldSession(uSession, this);
 		sWorld->AddSession(_session);
 		WriteLoginInfo(uSession);
+
+		// Get player pos;
+		Position pos;
+		_session->SetPlayerPos(pos);
 	}
 		break;
 	case CMSG_MOVE_START:

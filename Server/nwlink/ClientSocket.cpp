@@ -114,7 +114,9 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 		uint32 sID = 0;
 		packet >> sID;
 		_pworldLink->SessionID(sID);
+		_pworldLink->NofifyLogin();
 		std::cout << "Sessoin " << sID << std::endl;
+
 	}
 		break;
 	default:

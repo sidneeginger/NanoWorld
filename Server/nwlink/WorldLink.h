@@ -65,5 +65,6 @@ public:
 	void SendLogout();
 	void UpdateObjectMove(uint32 uid, float x, float y, float z, float a);
 	ObjectList GetObjectList();
+	void NofifyLogin();
 };
 

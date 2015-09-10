@@ -38,6 +38,11 @@ void CWorldLink::SendLogout()
 	SendPacket(packet);
 }
 
+void CWorldLink::NofifyLogin()
+{
+	SendPlayerPos(0, 0, 0, 0);
+}
+
 void CWorldLink::UpdateObjectMove(uint32 uid, float x, float y, float z, float a)
 {
 	std::unique_lock<std::mutex> guard(_ObjectLock);

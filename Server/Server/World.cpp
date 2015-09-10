@@ -40,7 +40,15 @@ void World::AddSession_(WorldSession* s)
 	if (find == m_session.end())
 	{
 		m_session[s->SessoinID()] = s;
-		UpdateMove(s);
+		UpdateAllMove();
+	}
+}
+
+void World::UpdateAllMove()
+{
+	for (auto& it : m_session)
+	{
+		UpdateMove(it.second);
 	}
 }
 

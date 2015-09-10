@@ -44,6 +44,7 @@ private:
 public:
 	void AddSession(WorldSession* s);
 	void UpdateMove(WorldSession* s);
+	void UpdateAllMove();
 	
 protected:
 	void UpdateSession(uint32 diff);
