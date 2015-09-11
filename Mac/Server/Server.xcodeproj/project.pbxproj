@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95DE26211BA1D81F00B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26111BA1D81F00B7FD7F /* Player.cpp */; };
-		95DE26221BA1D81F00B7FD7F /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26131BA1D81F00B7FD7F /* Server.cpp */; };
-		95DE26231BA1D81F00B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26141BA1D81F00B7FD7F /* stdafx.cpp */; };
-		95DE26241BA1D81F00B7FD7F /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26171BA1D81F00B7FD7F /* Unit.cpp */; };
-		95DE26251BA1D81F00B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26191BA1D81F00B7FD7F /* World.cpp */; };
-		95DE26261BA1D81F00B7FD7F /* WorldSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261B1BA1D81F00B7FD7F /* WorldSession.cpp */; };
-		95DE26271BA1D81F00B7FD7F /* WorldSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261D1BA1D81F00B7FD7F /* WorldSocket.cpp */; };
-		95DE26281BA1D81F00B7FD7F /* WorldSocketMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE261F1BA1D81F00B7FD7F /* WorldSocketMgr.cpp */; };
-		95DE26311BA1DE1E00B7FD7F /* libcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26301BA1DE1E00B7FD7F /* libcommon.a */; };
+		95DE26D21BA3079F00B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26C21BA3079F00B7FD7F /* Player.cpp */; };
+		95DE26D31BA3079F00B7FD7F /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26C41BA3079F00B7FD7F /* Server.cpp */; };
+		95DE26D41BA3079F00B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26C51BA3079F00B7FD7F /* stdafx.cpp */; };
+		95DE26D51BA3079F00B7FD7F /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26C81BA3079F00B7FD7F /* Unit.cpp */; };
+		95DE26D61BA3079F00B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26CA1BA3079F00B7FD7F /* World.cpp */; };
+		95DE26D71BA3079F00B7FD7F /* WorldSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26CC1BA3079F00B7FD7F /* WorldSession.cpp */; };
+		95DE26D81BA3079F00B7FD7F /* WorldSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26CE1BA3079F00B7FD7F /* WorldSocket.cpp */; };
+		95DE26D91BA3079F00B7FD7F /* WorldSocketMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26D01BA3079F00B7FD7F /* WorldSocketMgr.cpp */; };
+		95DE26DB1BA3080200B7FD7F /* libcommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26DA1BA3080200B7FD7F /* libcommon.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95DE25FE1BA1D7E000B7FD7F /* CopyFiles */ = {
+		95DE26AF1BA3078400B7FD7F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -31,76 +31,76 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		95DE26001BA1D7E000B7FD7F /* Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Server; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DE26101BA1D81F00B7FD7F /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitstream.h; path = ../../../Server/Server/bitstream.h; sourceTree = "<group>"; };
-		95DE26111BA1D81F00B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/Server/Player.cpp; sourceTree = "<group>"; };
-		95DE26121BA1D81F00B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/Server/Player.h; sourceTree = "<group>"; };
-		95DE26131BA1D81F00B7FD7F /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../../../Server/Server/Server.cpp; sourceTree = "<group>"; };
-		95DE26141BA1D81F00B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/Server/stdafx.cpp; sourceTree = "<group>"; };
-		95DE26151BA1D81F00B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/Server/stdafx.h; sourceTree = "<group>"; };
-		95DE26161BA1D81F00B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/Server/targetver.h; sourceTree = "<group>"; };
-		95DE26171BA1D81F00B7FD7F /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Unit.cpp; path = ../../../Server/Server/Unit.cpp; sourceTree = "<group>"; };
-		95DE26181BA1D81F00B7FD7F /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = ../../../Server/Server/Unit.h; sourceTree = "<group>"; };
-		95DE26191BA1D81F00B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/Server/World.cpp; sourceTree = "<group>"; };
-		95DE261A1BA1D81F00B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/Server/World.h; sourceTree = "<group>"; };
-		95DE261B1BA1D81F00B7FD7F /* WorldSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSession.cpp; path = ../../../Server/Server/WorldSession.cpp; sourceTree = "<group>"; };
-		95DE261C1BA1D81F00B7FD7F /* WorldSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSession.h; path = ../../../Server/Server/WorldSession.h; sourceTree = "<group>"; };
-		95DE261D1BA1D81F00B7FD7F /* WorldSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSocket.cpp; path = ../../../Server/Server/WorldSocket.cpp; sourceTree = "<group>"; };
-		95DE261E1BA1D81F00B7FD7F /* WorldSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocket.h; path = ../../../Server/Server/WorldSocket.h; sourceTree = "<group>"; };
-		95DE261F1BA1D81F00B7FD7F /* WorldSocketMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSocketMgr.cpp; path = ../../../Server/Server/WorldSocketMgr.cpp; sourceTree = "<group>"; };
-		95DE26201BA1D81F00B7FD7F /* WorldSocketMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocketMgr.h; path = ../../../Server/Server/WorldSocketMgr.h; sourceTree = "<group>"; };
-		95DE26301BA1DE1E00B7FD7F /* libcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcommon.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libcommon.a"; sourceTree = "<group>"; };
+		95DE26B11BA3078400B7FD7F /* Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Server; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DE26C11BA3079F00B7FD7F /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitstream.h; path = ../../../Server/Server/bitstream.h; sourceTree = "<group>"; };
+		95DE26C21BA3079F00B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/Server/Player.cpp; sourceTree = "<group>"; };
+		95DE26C31BA3079F00B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/Server/Player.h; sourceTree = "<group>"; };
+		95DE26C41BA3079F00B7FD7F /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../../../Server/Server/Server.cpp; sourceTree = "<group>"; };
+		95DE26C51BA3079F00B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/Server/stdafx.cpp; sourceTree = "<group>"; };
+		95DE26C61BA3079F00B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/Server/stdafx.h; sourceTree = "<group>"; };
+		95DE26C71BA3079F00B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/Server/targetver.h; sourceTree = "<group>"; };
+		95DE26C81BA3079F00B7FD7F /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Unit.cpp; path = ../../../Server/Server/Unit.cpp; sourceTree = "<group>"; };
+		95DE26C91BA3079F00B7FD7F /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = ../../../Server/Server/Unit.h; sourceTree = "<group>"; };
+		95DE26CA1BA3079F00B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/Server/World.cpp; sourceTree = "<group>"; };
+		95DE26CB1BA3079F00B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/Server/World.h; sourceTree = "<group>"; };
+		95DE26CC1BA3079F00B7FD7F /* WorldSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSession.cpp; path = ../../../Server/Server/WorldSession.cpp; sourceTree = "<group>"; };
+		95DE26CD1BA3079F00B7FD7F /* WorldSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSession.h; path = ../../../Server/Server/WorldSession.h; sourceTree = "<group>"; };
+		95DE26CE1BA3079F00B7FD7F /* WorldSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSocket.cpp; path = ../../../Server/Server/WorldSocket.cpp; sourceTree = "<group>"; };
+		95DE26CF1BA3079F00B7FD7F /* WorldSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocket.h; path = ../../../Server/Server/WorldSocket.h; sourceTree = "<group>"; };
+		95DE26D01BA3079F00B7FD7F /* WorldSocketMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldSocketMgr.cpp; path = ../../../Server/Server/WorldSocketMgr.cpp; sourceTree = "<group>"; };
+		95DE26D11BA3079F00B7FD7F /* WorldSocketMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldSocketMgr.h; path = ../../../Server/Server/WorldSocketMgr.h; sourceTree = "<group>"; };
+		95DE26DA1BA3080200B7FD7F /* libcommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcommon.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libcommon.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95DE25FD1BA1D7E000B7FD7F /* Frameworks */ = {
+		95DE26AE1BA3078400B7FD7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DE26311BA1DE1E00B7FD7F /* libcommon.a in Frameworks */,
+				95DE26DB1BA3080200B7FD7F /* libcommon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95DE25F71BA1D7E000B7FD7F = {
+		95DE26A81BA3078400B7FD7F = {
 			isa = PBXGroup;
 			children = (
-				95DE26301BA1DE1E00B7FD7F /* libcommon.a */,
-				95DE26021BA1D7E000B7FD7F /* Server */,
-				95DE26011BA1D7E000B7FD7F /* Products */,
+				95DE26DA1BA3080200B7FD7F /* libcommon.a */,
+				95DE26B31BA3078400B7FD7F /* Server */,
+				95DE26B21BA3078400B7FD7F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		95DE26011BA1D7E000B7FD7F /* Products */ = {
+		95DE26B21BA3078400B7FD7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95DE26001BA1D7E000B7FD7F /* Server */,
+				95DE26B11BA3078400B7FD7F /* Server */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95DE26021BA1D7E000B7FD7F /* Server */ = {
+		95DE26B31BA3078400B7FD7F /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				95DE26101BA1D81F00B7FD7F /* bitstream.h */,
-				95DE26111BA1D81F00B7FD7F /* Player.cpp */,
-				95DE26121BA1D81F00B7FD7F /* Player.h */,
-				95DE26131BA1D81F00B7FD7F /* Server.cpp */,
-				95DE26141BA1D81F00B7FD7F /* stdafx.cpp */,
-				95DE26151BA1D81F00B7FD7F /* stdafx.h */,
-				95DE26161BA1D81F00B7FD7F /* targetver.h */,
-				95DE26171BA1D81F00B7FD7F /* Unit.cpp */,
-				95DE26181BA1D81F00B7FD7F /* Unit.h */,
-				95DE26191BA1D81F00B7FD7F /* World.cpp */,
-				95DE261A1BA1D81F00B7FD7F /* World.h */,
-				95DE261B1BA1D81F00B7FD7F /* WorldSession.cpp */,
-				95DE261C1BA1D81F00B7FD7F /* WorldSession.h */,
-				95DE261D1BA1D81F00B7FD7F /* WorldSocket.cpp */,
-				95DE261E1BA1D81F00B7FD7F /* WorldSocket.h */,
-				95DE261F1BA1D81F00B7FD7F /* WorldSocketMgr.cpp */,
-				95DE26201BA1D81F00B7FD7F /* WorldSocketMgr.h */,
+				95DE26C11BA3079F00B7FD7F /* bitstream.h */,
+				95DE26C21BA3079F00B7FD7F /* Player.cpp */,
+				95DE26C31BA3079F00B7FD7F /* Player.h */,
+				95DE26C41BA3079F00B7FD7F /* Server.cpp */,
+				95DE26C51BA3079F00B7FD7F /* stdafx.cpp */,
+				95DE26C61BA3079F00B7FD7F /* stdafx.h */,
+				95DE26C71BA3079F00B7FD7F /* targetver.h */,
+				95DE26C81BA3079F00B7FD7F /* Unit.cpp */,
+				95DE26C91BA3079F00B7FD7F /* Unit.h */,
+				95DE26CA1BA3079F00B7FD7F /* World.cpp */,
+				95DE26CB1BA3079F00B7FD7F /* World.h */,
+				95DE26CC1BA3079F00B7FD7F /* WorldSession.cpp */,
+				95DE26CD1BA3079F00B7FD7F /* WorldSession.h */,
+				95DE26CE1BA3079F00B7FD7F /* WorldSocket.cpp */,
+				95DE26CF1BA3079F00B7FD7F /* WorldSocket.h */,
+				95DE26D01BA3079F00B7FD7F /* WorldSocketMgr.cpp */,
+				95DE26D11BA3079F00B7FD7F /* WorldSocketMgr.h */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -108,13 +108,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95DE25FF1BA1D7E000B7FD7F /* Server */ = {
+		95DE26B01BA3078400B7FD7F /* Server */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95DE26071BA1D7E000B7FD7F /* Build configuration list for PBXNativeTarget "Server" */;
+			buildConfigurationList = 95DE26B81BA3078400B7FD7F /* Build configuration list for PBXNativeTarget "Server" */;
 			buildPhases = (
-				95DE25FC1BA1D7E000B7FD7F /* Sources */,
-				95DE25FD1BA1D7E000B7FD7F /* Frameworks */,
-				95DE25FE1BA1D7E000B7FD7F /* CopyFiles */,
+				95DE26AD1BA3078400B7FD7F /* Sources */,
+				95DE26AE1BA3078400B7FD7F /* Frameworks */,
+				95DE26AF1BA3078400B7FD7F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -122,60 +122,60 @@
 			);
 			name = Server;
 			productName = Server;
-			productReference = 95DE26001BA1D7E000B7FD7F /* Server */;
+			productReference = 95DE26B11BA3078400B7FD7F /* Server */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		95DE25F81BA1D7E000B7FD7F /* Project object */ = {
+		95DE26A91BA3078400B7FD7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Tornadocean;
 				TargetAttributes = {
-					95DE25FF1BA1D7E000B7FD7F = {
+					95DE26B01BA3078400B7FD7F = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
-			buildConfigurationList = 95DE25FB1BA1D7E000B7FD7F /* Build configuration list for PBXProject "Server" */;
+			buildConfigurationList = 95DE26AC1BA3078400B7FD7F /* Build configuration list for PBXProject "Server" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 95DE25F71BA1D7E000B7FD7F;
-			productRefGroup = 95DE26011BA1D7E000B7FD7F /* Products */;
+			mainGroup = 95DE26A81BA3078400B7FD7F;
+			productRefGroup = 95DE26B21BA3078400B7FD7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95DE25FF1BA1D7E000B7FD7F /* Server */,
+				95DE26B01BA3078400B7FD7F /* Server */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95DE25FC1BA1D7E000B7FD7F /* Sources */ = {
+		95DE26AD1BA3078400B7FD7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DE26231BA1D81F00B7FD7F /* stdafx.cpp in Sources */,
-				95DE26251BA1D81F00B7FD7F /* World.cpp in Sources */,
-				95DE26281BA1D81F00B7FD7F /* WorldSocketMgr.cpp in Sources */,
-				95DE26241BA1D81F00B7FD7F /* Unit.cpp in Sources */,
-				95DE26221BA1D81F00B7FD7F /* Server.cpp in Sources */,
-				95DE26271BA1D81F00B7FD7F /* WorldSocket.cpp in Sources */,
-				95DE26211BA1D81F00B7FD7F /* Player.cpp in Sources */,
-				95DE26261BA1D81F00B7FD7F /* WorldSession.cpp in Sources */,
+				95DE26D21BA3079F00B7FD7F /* Player.cpp in Sources */,
+				95DE26D81BA3079F00B7FD7F /* WorldSocket.cpp in Sources */,
+				95DE26D71BA3079F00B7FD7F /* WorldSession.cpp in Sources */,
+				95DE26D41BA3079F00B7FD7F /* stdafx.cpp in Sources */,
+				95DE26D61BA3079F00B7FD7F /* World.cpp in Sources */,
+				95DE26D31BA3079F00B7FD7F /* Server.cpp in Sources */,
+				95DE26D51BA3079F00B7FD7F /* Unit.cpp in Sources */,
+				95DE26D91BA3079F00B7FD7F /* WorldSocketMgr.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		95DE26051BA1D7E000B7FD7F /* Debug */ = {
+		95DE26B61BA3078400B7FD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		95DE26061BA1D7E000B7FD7F /* Release */ = {
+		95DE26B71BA3078400B7FD7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,35 +252,39 @@
 			};
 			name = Release;
 		};
-		95DE26081BA1D7E000B7FD7F /* Debug */ = {
+		95DE26B91BA3078400B7FD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/Tornado/Code/boost_inc/include,
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/common,
+					/Users/Tornado/Code/boost_inc/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Tornado/Code/boost_inc/lib,
+					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/boost_inc/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		95DE26091BA1D7E000B7FD7F /* Release */ = {
+		95DE26BA1BA3078400B7FD7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/Tornado/Code/boost_inc/include,
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/common,
+					/Users/Tornado/Code/boost_inc/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Tornado/Code/boost_inc/lib,
+					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/boost_inc/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -289,25 +293,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95DE25FB1BA1D7E000B7FD7F /* Build configuration list for PBXProject "Server" */ = {
+		95DE26AC1BA3078400B7FD7F /* Build configuration list for PBXProject "Server" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95DE26051BA1D7E000B7FD7F /* Debug */,
-				95DE26061BA1D7E000B7FD7F /* Release */,
+				95DE26B61BA3078400B7FD7F /* Debug */,
+				95DE26B71BA3078400B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95DE26071BA1D7E000B7FD7F /* Build configuration list for PBXNativeTarget "Server" */ = {
+		95DE26B81BA3078400B7FD7F /* Build configuration list for PBXNativeTarget "Server" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95DE26081BA1D7E000B7FD7F /* Debug */,
-				95DE26091BA1D7E000B7FD7F /* Release */,
+				95DE26B91BA3078400B7FD7F /* Debug */,
+				95DE26BA1BA3078400B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 95DE25F81BA1D7E000B7FD7F /* Project object */;
+	rootObject = 95DE26A91BA3078400B7FD7F /* Project object */;
 }

@@ -28,6 +28,7 @@
 		95DE25B81BA1D1DA00B7FD7F /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE25A31BA1D1DA00B7FD7F /* util.cpp */; };
 		95DE25B91BA1D1DA00B7FD7F /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25A41BA1D1DA00B7FD7F /* Util.h */; };
 		95DE25BA1BA1D1DA00B7FD7F /* WorldPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DE25A51BA1D1DA00B7FD7F /* WorldPacket.h */; };
+		95DE26A71BA3010100B7FD7F /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26A61BA3010100B7FD7F /* libboost_system.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		95DE25A31BA1D1DA00B7FD7F /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = ../../Server/Common/util.cpp; sourceTree = "<group>"; };
 		95DE25A41BA1D1DA00B7FD7F /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = ../../Server/Common/Util.h; sourceTree = "<group>"; };
 		95DE25A51BA1D1DA00B7FD7F /* WorldPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldPacket.h; path = ../../Server/Common/WorldPacket.h; sourceTree = "<group>"; };
+		95DE26A61BA3010100B7FD7F /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = ../../../../boost_inc/lib/libboost_system.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DE26A71BA3010100B7FD7F /* libboost_system.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +72,7 @@
 		95DE257B1BA1D19000B7FD7F = {
 			isa = PBXGroup;
 			children = (
+				95DE26A61BA3010100B7FD7F /* libboost_system.a */,
 				95DE25BB1BA1D1FC00B7FD7F /* common */,
 				95DE25851BA1D19000B7FD7F /* Products */,
 			);
@@ -284,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -298,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -327,6 +333,7 @@
 				95DE258A1BA1D19000B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,10 +8,8 @@
 #include <memory>
 #include <functional>
 #include <type_traits>
-//#include <boost/asio/ip/tcp.hpp>
-//#include <boost/asio/write.hpp>
-//#include <boost/asio/read.hpp>
 #include <boost/asio.hpp>
+#include <iostream>
 
 using boost::asio::ip::tcp;
 
@@ -93,6 +91,7 @@ public:
 
 	void ConnectHandlerInternal(boost::system::error_code error)
 	{
+        std::cout << "client link" << std::endl;
 		ConnectHandler();
 		AsyncRead();
 	}
@@ -112,11 +111,11 @@ public:
 	{
 		_writeQueue.push(std::move(buffer));
 
-#ifdef TC_SOCKET_USE_IOCP
+//#ifdef TC_SOCKET_USE_IOCP
 		AsyncProcessQueue(guard);
-#else
-		(void)guard;
-#endif
+//#else
+//		(void)guard;
+//#endif
 	}
 
 	bool IsOpen() const { return !_closed && !_closing; }
@@ -158,7 +157,8 @@ protected:
 		_socket.async_write_some(boost::asio::buffer(buffer.GetReadPointer(), buffer.GetActiveSize()), std::bind(&Socket<T>::WriteHandler,
 			this->shared_from_this(), std::placeholders::_1, std::placeholders::_2));
 #else
-		_socket.async_write_some(boost::asio::null_buffers(), std::bind(&Socket<T>::WriteHandlerWrapper,
+		//_writeBuffer = _writeQueue.front();
+        _socket.async_write_some(boost::asio::null_buffers(), std::bind(&Socket<T>::WriteHandlerWrapper,
 			this->shared_from_this(), std::placeholders::_1, std::placeholders::_2));
 #endif
 

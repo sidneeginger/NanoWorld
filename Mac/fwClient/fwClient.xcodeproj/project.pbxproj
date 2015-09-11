@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95DE262F1BA1DE1100B7FD7F /* libnwlink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE262E1BA1DE1100B7FD7F /* libnwlink.a */; };
-		95DE263F1BA1E06800B7FD7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE263E1BA1E06800B7FD7F /* OpenGL.framework */; };
-		95DE26411BA1E07100B7FD7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26401BA1E07100B7FD7F /* IOKit.framework */; };
-		95DE26431BA1E0A700B7FD7F /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26421BA1E0A700B7FD7F /* libglfw3.a */; };
-		95DE26451BA1E0B800B7FD7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26441BA1E0B800B7FD7F /* Cocoa.framework */; };
-		95DE26471BA1E0C300B7FD7F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */; };
-		95DE26541BA1E18400B7FD7F /* fwClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26481BA1E18400B7FD7F /* fwClient.cpp */; };
-		95DE26551BA1E18400B7FD7F /* GLApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26491BA1E18400B7FD7F /* GLApp.cpp */; };
-		95DE26561BA1E18400B7FD7F /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264B1BA1E18400B7FD7F /* NWApp.cpp */; };
-		95DE26571BA1E18400B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264D1BA1E18400B7FD7F /* Player.cpp */; };
-		95DE26581BA1E18400B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE264F1BA1E18400B7FD7F /* stdafx.cpp */; };
-		95DE26591BA1E18400B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26521BA1E18400B7FD7F /* World.cpp */; };
+		95DE268B1BA2FEA300B7FD7F /* fwClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE267D1BA2FEA300B7FD7F /* fwClient.cpp */; };
+		95DE268C1BA2FEA300B7FD7F /* GLApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE267E1BA2FEA300B7FD7F /* GLApp.cpp */; };
+		95DE268E1BA2FEA300B7FD7F /* NWApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26821BA2FEA300B7FD7F /* NWApp.cpp */; };
+		95DE268F1BA2FEA300B7FD7F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26841BA2FEA300B7FD7F /* Player.cpp */; };
+		95DE26901BA2FEA300B7FD7F /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26861BA2FEA300B7FD7F /* stdafx.cpp */; };
+		95DE26911BA2FEA300B7FD7F /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95DE26891BA2FEA300B7FD7F /* World.cpp */; };
+		95DE26931BA2FF6700B7FD7F /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26921BA2FF6700B7FD7F /* libglfw3.a */; };
+		95DE26951BA2FF7000B7FD7F /* libnwlink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26941BA2FF7000B7FD7F /* libnwlink.a */; };
+		95DE26971BA2FF8F00B7FD7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26961BA2FF8F00B7FD7F /* IOKit.framework */; };
+		95DE26991BA2FF9A00B7FD7F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE26981BA2FF9A00B7FD7F /* OpenGL.framework */; };
+		95DE269B1BA2FFB300B7FD7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE269A1BA2FFB300B7FD7F /* Cocoa.framework */; };
+		95DE269D1BA2FFBD00B7FD7F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE269C1BA2FFBD00B7FD7F /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95DE25C31BA1D34600B7FD7F /* CopyFiles */ = {
+		95DE266B1BA2FE4900B7FD7F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -34,81 +34,83 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		95DE25C51BA1D34600B7FD7F /* fwClient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fwClient; sourceTree = BUILT_PRODUCTS_DIR; };
-		95DE262E1BA1DE1100B7FD7F /* libnwlink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnwlink.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libnwlink.a"; sourceTree = "<group>"; };
-		95DE263E1BA1E06800B7FD7F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		95DE26401BA1E07100B7FD7F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		95DE26421BA1E0A700B7FD7F /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Server/lib/libglfw3.a; sourceTree = "<group>"; };
-		95DE26441BA1E0B800B7FD7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		95DE26481BA1E18400B7FD7F /* fwClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fwClient.cpp; path = ../../../Server/fwClient/fwClient.cpp; sourceTree = "<group>"; };
-		95DE26491BA1E18400B7FD7F /* GLApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLApp.cpp; path = ../../../Server/fwClient/GLApp.cpp; sourceTree = "<group>"; };
-		95DE264A1BA1E18400B7FD7F /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = ../../../Server/fwClient/GLApp.h; sourceTree = "<group>"; };
-		95DE264B1BA1E18400B7FD7F /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = ../../../Server/fwClient/NWApp.cpp; sourceTree = "<group>"; };
-		95DE264C1BA1E18400B7FD7F /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = ../../../Server/fwClient/NWApp.h; sourceTree = "<group>"; };
-		95DE264D1BA1E18400B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/fwClient/Player.cpp; sourceTree = "<group>"; };
-		95DE264E1BA1E18400B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/fwClient/Player.h; sourceTree = "<group>"; };
-		95DE264F1BA1E18400B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/fwClient/stdafx.cpp; sourceTree = "<group>"; };
-		95DE26501BA1E18400B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/fwClient/stdafx.h; sourceTree = "<group>"; };
-		95DE26511BA1E18400B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/fwClient/targetver.h; sourceTree = "<group>"; };
-		95DE26521BA1E18400B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/fwClient/World.cpp; sourceTree = "<group>"; };
-		95DE26531BA1E18400B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/fwClient/World.h; sourceTree = "<group>"; };
+		95DE266D1BA2FE4900B7FD7F /* fwClient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fwClient; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DE267D1BA2FEA300B7FD7F /* fwClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fwClient.cpp; path = ../../../Server/fwClient/fwClient.cpp; sourceTree = "<group>"; };
+		95DE267E1BA2FEA300B7FD7F /* GLApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLApp.cpp; path = ../../../Server/fwClient/GLApp.cpp; sourceTree = "<group>"; };
+		95DE267F1BA2FEA300B7FD7F /* GLApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLApp.h; path = ../../../Server/fwClient/GLApp.h; sourceTree = "<group>"; };
+		95DE26821BA2FEA300B7FD7F /* NWApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NWApp.cpp; path = ../../../Server/fwClient/NWApp.cpp; sourceTree = "<group>"; };
+		95DE26831BA2FEA300B7FD7F /* NWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWApp.h; path = ../../../Server/fwClient/NWApp.h; sourceTree = "<group>"; };
+		95DE26841BA2FEA300B7FD7F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../../../Server/fwClient/Player.cpp; sourceTree = "<group>"; };
+		95DE26851BA2FEA300B7FD7F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../Server/fwClient/Player.h; sourceTree = "<group>"; };
+		95DE26861BA2FEA300B7FD7F /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../../Server/fwClient/stdafx.cpp; sourceTree = "<group>"; };
+		95DE26871BA2FEA300B7FD7F /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../../Server/fwClient/stdafx.h; sourceTree = "<group>"; };
+		95DE26881BA2FEA300B7FD7F /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = targetver.h; path = ../../../Server/fwClient/targetver.h; sourceTree = "<group>"; };
+		95DE26891BA2FEA300B7FD7F /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../../../Server/fwClient/World.cpp; sourceTree = "<group>"; };
+		95DE268A1BA2FEA300B7FD7F /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../../../Server/fwClient/World.h; sourceTree = "<group>"; };
+		95DE26921BA2FF6700B7FD7F /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../Server/lib/libglfw3.a; sourceTree = "<group>"; };
+		95DE26941BA2FF7000B7FD7F /* libnwlink.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnwlink.a; path = "../../../../../Library/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug/libnwlink.a"; sourceTree = "<group>"; };
+		95DE26961BA2FF8F00B7FD7F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		95DE26981BA2FF9A00B7FD7F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		95DE269A1BA2FFB300B7FD7F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		95DE269C1BA2FFBD00B7FD7F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		95DE26A01BA3001900B7FD7F /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = ../../../../boost_inc/lib/libboost_system.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95DE25C21BA1D34600B7FD7F /* Frameworks */ = {
+		95DE266A1BA2FE4900B7FD7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DE26471BA1E0C300B7FD7F /* CoreVideo.framework in Frameworks */,
-				95DE26451BA1E0B800B7FD7F /* Cocoa.framework in Frameworks */,
-				95DE26431BA1E0A700B7FD7F /* libglfw3.a in Frameworks */,
-				95DE26411BA1E07100B7FD7F /* IOKit.framework in Frameworks */,
-				95DE263F1BA1E06800B7FD7F /* OpenGL.framework in Frameworks */,
-				95DE262F1BA1DE1100B7FD7F /* libnwlink.a in Frameworks */,
+				95DE269D1BA2FFBD00B7FD7F /* CoreVideo.framework in Frameworks */,
+				95DE269B1BA2FFB300B7FD7F /* Cocoa.framework in Frameworks */,
+				95DE26991BA2FF9A00B7FD7F /* OpenGL.framework in Frameworks */,
+				95DE26971BA2FF8F00B7FD7F /* IOKit.framework in Frameworks */,
+				95DE26951BA2FF7000B7FD7F /* libnwlink.a in Frameworks */,
+				95DE26931BA2FF6700B7FD7F /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95DE25BC1BA1D34600B7FD7F = {
+		95DE26641BA2FE4900B7FD7F = {
 			isa = PBXGroup;
 			children = (
-				95DE26461BA1E0C300B7FD7F /* CoreVideo.framework */,
-				95DE26441BA1E0B800B7FD7F /* Cocoa.framework */,
-				95DE26421BA1E0A700B7FD7F /* libglfw3.a */,
-				95DE26401BA1E07100B7FD7F /* IOKit.framework */,
-				95DE263E1BA1E06800B7FD7F /* OpenGL.framework */,
-				95DE262E1BA1DE1100B7FD7F /* libnwlink.a */,
-				95DE25C71BA1D34600B7FD7F /* fwClient */,
-				95DE25C61BA1D34600B7FD7F /* Products */,
+				95DE26A01BA3001900B7FD7F /* libboost_system.a */,
+				95DE269C1BA2FFBD00B7FD7F /* CoreVideo.framework */,
+				95DE269A1BA2FFB300B7FD7F /* Cocoa.framework */,
+				95DE26981BA2FF9A00B7FD7F /* OpenGL.framework */,
+				95DE26961BA2FF8F00B7FD7F /* IOKit.framework */,
+				95DE26941BA2FF7000B7FD7F /* libnwlink.a */,
+				95DE26921BA2FF6700B7FD7F /* libglfw3.a */,
+				95DE266F1BA2FE4900B7FD7F /* fwClient */,
+				95DE266E1BA2FE4900B7FD7F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		95DE25C61BA1D34600B7FD7F /* Products */ = {
+		95DE266E1BA2FE4900B7FD7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95DE25C51BA1D34600B7FD7F /* fwClient */,
+				95DE266D1BA2FE4900B7FD7F /* fwClient */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95DE25C71BA1D34600B7FD7F /* fwClient */ = {
+		95DE266F1BA2FE4900B7FD7F /* fwClient */ = {
 			isa = PBXGroup;
 			children = (
-				95DE26481BA1E18400B7FD7F /* fwClient.cpp */,
-				95DE26491BA1E18400B7FD7F /* GLApp.cpp */,
-				95DE264A1BA1E18400B7FD7F /* GLApp.h */,
-				95DE264B1BA1E18400B7FD7F /* NWApp.cpp */,
-				95DE264C1BA1E18400B7FD7F /* NWApp.h */,
-				95DE264D1BA1E18400B7FD7F /* Player.cpp */,
-				95DE264E1BA1E18400B7FD7F /* Player.h */,
-				95DE264F1BA1E18400B7FD7F /* stdafx.cpp */,
-				95DE26501BA1E18400B7FD7F /* stdafx.h */,
-				95DE26511BA1E18400B7FD7F /* targetver.h */,
-				95DE26521BA1E18400B7FD7F /* World.cpp */,
-				95DE26531BA1E18400B7FD7F /* World.h */,
+				95DE267D1BA2FEA300B7FD7F /* fwClient.cpp */,
+				95DE267E1BA2FEA300B7FD7F /* GLApp.cpp */,
+				95DE267F1BA2FEA300B7FD7F /* GLApp.h */,
+				95DE26821BA2FEA300B7FD7F /* NWApp.cpp */,
+				95DE26831BA2FEA300B7FD7F /* NWApp.h */,
+				95DE26841BA2FEA300B7FD7F /* Player.cpp */,
+				95DE26851BA2FEA300B7FD7F /* Player.h */,
+				95DE26861BA2FEA300B7FD7F /* stdafx.cpp */,
+				95DE26871BA2FEA300B7FD7F /* stdafx.h */,
+				95DE26881BA2FEA300B7FD7F /* targetver.h */,
+				95DE26891BA2FEA300B7FD7F /* World.cpp */,
+				95DE268A1BA2FEA300B7FD7F /* World.h */,
 			);
 			path = fwClient;
 			sourceTree = "<group>";
@@ -116,13 +118,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95DE25C41BA1D34600B7FD7F /* fwClient */ = {
+		95DE266C1BA2FE4900B7FD7F /* fwClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95DE25CC1BA1D34600B7FD7F /* Build configuration list for PBXNativeTarget "fwClient" */;
+			buildConfigurationList = 95DE26741BA2FE4900B7FD7F /* Build configuration list for PBXNativeTarget "fwClient" */;
 			buildPhases = (
-				95DE25C11BA1D34600B7FD7F /* Sources */,
-				95DE25C21BA1D34600B7FD7F /* Frameworks */,
-				95DE25C31BA1D34600B7FD7F /* CopyFiles */,
+				95DE26691BA2FE4900B7FD7F /* Sources */,
+				95DE266A1BA2FE4900B7FD7F /* Frameworks */,
+				95DE266B1BA2FE4900B7FD7F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -130,58 +132,58 @@
 			);
 			name = fwClient;
 			productName = fwClient;
-			productReference = 95DE25C51BA1D34600B7FD7F /* fwClient */;
+			productReference = 95DE266D1BA2FE4900B7FD7F /* fwClient */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		95DE25BD1BA1D34600B7FD7F /* Project object */ = {
+		95DE26651BA2FE4900B7FD7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Tornadocean;
 				TargetAttributes = {
-					95DE25C41BA1D34600B7FD7F = {
+					95DE266C1BA2FE4900B7FD7F = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
-			buildConfigurationList = 95DE25C01BA1D34600B7FD7F /* Build configuration list for PBXProject "fwClient" */;
+			buildConfigurationList = 95DE26681BA2FE4900B7FD7F /* Build configuration list for PBXProject "fwClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 95DE25BC1BA1D34600B7FD7F;
-			productRefGroup = 95DE25C61BA1D34600B7FD7F /* Products */;
+			mainGroup = 95DE26641BA2FE4900B7FD7F;
+			productRefGroup = 95DE266E1BA2FE4900B7FD7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95DE25C41BA1D34600B7FD7F /* fwClient */,
+				95DE266C1BA2FE4900B7FD7F /* fwClient */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95DE25C11BA1D34600B7FD7F /* Sources */ = {
+		95DE26691BA2FE4900B7FD7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DE26571BA1E18400B7FD7F /* Player.cpp in Sources */,
-				95DE26551BA1E18400B7FD7F /* GLApp.cpp in Sources */,
-				95DE26591BA1E18400B7FD7F /* World.cpp in Sources */,
-				95DE26541BA1E18400B7FD7F /* fwClient.cpp in Sources */,
-				95DE26561BA1E18400B7FD7F /* NWApp.cpp in Sources */,
-				95DE26581BA1E18400B7FD7F /* stdafx.cpp in Sources */,
+				95DE268C1BA2FEA300B7FD7F /* GLApp.cpp in Sources */,
+				95DE26911BA2FEA300B7FD7F /* World.cpp in Sources */,
+				95DE268F1BA2FEA300B7FD7F /* Player.cpp in Sources */,
+				95DE268E1BA2FEA300B7FD7F /* NWApp.cpp in Sources */,
+				95DE26901BA2FEA300B7FD7F /* stdafx.cpp in Sources */,
+				95DE268B1BA2FEA300B7FD7F /* fwClient.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		95DE25CA1BA1D34600B7FD7F /* Debug */ = {
+		95DE26721BA2FE4900B7FD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		95DE25CB1BA1D34600B7FD7F /* Release */ = {
+		95DE26731BA2FE4900B7FD7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,37 +260,41 @@
 			};
 			name = Release;
 		};
-		95DE25CD1BA1D34600B7FD7F /* Debug */ = {
+		95DE26751BA2FE4900B7FD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../../Server/include",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/include,
 					/Users/Tornado/Code/boost_inc/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Tornado/Code/boost_inc/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					"$(inherited)",
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/boost_inc/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		95DE25CE1BA1D34600B7FD7F /* Release */ = {
+		95DE26761BA2FE4900B7FD7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c11;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/../../Server/include",
+					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/include,
 					/Users/Tornado/Code/boost_inc/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/Users/Tornado/Code/boost_inc/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					"$(inherited)",
 					/Users/Tornado/Code/NanoWorld/NanoWorld/Server/lib,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/NanoWorld-coxwookharfpvxexpsluwcubgtux/Build/Products/Debug",
+					/Users/Tornado/Code/boost_inc/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -297,25 +303,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95DE25C01BA1D34600B7FD7F /* Build configuration list for PBXProject "fwClient" */ = {
+		95DE26681BA2FE4900B7FD7F /* Build configuration list for PBXProject "fwClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95DE25CA1BA1D34600B7FD7F /* Debug */,
-				95DE25CB1BA1D34600B7FD7F /* Release */,
+				95DE26721BA2FE4900B7FD7F /* Debug */,
+				95DE26731BA2FE4900B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95DE25CC1BA1D34600B7FD7F /* Build configuration list for PBXNativeTarget "fwClient" */ = {
+		95DE26741BA2FE4900B7FD7F /* Build configuration list for PBXNativeTarget "fwClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95DE25CD1BA1D34600B7FD7F /* Debug */,
-				95DE25CE1BA1D34600B7FD7F /* Release */,
+				95DE26751BA2FE4900B7FD7F /* Debug */,
+				95DE26761BA2FE4900B7FD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 95DE25BD1BA1D34600B7FD7F /* Project object */;
+	rootObject = 95DE26651BA2FE4900B7FD7F /* Project object */;
 }

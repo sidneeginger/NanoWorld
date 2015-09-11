@@ -26,8 +26,9 @@ int main()
 
 	boost::asio::signal_set signals(io, SIGINT, SIGTERM);
 #ifdef _WIN32
-//#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
 	signals.add(SIGBREAK);
+#endif
 #endif
     
 	signals.async_wait(SignalHandler);
