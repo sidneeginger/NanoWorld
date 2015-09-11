@@ -113,7 +113,7 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 		packet >> fz;
 		packet >> fa;
 		_pworldLink->UpdateObjectMove(sID, fx, fy, fz, fa);
-		std::cout << "ID " << sID << " x" << fx << " y" << fy << " z" << fz << " a" << fa << std::endl;
+		//std::cout << "ID " << sID << " x" << fx << " y" << fy << " z" << fz << " a" << fa << std::endl;
 	}
 		break;
 	case  SMSG_LOGINACK:
