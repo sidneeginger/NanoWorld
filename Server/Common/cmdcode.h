@@ -8,6 +8,7 @@ enum  OptCode : uint16
 	CMSG_LOGIN					= CMSG_BASE+1,
 	CMSG_LOGOUT				= CMSG_BASE + 2,
 	CMSG_MOVE_START		= CMSG_BASE + 3,
+    CMSG_LINK           = CMSG_BASE + 4,
 
 	SMSG_BASE						= 0xA000,
 	SMSG_LOGINACK			= SMSG_BASE + 1,

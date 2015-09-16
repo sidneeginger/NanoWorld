@@ -173,10 +173,13 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 	{
 		// Login
 		uint32 uID;
-		packet >> uID;
+        std::string sName;
+        std::string sPW;
+		packet >> sName;
+        packet >> sPW;
 
 		uint32 uSession = (uint32)uint64(this);
-		std::cout << "Player Login " << uID << "  Session " << uSession << std::endl;
+		std::cout << "Player Login " << sName.c_str() << " PW" << sPW.c_str() << "  Session " << uSession << std::endl;
 		_session = new WorldSession(uSession, this);
 		sWorld->AddSession(_session);
 		WriteLoginInfo(uSession);

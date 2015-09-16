@@ -45,6 +45,7 @@ protected:
 
 public:
 	int Run();
+    int InitResource();
 	int InitWindows(int nWidth, int nHeight);
 	int RefreshRate() const { return m_nRefreshRate; }
 	void RefreshRate(int val) { m_nRefreshRate = val; }

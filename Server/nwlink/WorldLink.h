@@ -11,6 +11,7 @@
 #include "../Common/Timer.h"
 #include <unordered_map>
 #include <vector>
+#include <iostream>
 
 struct Object
 {
@@ -63,7 +64,8 @@ public:
 	}
 
 	void SendPlayerPos(float fx, float fy, float fz, float fa);
-	void SendLoginInfo();
+    void SendLoginInfo(std::string& name, std::string& pw);
+    void SendLink();
 	void SendLogout();
 	void UpdateObjectMove(uint32 uid, float x, float y, float z, float a);
 	ObjectList GetObjectList();

@@ -6,7 +6,7 @@
 
 void ClientSocket::ConnectHandler()
 {
-	_pworldLink->SendLoginInfo();
+    _pworldLink->SendLink();
 }
 
 void ClientSocket::SendPacket(WorldPacket& packet)

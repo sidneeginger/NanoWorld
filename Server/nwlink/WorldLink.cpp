@@ -20,13 +20,24 @@ void CWorldLink::SendPlayerPos(float fx, float fy, float fz, float fa)
 }
 
 
-void CWorldLink::SendLoginInfo()
+void CWorldLink::SendLink()
 {
-	WorldPacket packet;
-	packet.SetOpcode(CMSG_LOGIN);
-	packet << uint32(12345);
+    WorldPacket packet;
+    packet.SetOpcode(CMSG_LINK);
+    packet << uint32(12345);
+    
+    SendPacket(packet);
+}
 
-	SendPacket(packet);
+
+void CWorldLink::SendLoginInfo(std::string& name, std::string& pw)
+{
+    WorldPacket packet;
+    packet.SetOpcode(CMSG_LOGIN);
+    packet << name;
+    packet << pw;
+    
+    SendPacket(packet);
 }
 
 void CWorldLink::SendLogout()

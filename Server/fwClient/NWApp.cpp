@@ -35,6 +35,8 @@ void NWApp::Draw()
 	DrawWorld();
 }
 
+
+
 void NWApp::CalcActor()
 {
 	Camera cam = GetCame();
@@ -168,4 +170,10 @@ void NWApp::DrawWorld()
 	m_world.Draw();
 
 	glPopMatrix();
+}
+
+int NWApp::Login(string &name, string &pw)
+{
+    m_plink->SendLoginInfo(name, pw);
+    return 0;
 }

@@ -57,9 +57,14 @@ int GLApp::InitWindows(int nWidth, int nHeight)
 
 	glClearDepth(1.0f);
 
-	Init();
+	//Init();
 
 	return 0;
+}
+
+int GLApp::InitResource()
+{
+    return Init();
 }
 
 void GLApp::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)

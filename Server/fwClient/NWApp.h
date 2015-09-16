@@ -4,6 +4,8 @@
 #include "World.h"
 #include "../nwlink/WorldLink.h"
 #include <unordered_map>
+#include <iostream>
+using namespace std;
 
 typedef std::unordered_map<uint32, Player*> PlayerMap;
 
@@ -32,5 +34,8 @@ private:
 	void DrawWorld();
 	void UpdateObjects(ObjectList& list);
 	void RemoveObjects(IDList& list);
+    
+public:
+    int Login(string& name, string& pw);
 };
 
