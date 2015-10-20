@@ -80,6 +80,8 @@ public:
 protected:
 	virtual void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
 	virtual void onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event);
+    bool onTouchBegan(Touch* touch, Event* event) { return true; }
+    void onTouchEnd(Touch*, Event*);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

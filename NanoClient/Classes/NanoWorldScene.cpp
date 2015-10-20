@@ -95,33 +95,40 @@ void Player::update(float dt)
 		break;
 	case PLAYER_STATE_FORWARD:
 	{
-		Vec3 curPos = player->getPosition3D();
-		Vec3 newFaceDir = _targetPos - curPos;
-		newFaceDir.y = 0.0f;
-		newFaceDir.normalize();
-		Vec3 offset = newFaceDir * 25.0f * dt;
-		curPos += offset;
-		player->setPosition3D(curPos);
+        //Vec3 curPos = player->getPosition3D();
+        //Vec3 newFaceDir = _targetPos - curPos;
+        //newFaceDir.y = 0.0f;
+       // newFaceDir.normalize();
+       // Vec3 offset = newFaceDir * 25.0f * dt;
+       // curPos += offset;
+       // player->setPosition3D(curPos);
+        Vec3 forward_vec;
+        player->getNodeToWorldTransform().getForwardVector(&forward_vec);
+        forward_vec.normalize();
+        player->setPosition3D(player->getPosition3D() + forward_vec * 25 * dt);
+
 	}
 	break;
 	case PLAYER_STATE_BACKWARD:
 	{
-		Vec3 forward_vec;
-		player->getNodeToWorldTransform().getForwardVector(&forward_vec);
-		forward_vec.normalize();
-		player->setPosition3D(player->getPosition3D() - forward_vec * 15 * dt);
+        Vec3 forward_vec;
+        player->getNodeToWorldTransform().getForwardVector(&forward_vec);
+        forward_vec.normalize();
+        player->setPosition3D(player->getPosition3D() - forward_vec * 15 * dt);
 	}
 	break;
 	case PLAYER_STATE_LEFT:
 	{
-		player->setRotation3D(player->getRotation3D() + Vec3(0, 25 * dt, 0));
-		_headingAngle += 25 * dt;
+		//player->setRotation3D(player->getRotation3D() + Vec3(0, 25 * dt, 0));
+		_headingAngle += 2 * dt;
+        _headingAxis.set(0, _headingAngle, 0);
 	}
 	break;
 	case PLAYER_STATE_RIGHT:
 	{
-		player->setRotation3D(player->getRotation3D() + Vec3(0, -25 * dt, 0));
-		_headingAngle -= 25 * dt;
+		//player->setRotation3D(player->getRotation3D() + Vec3(0, -25 * dt, 0));
+		_headingAngle -= 2 * dt;
+        _headingAxis.set(0, _headingAngle, 0);
 	}
 	break;
 	default:
@@ -285,18 +292,61 @@ bool NanoWorld::init()
 	_worldScene->setPosition3D(s_scenePositons[SCENE_WORLD]);
 	this->addChild(_worldScene);
 
-	//auto listener = EventListenerTouchOneByOne::create();
+	auto listener = EventListenerTouchOneByOne::create();
 	auto lsnkeyborad = EventListenerKeyboard::create();
 	auto lsnMouse = EventListenerMouse::create();
 
 	lsnkeyborad->onKeyPressed = CC_CALLBACK_2(NanoWorld::onKeyPressed, this);
 	lsnkeyborad->onKeyReleased = CC_CALLBACK_2(NanoWorld::onKeyReleased, this);
-
+    
+    listener->onTouchBegan = CC_CALLBACK_2(NanoWorld::onTouchBegan, this);
+    listener->onTouchEnded = CC_CALLBACK_2(NanoWorld::onTouchEnd, this);
+    
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(lsnkeyborad, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(lsnMouse, this);
     
     return true;
 }
+
+void NanoWorld::onTouchEnd(Touch* touch, Event* event)
+{
+    auto location = touch->getLocation();
+    auto camera = _gameCameras[CAMERA_WORLD_3D_SCENE];
+    if(camera != Camera::getVisitingCamera())
+    {
+        return;
+    }
+    
+    if(_player)
+    {
+        Vec3 nearP(location.x, location.y, 0.0f), farP(location.x, location.y, 1.0f);
+        // convert screen touch location to the world location on near and far plane
+        auto size = Director::getInstance()->getWinSize();
+        camera->unprojectGL(size, &nearP, &nearP);
+        camera->unprojectGL(size, &farP, &farP);
+        Vec3 dir = farP - nearP;
+        dir.normalize();
+        Vec3 collisionPoint;
+        bool isInTerrain = _terrain->getIntersectionPoint(Ray(nearP, dir), collisionPoint);
+        if (!isInTerrain)
+        {
+            _player->idle();
+        }
+        else
+        {
+            dir = collisionPoint - _player->getPosition3D();
+            dir.y = 0;
+            dir.normalize();
+            _player->_headingAngle =  -1*acos(dir.dot(Vec3(0,0,-1)));
+            dir.cross(dir,Vec3(0,0,-1),&_player->_headingAxis);
+            _player->_targetPos=collisionPoint;
+            _player->forward();
+        }
+    }
+    event->stopPropagation();
+}
+
 
 void NanoWorld::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 {
@@ -402,6 +452,7 @@ void NanoWorld::createWorld3D()
 		_gameCameras[CAMERA_WORLD_3D_SCENE],
 		_terrain);
 	_player->setScale(0.2);
+    _player->setRotation(90);
 	_player->setPositionY(_terrain->getHeight(_player->getPositionX(),
 		_player->getPositionZ()));
 
