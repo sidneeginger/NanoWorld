@@ -228,8 +228,8 @@ bool NanoWorld::init()
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Camera *ca = nullptr;   // temp variable
 
-							////////////////////////////////////////////////////////////////////////
-							// create world 3D scene, this scene has two camera
+	////////////////////////////////////////////////////////////////////////
+	// create world 3D scene, this scene has two camera
 	_worldScene = Node::create();
 	// create a camera to look the skybox
 	ca = _gameCameras[CAMERA_WORLD_3D_SKYBOX] =
