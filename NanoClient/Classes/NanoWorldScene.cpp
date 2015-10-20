@@ -96,11 +96,13 @@ void Player::update(float dt)
 	case PLAYER_STATE_LEFT:
 	{
 		player->setRotation3D(player->getRotation3D() + Vec3(0, 25 * dt, 0));
+		_headingAngle += 25 * dt;
 	}
 	break;
 	case PLAYER_STATE_RIGHT:
 	{
 		player->setRotation3D(player->getRotation3D() + Vec3(0, -25 * dt, 0));
+		_headingAngle -= 25 * dt;
 	}
 	break;
 	default:
@@ -260,56 +262,63 @@ bool NanoWorld::init()
 	_worldScene->addChild(_monsters[1]);
 	// move camera above player
 	ca->setPosition3D(_player->getPosition3D() + Vec3(0, 45, 60));
-	ca->setRotation3D(Vec3(-45, 0, 0));
+	ca->setRotation3D(Vec3(-30, 0, 0));
 	_worldScene->setPosition3D(s_scenePositons[SCENE_WORLD]);
 	this->addChild(_worldScene);
-    
- //   Size visibleSize = Director::getInstance()->getVisibleSize();
- //   Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
- //   /////////////////////////////
- //   // 2. add a menu item with "X" image, which is clicked to quit the program
- //   //    you may modify it.
+	//auto listener = EventListenerTouchOneByOne::create();
+	auto lsnkeyborad = EventListenerKeyboard::create();
+	auto lsnMouse = EventListenerMouse::create();
 
- //   // add a "close" icon to exit the progress. it's an autorelease object
- //   auto closeItem = MenuItemImage::create(
- //                                          "CloseNormal.png",
- //                                          "CloseSelected.png",
- //                                          CC_CALLBACK_1(NanoWorld::menuCloseCallback, this));
- //   
-	//closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
- //                               origin.y + closeItem->getContentSize().height/2));
+	lsnkeyborad->onKeyPressed = CC_CALLBACK_2(NanoWorld::onKeyPressed, this);
+	lsnkeyborad->onKeyReleased = CC_CALLBACK_2(NanoWorld::onKeyReleased, this);
 
- //   // create menu, it's an autorelease object
- //   auto menu = Menu::create(closeItem, NULL);
- //   menu->setPosition(Vec2::ZERO);
- //   this->addChild(menu, 1);
-
- //   /////////////////////////////
- //   // 3. add your codes below...
-
- //   // add a label shows "Hello World"
- //   // create and initialize a label
- //   
- //   auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
- //   
- //   // position the label on the center of the screen
- //   label->setPosition(Vec2(origin.x + visibleSize.width/2,
- //                           origin.y + visibleSize.height - label->getContentSize().height));
-
- //   // add the label as a child to this layer
- //   this->addChild(label, 1);
-
- //   // add "HelloWorld" splash screen"
- //   auto sprite = Sprite::create("HelloWorld.png");
-
- //   // position the sprite on the center of the screen
- //   sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
- //   // add the sprite as a child to this layer
- //   this->addChild(sprite, 0);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(lsnkeyborad, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(lsnMouse, this);
     
     return true;
+}
+
+void NanoWorld::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
+{
+	switch (keyCode)
+	{
+	case cocos2d::EventKeyboard::KeyCode::KEY_A:
+	case cocos2d::EventKeyboard::KeyCode::KEY_D:
+	case cocos2d::EventKeyboard::KeyCode::KEY_S:
+	case cocos2d::EventKeyboard::KeyCode::KEY_W:
+		_player->idle();
+		break;
+	default:
+		break;
+	}
+
+	event->stopPropagation();
+}
+
+void NanoWorld::onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event)
+{
+	switch (keyCode)
+	{
+	case cocos2d::EventKeyboard::KeyCode::KEY_A:
+		_player->turnLeft();
+		break;
+	case cocos2d::EventKeyboard::KeyCode::KEY_D:
+		_player->turnRight();
+		break;
+	case cocos2d::EventKeyboard::KeyCode::KEY_E:
+		break;
+	case cocos2d::EventKeyboard::KeyCode::KEY_S:
+		_player->backward();
+		break;
+	case cocos2d::EventKeyboard::KeyCode::KEY_W:
+		_player->forward();
+		break;
+	default:
+		break;
+	}
+
+	event->stopPropagation();
 }
 
 
@@ -373,7 +382,7 @@ void NanoWorld::createWorld3D()
 	_player = Player::create("Sprite3D/girl.c3b",
 		_gameCameras[CAMERA_WORLD_3D_SCENE],
 		_terrain);
-	_player->setScale(0.12);
+	_player->setScale(0.2);
 	_player->setPositionY(_terrain->getHeight(_player->getPositionX(),
 		_player->getPositionZ()));
 
@@ -397,9 +406,9 @@ void NanoWorld::createWorld3D()
 	_player->addChild(rootps, 0);
 
 	// add BillBoard for test blend
-	auto billboard = BillBoard::create("Images/btn-play-normal.png");
-	billboard->setPosition3D(Vec3(0, 180, 0));
-	_player->addChild(billboard);
+	//auto billboard = BillBoard::create("Images/btn-play-normal.png");
+	//billboard->setPosition3D(Vec3(0, 180, 0));
+	//_player->addChild(billboard);
 
 	// create two Sprite3D monster, one is transparent
 	auto monster = Sprite3D::create("Sprite3D/orc.c3b");

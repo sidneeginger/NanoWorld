@@ -97,6 +97,10 @@ private:
 	Node* _descDlg;
 public:
 	void createWorld3D();
+
+protected:
+	virtual void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
+	virtual void onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
