@@ -8,6 +8,10 @@
 #include "2d/CCAction.h"
 #include "renderer/CCRenderState.h"
 #include <spine/spine-cocos2dx.h>
+#include "cocos-ext.h"
+// Particle System, include Particle Universe Particle System
+//#include "Particle3D/CCParticleSystem3D.h"
+//#include "Particle3D/PU/CCPUParticleSystem3D.h"
 
 USING_NS_CC;
 using namespace spine;
@@ -17,6 +21,19 @@ using namespace spine;
 #define PLAYER_STATE_IDLE 2
 #define PLAYER_STATE_FORWARD 3
 #define PLAYER_STATE_BACKWARD 4
+
+enum GAME_CAMERAS_ORDER {
+	CAMERA_WORLD_3D_SKYBOX = 0,
+	CAMERA_WORLD_3D_SCENE,
+	CAMERA_UI_2D,
+	CAMERA_DIALOG_2D_BASE,
+	CAMERA_DIALOG_3D_MODEL,
+	CAMERA_DIALOG_2D_ABOVE,
+	CAMERA_OSD_2D_BASE,
+	CAMERA_OSD_3D_MODEL,
+	CAMERA_OSD_2D_ABOVE,
+	CAMERA_COUNT,
+};
 
 class Player : public cocos2d::Sprite3D
 {
@@ -78,6 +95,8 @@ private:
 	Node* _detailDlg;
 	// init in createDescDlg()
 	Node* _descDlg;
+public:
+	void createWorld3D();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
