@@ -132,7 +132,7 @@ void Player::update(float dt)
 	}
 	break;
 	default:
-		break;
+		break; 
 	}
 	// transform player position to world coord
 	auto playerPos = player->getPosition3D();

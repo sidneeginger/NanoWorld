@@ -16,6 +16,18 @@
     <Filter Include="头文件\Network">
       <UniqueIdentifier>{a157910f-c897-41b9-bd3b-29b558d28a2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{fad1a48f-90ba-420d-b952-b3df4e526ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{ae2ae27b-a57d-47f7-9812-a91e249b046c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{fcf4db5a-5dd8-480d-a325-5e0f0c6a12bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="format">
+      <UniqueIdentifier>{4775f3ce-4857-4c4b-88a7-e96c504d96ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -75,6 +87,30 @@
     <ClInclude Include="LockedQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Config\Config.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Appender.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Logger.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Stringformat.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="format\format.h">
+      <Filter>format</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\AppenderConsole.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="CompilerDefs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +121,24 @@
     </ClCompile>
     <ClCompile Include="util.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\Config.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Appender.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Logger.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="format\format.cpp">
+      <Filter>format</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\AppenderConsole.cpp">
+      <Filter>Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
