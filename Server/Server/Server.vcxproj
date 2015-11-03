@@ -74,7 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../common;D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
+    <IncludePath>../common/Threading;../common;D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
     <LibraryPath>D:\AddLib\Boost1590\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

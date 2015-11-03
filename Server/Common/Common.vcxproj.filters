@@ -28,6 +28,9 @@
     <Filter Include="format">
       <UniqueIdentifier>{4775f3ce-4857-4c4b-88a7-e96c504d96ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{99e95465-dc35-4e6f-ac05-ac9c4219ad8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -81,9 +84,6 @@
     <ClInclude Include="cmdcode.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LockedQueue.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Config\Config.h">
       <Filter>Config</Filter>
     </ClInclude>
@@ -115,6 +115,21 @@
       <Filter>Log</Filter>
     </ClInclude>
     <ClInclude Include="errors.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\Callback.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\ProcessPriority.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\ProducerConsumerQueue.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Threading\LockedQueue.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="GitRevision.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -151,6 +166,9 @@
     </ClCompile>
     <ClCompile Include="Log\LogOperation.cpp">
       <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="GitRevision.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
