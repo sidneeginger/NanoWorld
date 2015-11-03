@@ -148,7 +148,7 @@ struct LocalizedString
 template <typename T>
 using Optional = boost::optional<T>;
 
-namespace Trinity
+namespace Tornado
 {
 	//! std::make_unique implementation (TODO: remove this once C++14 is supported)
 	template<typename T, typename ...Args>

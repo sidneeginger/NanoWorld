@@ -40,8 +40,8 @@ public:
 	template<typename Format, typename... Args>
 	inline void outMessage(std::string const& filter, LogLevel const level, Format&& fmt, Args&&... args)
 	{
-		write(Trinity::make_unique<LogMessage>(level, filter,
-			Trinity::StringFormat(std::forward<Format>(fmt), std::forward<Args>(args)...)));
+		write(Tornado::make_unique<LogMessage>(level, filter,
+			Tornado::StringFormat(std::forward<Format>(fmt), std::forward<Args>(args)...)));
 	}
 
 	template<typename Format, typename... Args>
@@ -51,8 +51,8 @@ public:
 			return;
 
 		std::unique_ptr<LogMessage> msg =
-			Trinity::make_unique<LogMessage>(LOG_LEVEL_INFO, "commands.gm",
-				Trinity::StringFormat(std::forward<Format>(fmt), std::forward<Args>(args)...));
+			Tornado::make_unique<LogMessage>(LOG_LEVEL_INFO, "commands.gm",
+				Tornado::StringFormat(std::forward<Format>(fmt), std::forward<Args>(args)...));
 
 		msg->param1 = std::to_string(account);
 
