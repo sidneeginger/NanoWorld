@@ -66,9 +66,6 @@
     <ClInclude Include="ByteBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="error.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ByteConverter.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -111,6 +108,15 @@
     <ClInclude Include="CompilerDefs.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Log\AppenderFile.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\LogOperation.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="errors.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -138,6 +144,12 @@
       <Filter>format</Filter>
     </ClCompile>
     <ClCompile Include="Log\AppenderConsole.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\AppenderFile.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\LogOperation.cpp">
       <Filter>Log</Filter>
     </ClCompile>
   </ItemGroup>

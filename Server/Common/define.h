@@ -1,5 +1,6 @@
 #pragma once
 
+#include "CompilerDefs.h"
 #include <cstddef>
 #include <cinttypes>
 #include <climits>

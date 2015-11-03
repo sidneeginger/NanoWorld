@@ -15,7 +15,7 @@
 //void vutf8printf(FILE* out, const char *str, va_list* ap);
 
 #include "Define.h"
-#include "Error.h"
+#include "Errors.h"
 
 #include <algorithm>
 #include <string>

@@ -448,7 +448,7 @@ void NanoWorld::createWorld3D()
 	_terrain->setLODDistance(64, 128, 192);
 
 	// create player
-	_player = Player::create("Sprite3D/girl.c3b",
+	_player = Player::create("model/mage/mage.c3b",
 		_gameCameras[CAMERA_WORLD_3D_SCENE],
 		_terrain);
 	_player->setScale(0.2);
@@ -456,10 +456,17 @@ void NanoWorld::createWorld3D()
 	_player->setPositionY(_terrain->getHeight(_player->getPositionX(),
 		_player->getPositionZ()));
 
-	auto animation = Animation3D::create("Sprite3D/girl.c3b", "Take 001");
+	auto wuqi2 = _player->getMeshByName("fashi_wuqi2");
+	wuqi2->setVisible(false);
+
+	auto wuqi = _player->getMeshByName("fashi_wuqi01");
+	wuqi->setVisible(true);
+
+
+	auto animation = Animation3D::create("model/mage/mage.c3b", "Take 001");
 	if (animation)
 	{
-		auto animate = Animate3D::create(animation);
+		auto animate = Animate3D::createWithFrames(animation, 206, 229);
 		_player->runAction(RepeatForever::create(animate));
 	}
 	// add a particle 3d above player

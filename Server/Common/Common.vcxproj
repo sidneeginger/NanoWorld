@@ -97,7 +97,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_BUILD_DIRECTIVE="$(ConfigurationName)";_WIN64;_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_WIN32_WINNT=0x0602;BOOST_DATE_TIME_NO_LIB;BOOST_REGEX_NO_LIB;BOOST_CHRONO_NO_LIB;SCRIPTS;NO_CORE_FUNCS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -151,13 +151,15 @@
     <ClInclude Include="CompilerDefs.h" />
     <ClInclude Include="Config\Config.h" />
     <ClInclude Include="define.h" />
-    <ClInclude Include="error.h" />
+    <ClInclude Include="errors.h" />
     <ClInclude Include="format\format.h" />
     <ClInclude Include="LockedQueue.h" />
     <ClInclude Include="Log\Appender.h" />
     <ClInclude Include="Log\AppenderConsole.h" />
+    <ClInclude Include="Log\AppenderFile.h" />
     <ClInclude Include="Log\Log.h" />
     <ClInclude Include="Log\Logger.h" />
+    <ClInclude Include="Log\LogOperation.h" />
     <ClInclude Include="MessageBuffer.h" />
     <ClInclude Include="NetworkThread.h" />
     <ClInclude Include="Packet.h" />
@@ -176,8 +178,10 @@
     <ClCompile Include="format\format.cpp" />
     <ClCompile Include="Log\Appender.cpp" />
     <ClCompile Include="Log\AppenderConsole.cpp" />
+    <ClCompile Include="Log\AppenderFile.cpp" />
     <ClCompile Include="Log\Log.cpp" />
     <ClCompile Include="Log\Logger.cpp" />
+    <ClCompile Include="Log\LogOperation.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

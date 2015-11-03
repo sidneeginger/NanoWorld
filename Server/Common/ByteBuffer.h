@@ -1,7 +1,7 @@
 #pragma once
 
 #include "define.h"
-#include "error.h"
+#include "errors.h"
 #include "ByteConverter.h"
 #include "Util.h"
 
