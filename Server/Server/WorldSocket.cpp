@@ -382,8 +382,8 @@ void WorldSocket::NewSession(uint32 AccountID)
 
 bool WorldSocket::Update()
 {
-	//if (!base::Update())
-	//	return false;
+	if (!NanoNetSocket::Update())
+		return false;
 
 	if (_queryFuture.valid() && _queryFuture.wait_for(std::chrono::seconds(0)) == std::future_status::ready)
 	{

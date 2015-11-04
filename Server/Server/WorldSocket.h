@@ -14,6 +14,7 @@ enum class BufferSizes : uint32
 
 class WorldSocket : public Socket<WorldSocket>
 {
+	typedef Socket<WorldSocket> NanoNetSocket;
 public:
 	explicit WorldSocket(tcp::socket&& socket);
 	~WorldSocket();

@@ -123,7 +123,6 @@ ClientSocket::ReadDataHandlerResult ClientSocket::ReadDataHandler()
 		_pworldLink->SessionID(sID);
 		_pworldLink->NofifyLogin();
 		std::cout << "Sessoin " << sID << std::endl;
-
 	}
 		break;
 	default:
