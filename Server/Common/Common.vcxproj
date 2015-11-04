@@ -184,6 +184,7 @@
     <ClCompile Include="Log\Appender.cpp" />
     <ClCompile Include="Log\AppenderConsole.cpp" />
     <ClCompile Include="Log\AppenderFile.cpp" />
+    <ClCompile Include="Log\Errors.cpp" />
     <ClCompile Include="Log\Log.cpp" />
     <ClCompile Include="Log\Logger.cpp" />
     <ClCompile Include="Log\LogOperation.cpp" />

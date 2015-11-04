@@ -21,7 +21,7 @@
 
 #include "Common.h"
 #include "errors.h"
-//#include "Log.h"
+#include "Log.h"
 
 #include "Field.h"
 #include "QueryResult.h"

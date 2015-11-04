@@ -19,6 +19,12 @@
     <Filter Include="Database">
       <UniqueIdentifier>{303ea3a9-acd9-47e1-93e0-dcd80427af1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Database\Implementation">
+      <UniqueIdentifier>{b81f4ef0-9ac3-407b-bc68-76d0c852e37a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging">
+      <UniqueIdentifier>{aa790a7a-f4f3-4026-af9e-eb26056faab5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,6 +84,21 @@
     <ClInclude Include="Database\Transaction.h">
       <Filter>Database</Filter>
     </ClInclude>
+    <ClInclude Include="Database\Implementation\LoginDatabase.h">
+      <Filter>Database\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Implementation\CharacterDatabase.h">
+      <Filter>Database\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Implementation\HotfixDatabase.h">
+      <Filter>Database\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Implementation\WorldDatabase.h">
+      <Filter>Database\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging\AppenderDB.h">
+      <Filter>Logging</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -118,6 +139,21 @@
     </ClCompile>
     <ClCompile Include="Database\QueryHolder.cpp">
       <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Implementation\LoginDatabase.cpp">
+      <Filter>Database\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Implementation\CharacterDatabase.cpp">
+      <Filter>Database\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Implementation\HotfixDatabase.cpp">
+      <Filter>Database\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Implementation\WorldDatabase.cpp">
+      <Filter>Database\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging\AppenderDB.cpp">
+      <Filter>Logging</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -74,8 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../common/Threading;../common;D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\AddLib\Boost1590\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenSSL-Win64\include;../database/logging;C:\Program Files\MySQL\MySQL Server 5.6\include;../common/utility;../common/log;../database/database;../common/Threading;../common;D:\AddLib\Boost1590\include\boost-1_59;$(IncludePath)</IncludePath>
+    <LibraryPath>../lib;d:\OpenSSL-Win64\lib\VC;C:\Program Files\MySQL\MySQL Server 5.6\lib;D:\AddLib\Boost1590\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -109,7 +109,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>common.lib;libmysql.lib;database.lib;libeay32MD.lib;ssleay32MDd.lib;libeay32MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
