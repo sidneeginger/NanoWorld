@@ -33,7 +33,7 @@ class SQLQueryHolder
         template<typename Format, typename... Args>
         bool SetPQuery(size_t index, Format&& sql, Args&&... args)
         {
-            return SetQuery(index, Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
+            return SetQuery(index, Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
         }
         bool SetPreparedQuery(size_t index, PreparedStatement* stmt);
         void SetSize(size_t size);

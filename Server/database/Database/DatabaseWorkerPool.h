@@ -162,7 +162,7 @@ class DatabaseWorkerPool
         //! This method should only be used for queries that are only executed once, e.g during startup.
         void Execute(const char* sql)
         {
-            if (Trinity::IsFormatEmptyOrNull(sql))
+            if (Tornado::IsFormatEmptyOrNull(sql))
                 return;
 
             BasicStatementTask* task = new BasicStatementTask(sql);
@@ -174,10 +174,10 @@ class DatabaseWorkerPool
         template<typename Format, typename... Args>
         void PExecute(Format&& sql, Args&&... args)
         {
-            if (Trinity::IsFormatEmptyOrNull(sql))
+            if (Tornado::IsFormatEmptyOrNull(sql))
                 return;
 
-            Execute(Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
+            Execute(Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
         }
 
         //! Enqueues a one-way SQL operation in prepared statement format that will be executed asynchronously.
@@ -209,10 +209,10 @@ class DatabaseWorkerPool
         template<typename Format, typename... Args>
         void DirectPExecute(Format&& sql, Args&&... args)
         {
-            if (Trinity::IsFormatEmptyOrNull(sql))
+            if (Tornado::IsFormatEmptyOrNull(sql))
                 return;
 
-            DirectExecute(Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
+            DirectExecute(Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
         }
 
         //! Directly executes a one-way SQL operation in prepared statement format, that will block the calling thread until finished.
@@ -254,10 +254,10 @@ class DatabaseWorkerPool
         template<typename Format, typename... Args>
         QueryResult PQuery(Format&& sql, T* conn, Args&&... args)
         {
-            if (Trinity::IsFormatEmptyOrNull(sql))
+            if (Tornado::IsFormatEmptyOrNull(sql))
                 return QueryResult(nullptr);
 
-            return Query(Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str(), conn);
+            return Query(Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str(), conn);
         }
 
         //! Directly executes an SQL query in string format -with variable args- that will block the calling thread until finished.
@@ -312,7 +312,7 @@ class DatabaseWorkerPool
         template<typename Format, typename... Args>
         QueryResultFuture AsyncPQuery(Format&& sql, Args&&... args)
         {
-            return AsyncQuery(Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
+            return AsyncQuery(Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
         }
 
         //! Enqueues a query in prepared format that will set the value of the PreparedQueryResultFuture return object as soon as the query is executed.

@@ -33,5 +33,6 @@ protected:
 
 public:
 	void KickPlayer(uint32 uid);
+	void Update(uint32 udiff);
 };
 

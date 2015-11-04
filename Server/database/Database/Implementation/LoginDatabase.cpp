@@ -106,6 +106,7 @@ void LoginDatabaseConnection::DoPrepareStatements()
         " LEFT JOIN account_banned ab ON a.id = ab.id LEFT JOIN account_access aa ON a.id = aa.id AND aa.RealmID = -1 WHERE ba.email = ?", CONNECTION_ASYNC);
     PrepareStatement(LOGIN_UPD_BNET_VS_FIELDS, "UPDATE battlenet_accounts SET v = ?, s = ? WHERE email = ?", CONNECTION_ASYNC);
     PrepareStatement(LOGIN_UPD_BNET_SESSION_KEY, "UPDATE battlenet_accounts SET sessionKey = ?, online = ? WHERE id = ?", CONNECTION_ASYNC);
+	PrepareStatement(LOGIN_SEL_NW, "SELECT id FROM nnet_account WHERE name=? AND password=?", CONNECTION_ASYNC);
     PrepareStatement(LOGIN_SEL_BNET_RECONNECT_INFO, "SELECT " BnetAccountInfo ", ba.sessionKey, " BnetGameAccountInfo
         " FROM battlenet_accounts ba LEFT JOIN battlenet_account_bans bab ON ba.id = bab.id LEFT JOIN account a ON ba.id = a.battlenet_account"
         " LEFT JOIN account_banned ab ON a.id = ab.id LEFT JOIN account_access aa ON a.id = aa.id AND aa.RealmID = -1 WHERE ba.email = ? AND a.username = ?", CONNECTION_ASYNC);

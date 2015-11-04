@@ -30,6 +30,7 @@ void World::UpdateSession(uint32 diff)
 
 	for (auto& it : m_session)
 	{
+		it.second->Update(diff);
 		if (it.second->PlayerKicked())
 		{
 			m_session.erase(it.first);
@@ -51,6 +52,10 @@ void World::AddSession_(WorldSession* s)
 		m_session[s->SessoinID()] = s;
 		UpdateAllMove();
 	}
+	else
+	{
+		KickedPlayer(s);
+	}
 }
 
 void World::UpdateAllMove()
@@ -64,6 +69,11 @@ void World::UpdateAllMove()
 
 void World::KickedPlayer(WorldSession* s)
 {
+	if (nullptr == s)
+	{
+		return;
+	}
+
 	Player player = s->GetPlayer();
 	for (auto& it : m_session)
 	{

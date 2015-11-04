@@ -42,7 +42,7 @@ class Transaction
         template<typename Format, typename... Args>
         void PAppend(Format&& sql, Args&&... args)
         {
-            Append(Trinity::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
+            Append(Tornado::StringFormat(std::forward<Format>(sql), std::forward<Args>(args)...).c_str());
         }
 
         size_t GetSize() const { return m_queries.size(); }

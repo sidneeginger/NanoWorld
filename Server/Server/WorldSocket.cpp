@@ -6,11 +6,14 @@
 #include "../Common/cmdcode.h"
 #include "WorldSession.h"
 #include "World.h"
+#include "../database/DatabaseEnv.h"
+#include "log.h"
 
 WorldSocket::WorldSocket(tcp::socket&& socket) 
 	: Socket(std::move(socket))
 {
 	_headerBuffer.Resize(4);
+	_session = nullptr;
 }
 
 
@@ -171,22 +174,7 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 		break;
 	case CMSG_LOGIN:
 	{
-		// Login
-		uint32 uID;
-        std::string sName;
-        std::string sPW;
-		packet >> sName;
-        packet >> sPW;
-
-		uint32 uSession = (uint32)uint64(this);
-		std::cout << "Player Login " << sName.c_str() << " PW" << sPW.c_str() << "  Session " << uSession << std::endl;
-		_session = new WorldSession(uSession, this);
-		sWorld->AddSession(_session);
-		WriteLoginInfo(uSession);
-
-		// Get player pos;
-		Position pos;
-		_session->SetPlayerPos(pos);
+		HandleLogin(packet);
 	}
 		break;
 	case CMSG_MOVE_START:
@@ -336,4 +324,73 @@ WorldSocket::ReadDataHandlerResult WorldSocket::ReadDataHandler()
 	//}
 
 	return ReadDataHandlerResult::Ok;
+}
+
+void WorldSocket::HandleLogin(WorldPacket& packet)
+{
+	if (_queryCallback)
+	{
+		TC_LOG_DEBUG("session", "[Battlenet::ResumeRequest] %s attempted to log too quick after previous attempt!", GetRemoteIpAddress().to_string().c_str());
+		return;
+	}
+
+	// Login
+	uint32 uID;
+	std::string sName;
+	std::string sPW;
+	packet >> sName;
+	packet >> sPW;
+	std::cout << "Player Login " << sName.c_str() << " PW" << sPW.c_str() << std::endl;
+
+
+	PreparedStatement* stmt = LoginDatabase.GetPreparedStatement(LOGIN_SEL_NW);
+	stmt->setString(0, sName);
+	stmt->setString(1, sPW);
+
+	_queryCallback = std::bind(&WorldSocket::HandleResumeRequestCallback, this, std::placeholders::_1);
+	_queryFuture = LoginDatabase.AsyncQuery(stmt);
+}
+
+void WorldSocket::HandleResumeRequestCallback(PreparedQueryResult result)
+{
+	if (!result)
+	{
+		return;
+	}
+
+	Field* fields = result->Fetch();
+
+	auto id = fields[0].GetInt32();
+
+	NewSession(id);
+}
+
+
+void WorldSocket::NewSession(uint32 AccountID)
+{
+	_session = new WorldSession(AccountID, this);
+	if (_session != nullptr)
+	{
+		sWorld->AddSession(_session);
+		WriteLoginInfo(AccountID);
+
+		// Get player pos;
+		Position pos;
+		_session->SetPlayerPos(pos);
+	}
+}
+
+bool WorldSocket::Update()
+{
+	//if (!base::Update())
+	//	return false;
+
+	if (_queryFuture.valid() && _queryFuture.wait_for(std::chrono::seconds(0)) == std::future_status::ready)
+	{
+		auto callback = std::move(_queryCallback);
+		_queryCallback = nullptr;
+		callback(_queryFuture.get());
+	}
+
+	return true;
 }

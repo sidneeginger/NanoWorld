@@ -41,3 +41,9 @@ void WorldSession::KickPlayer(uint32 uid)
 
 	_pSocket->SendPacket(packet);
 }
+
+
+void WorldSession::Update(uint32 udiff)
+{
+	
+}

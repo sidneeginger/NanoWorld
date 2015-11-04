@@ -23,8 +23,8 @@
 
 using namespace boost::program_options;
 
-#ifndef _TRINITY_BNET_CONFIG
-# define _TRINITY_BNET_CONFIG  "bnetserver.conf"
+#ifndef _TORNADO_NNET_CONFIG
+# define _TORNADO_NNET_CONFIG  "nnetserver.conf"
 #endif
 
 
@@ -40,7 +40,7 @@ variables_map GetConsoleArguments(int argc, char** argv, std::string& configFile
 
 int main(int argc, char** argv)
 {
-	std::string configFile = _TRINITY_BNET_CONFIG;
+	std::string configFile = _TORNADO_NNET_CONFIG;
 	std::string configService;
 	auto vm = GetConsoleArguments(argc, argv, configFile, configService);
 	// exit if help or version is enabled
@@ -95,7 +95,6 @@ int main(int argc, char** argv)
 	{
 		return 1;
 	}
-
 
 	boost::asio::io_service io;
 	sWorldMgr.StartNetwork(io, bindIp, bnport);
@@ -203,7 +202,7 @@ variables_map GetConsoleArguments(int argc, char** argv, std::string& configFile
 	all.add_options()
 		("help,h", "print usage message")
 		("version,v", "print version build info")
-		("config,c", value<std::string>(&configFile)->default_value(_TRINITY_BNET_CONFIG), "use <arg> as configuration file")
+		("config,c", value<std::string>(&configFile)->default_value(_TORNADO_NNET_CONFIG), "use <arg> as configuration file")
 		;
 #if PLATFORM == PLATFORM_WINDOWS
 	options_description win("Windows platform specific options");

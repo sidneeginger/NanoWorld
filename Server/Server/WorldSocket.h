@@ -1,6 +1,7 @@
 #pragma once
 #include "../Common/Socket.h"
 #include "../Common/Packet.h"
+#include "../Common/Threading/Callback.h"
 
 class WorldSession;
 class WorldPacket;
@@ -37,10 +38,18 @@ public:
 	void Write(MessageBuffer& buffer);
 
 	void SendPacket(WorldPacket& packet);
+	bool Update() override;
 
 private:
 	MessageBuffer _headerBuffer;
 	MessageBuffer _packetBuffer;
 	WorldSession* _session;
+
+	PreparedQueryResultFuture _queryFuture;
+	std::function<void(PreparedQueryResult)> _queryCallback;
+
+	void HandleLogin(WorldPacket& packet);
+	void HandleResumeRequestCallback(PreparedQueryResult result);
+	void NewSession(uint32 AccountID);
 };
 
