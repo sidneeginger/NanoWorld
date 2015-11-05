@@ -16,7 +16,7 @@ Log::Log() : AppenderId(0), lowestLogLevel(LOG_LEVEL_FATAL), _ioService(nullptr)
 {
 	m_logsTimestamp = "_" + GetTimestampStr();
 	RegisterAppender<AppenderConsole>();
-	//RegisterAppender<AppenderFile>();
+	RegisterAppender<AppenderFile>();
 }
 
 Log::~Log()

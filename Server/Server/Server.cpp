@@ -57,7 +57,6 @@ int main(int argc, char** argv)
 	sLog->RegisterAppender<AppenderDB>();
 	sLog->Initialize(nullptr);
 
-	TC_LOG_INFO("server.bnetserver", "Server Start\n");
 	TC_LOG_INFO("server.bnetserver", "%s (server)", GitRevision::GetFullVersion());
 	TC_LOG_INFO("server.bnetserver", "Revision Number: %s", GitRevision::GetBuildNum());
 	TC_LOG_INFO("server.bnetserver", "<Ctrl-C> to stop.\n");
@@ -100,7 +99,8 @@ int main(int argc, char** argv)
 
 	boost::asio::io_service io;
 	sWorldMgr.StartNetwork(io, bindIp, bnport);
-	std::cout << "World Manager Start." << std::endl;
+	TC_LOG_INFO("server.bnetserver", "Server Run, bind IP: %s Port:%d", bindIp.c_str(), bnport);
+
 
 	boost::asio::signal_set signals(io, SIGINT, SIGTERM);
 #ifdef _WIN32

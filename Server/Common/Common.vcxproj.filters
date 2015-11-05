@@ -132,6 +132,9 @@
     <ClInclude Include="GitRevision.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\revision_data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
