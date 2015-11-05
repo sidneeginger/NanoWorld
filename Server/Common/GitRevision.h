@@ -25,6 +25,7 @@ namespace GitRevision
     char const* GetHash();
     char const* GetDate();
     char const* GetBranch();
+	char const* GetBuildNum();
     char const* GetSourceDirectory();
     char const* GetMySQLExecutable();
     char const* GetFullDatabase();

@@ -13,6 +13,11 @@ char const* GitRevision::GetDate()
     return _DATE;
 }
 
+char const* GitRevision::GetBuildNum()
+{
+	return _BUILD_NUM;
+}
+
 char const* GitRevision::GetBranch()
 {
     return _BRANCH;
@@ -38,7 +43,7 @@ char const* GitRevision::GetHotfixesDatabase()
     return _HOTFIXES_DATABASE;
 }
 
-#define _PACKAGENAME "TrinityCore"
+#define _PACKAGENAME "Tornado"
 
 char const* GitRevision::GetFullVersion()
 {

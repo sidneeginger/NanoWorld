@@ -57,7 +57,9 @@ int main(int argc, char** argv)
 	sLog->RegisterAppender<AppenderDB>();
 	sLog->Initialize(nullptr);
 
-	TC_LOG_INFO("server.bnetserver", "%s (bnetserver)", GitRevision::GetFullVersion());
+	TC_LOG_INFO("server.bnetserver", "Server Start\n");
+	TC_LOG_INFO("server.bnetserver", "%s (server)", GitRevision::GetFullVersion());
+	TC_LOG_INFO("server.bnetserver", "Revision Number: %s", GitRevision::GetBuildNum());
 	TC_LOG_INFO("server.bnetserver", "<Ctrl-C> to stop.\n");
 	TC_LOG_INFO("server.bnetserver", "Using configuration file %s.", configFile.c_str());
 	TC_LOG_INFO("server.bnetserver", "Using SSL version: %s (library: %s)", OPENSSL_VERSION_TEXT, SSLeay_version(SSLEAY_VERSION));
