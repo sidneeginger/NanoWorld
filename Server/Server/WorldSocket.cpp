@@ -23,9 +23,11 @@ WorldSocket::~WorldSocket()
 
 void WorldSocket::Start()
 {
-	std::string ip_address = GetRemoteIpAddress().to_string();
-	auto nPort = GetRemotePort();
-	std::cout << ip_address << ":" << nPort << std::endl;
+	//std::string ip_address = GetRemoteIpAddress().to_string();
+	//auto nPort = GetRemotePort();
+	//std::cout << ip_address << ":" << nPort << std::endl;
+	auto cli = GetClientInfo();
+	TC_LOG_INFO("networld", "CilentInfo: %s", cli.c_str());
 
 	AsyncRead();
 }
@@ -340,7 +342,8 @@ void WorldSocket::HandleLogin(WorldPacket& packet)
 	std::string sPW;
 	packet >> sName;
 	packet >> sPW;
-	std::cout << "Player Login " << sName.c_str() << " PW" << sPW.c_str() << std::endl;
+	
+	TC_LOG_INFO("network", "Client Login: %s at %s", sName.c_str(), GetClientInfo().c_str());
 
 
 	PreparedStatement* stmt = LoginDatabase.GetPreparedStatement(LOGIN_SEL_NW);
@@ -393,4 +396,19 @@ bool WorldSocket::Update()
 	}
 
 	return true;
+}
+
+std::string WorldSocket::GetClientInfo() const
+{
+	std::ostringstream stream;
+	stream << '[' << GetRemoteIpAddress() << ':' << GetRemotePort();
+	//if (_accountInfo && !_accountInfo->Login.empty())
+	//	stream << ", Account: " << _accountInfo->Login;
+
+	//if (_gameAccountInfo)
+	//	stream << ", Game account: " << _gameAccountInfo->Name;
+
+	stream << ']';
+
+	return stream.str();
 }

@@ -35,6 +35,7 @@ protected:
 	ReadDataHandlerResult ReadDataHandler();
 
 public:
+	std::string GetClientInfo() const;
 	int WriteLoginInfo(uint32);
 	void Write(MessageBuffer& buffer);
 
